@@ -35,13 +35,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "FIXME"
+    "url": "https://github.com/sakalx/react-input-collection/tree/master"
   },
   "keywords": [
-    "input",
+    "animations",
     "collection",
     "efect",
-    "react"
+    "efect",
+    "input",
+    "inputs",
+    "react",
+    "reactjs"
   ],
   "author": "sakal",
   "license": "MIT",
