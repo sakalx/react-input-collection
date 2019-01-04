@@ -14,28 +14,25 @@
 
 
 .i-material__input {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid var(--i-material-color-main);
     border-radius: 0;
+    -webkit-box-shadow: none;
     box-shadow: none;
     cursor: text;
     outline: none;
     padding: 8px;
     width: 100%;
 }
+
 .i-material__input:hover {
     border-bottom: 1px solid var(--i-material-color-hover);
 }
-.i-material__input::-webkit-input-placeholder {
-    transition: color 300ms ease;
-}
-
-.i-material__input:not(:focus)::-webkit-input-placeholder {
-    color: transparent;
-}
 
 
+/*Underline*/
 .i-material__hr {
     background: var(--i-material-color-active);
     border: none;
@@ -48,28 +45,41 @@
     margin: 0;
     padding: 0;
     position: absolute;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
     transform: scaleX(0);
+    -webkit-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
     transition: all 200ms ease-out;
     visibility: hidden;
     width: 100%;
     will-change: transform, visibility;
     z-index: 9;
 }
+
 .i-material__input:focus ~ .i-material__hr {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
     transform: scaleX(1);
     visibility: visible;
 }
 
 
+/*Label*/
 .i-material__label {
     bottom: 0;
     color: var(--i-material-color-main);
     left: 0;
     pointer-events: none;
     position: absolute;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
     transition: all 300ms ease;
+    -webkit-transition-property: bottom, color, scale;
+    -o-transition-property: bottom, color, scale;
     transition-property: bottom, color, scale;
 }
+
 .i-material__input:hover ~ .i-material__label {
     color: var(--i-material-color-hover);
 }
@@ -81,5 +91,74 @@
 .i-material__input:focus ~ .i-material__label,
 .i-material__input:not([value=""]) ~ .i-material__label {
     bottom: 100%;
+    -webkit-transform: scale(.8);
+    -ms-transform: scale(.8);
     transform: scale(.8);
+}
+
+
+/*Placeholder*/
+.i-material__input::-webkit-input-placeholder {
+    -webkit-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+    transition: color 300ms ease;
+}
+.i-material__input:-ms-input-placeholder {
+    -webkit-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+    transition: color 300ms ease;
+}
+.i-material__input::-ms-input-placeholder {
+    -webkit-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+    transition: color 300ms ease;
+}
+.i-material__input::placeholder {
+    -webkit-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+    transition: color 300ms ease;
+}
+
+.i-material__input::-webkit-input-placeholder {
+    -webkit-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+    transition: color 300ms ease;
+}
+
+.i-material__input::-ms-input-placeholder {
+    -webkit-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+    transition: color 300ms ease;
+}
+
+
+.i-material__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+
+.i-material__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+
+.i-material__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+
+.i-material__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-material__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-material__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-material__input:not(:focus)::-moz-placeholder {
+    color: transparent;
 }
