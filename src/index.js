@@ -1,84 +1,83 @@
-/*
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
 
-const variables = {
-  'duration': '--duration-effect',
-  'iterationCount': '--iteration-count',
-};
+const cssVarNames = new Map([
+  ['activeColor', '--i-material-color-active'],
+  ['hoverColor', '--i-material-color-hover'],
+  ['mainColor', '--i-material-color-main'],
+]);
 
-class GlitchEffect extends React.Component {
+class InputMaterial extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.refFieldset = React.createRef();
+  }
 
   componentDidMount() {
-    this.initVariables();
+    const {activeColor, hoverColor, mainColor} = this.props;
 
-    if (!this.props.onHover && !this.props.disabled) {
-      this.toggleGlitchEffect()
+    if (!!activeColor || !!hoverColor || !!mainColor) {
+      this.changeCssVariables();
     }
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.disabled !== prevProps.disabled) {
-      this.toggleGlitchEffect()
-    }
+    this.changeCssVariables(prevProps);
   }
 
-  initVariables = () => {
-    Object.entries(this.props).forEach(([key, value]) => {
-      if (!!variables[key]) {
-        this.setGlitchVariable(variables[key], value)
-      }
-    });
+  setCssVariable = (key, value) => {
+    this.refFieldset.current.style.setProperty(key, value);
   };
 
-  setGlitchVariable = (key, value) => {
-    this.refGlitch.style.setProperty(key, value);
-  };
+  changeCssVariables = (prevProps = {}) => {
+    Object.entries(this.props)
+      .forEach(([key, value]) => {
+        const cssVarKey = cssVarNames.get(key);
 
-  toggleGlitchEffect = () => {
-    this.refGlitch.classList.toggle('glitch');
-  };
-
-  handleHover = () => {
-    if (!!this.props.onHover) {
-      this.toggleGlitchEffect()
-    }
+        if (value !== prevProps[key] && cssVarKey) {
+          this.setCssVariable(cssVarKey, value)
+        }
+      });
   };
 
   render() {
     const {
-      className = null,
-      style = null,
+      activeColor,
+      hoverColor,
+      mainColor,
+      containerClassName = '',
+      containerStyle,
+      inputStyle,
+      underLineStyle,
+      labelStyle,
+      label = '',
+      ...rest
     } = this.props;
 
     return (
-      <div
-        className={className}
-        onMouseEnter={this.handleHover}
-        onMouseLeave={this.handleHover}
-        style={style}
-      >
-        <div
-          className='glitch-variables'
-          ref={refGlitch => this.refGlitch = refGlitch}
-        >
-          {this.props.children}
-        </div>
-      </div>
+      <fieldset className={`i-material ${containerClassName}`} style={containerStyle} ref={this.refFieldset}>
+        <input className='i-material__input' style={inputStyle} {...rest}/>
+        <hr className='i-material__hr' style={underLineStyle}/>
+        <label className='i-material__label' style={labelStyle}>{label}</label>
+      </fieldset>
     )
   }
 }
 
-export default GlitchEffect;
+export default InputMaterial;
 
-GlitchEffect.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  duration: PropTypes.string,
-  iterationCount: PropTypes.string,
-  onHover: PropTypes.bool,
-  style: PropTypes.object,
-};*/
+InputMaterial.propTypes = {
+  activeColor: PropTypes.string,
+  hoverColor: PropTypes.string,
+  mainColor: PropTypes.string,
+  containerClassName: PropTypes.string,
+  containerStyle: PropTypes.object,
+  inputStyle: PropTypes.object,
+  underLineStyle: PropTypes.object,
+  labelStyle: PropTypes.object,
+  label: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};
