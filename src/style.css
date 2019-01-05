@@ -1,11 +1,11 @@
-.i-material {
-    --i-material-color-main: #a3a3a3;
-    --i-material-color-active: #2196f3;
-    --i-material-color-hover: #3d3d3d;
+.i-mUI {
+    --i-mUI-color-main: #a3a3a3;
+    --i-mUI-color-active: #2196f3;
+    --i-mUI-color-hover: #3d3d3d;
 }
 
 
-.i-material {
+.i-mUI {
     border: none;
     overflow: visible;
     padding: 0;
@@ -13,11 +13,11 @@
 }
 
 
-.i-material__input {
+.i-mUI__input {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border: none;
-    border-bottom: 1px solid var(--i-material-color-main);
+    border-bottom: 1px solid var(--i-mUI-color-main);
     border-radius: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -27,14 +27,14 @@
     width: 100%;
 }
 
-.i-material__input:hover {
-    border-bottom: 1px solid var(--i-material-color-hover);
+.i-mUI__input:hover {
+    border-bottom: 1px solid var(--i-mUI-color-hover);
 }
 
 
 /*Underline*/
-.i-material__hr {
-    background: var(--i-material-color-active);
+.i-mUI__hr {
+    background: var(--i-mUI-color-active);
     border: none;
     bottom: 0;
     content: '';
@@ -57,7 +57,7 @@
     z-index: 9;
 }
 
-.i-material__input:focus ~ .i-material__hr {
+.i-mUI__input:focus ~ .i-mUI__hr {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
     transform: scaleX(1);
@@ -66,9 +66,9 @@
 
 
 /*Label*/
-.i-material__label {
+.i-mUI__label {
     bottom: 0;
-    color: var(--i-material-color-main);
+    color: var(--i-mUI-color-main);
     left: 0;
     pointer-events: none;
     position: absolute;
@@ -80,16 +80,16 @@
     transition-property: bottom, color, scale;
 }
 
-.i-material__input:hover ~ .i-material__label {
-    color: var(--i-material-color-hover);
+.i-mUI__input:hover ~ .i-mUI__label {
+    color: var(--i-mUI-color-hover);
 }
 
-.i-material__input:focus ~ .i-material__label {
-    color: var(--i-material-color-active);
+.i-mUI__input:focus ~ .i-mUI__label {
+    color: var(--i-mUI-color-active);
 }
 
-.i-material__input:focus ~ .i-material__label,
-.i-material__input:not([value=""]) ~ .i-material__label {
+.i-mUI__input:focus ~ .i-mUI__label,
+.i-mUI__input:not([value=""]) ~ .i-mUI__label {
     bottom: 100%;
     -webkit-transform: scale(.8);
     -ms-transform: scale(.8);
@@ -98,67 +98,67 @@
 
 
 /*Placeholder*/
-.i-material__input::-webkit-input-placeholder {
+.i-mUI__input::-webkit-input-placeholder {
     -webkit-transition: color 300ms ease;
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
-.i-material__input:-ms-input-placeholder {
+.i-mUI__input:-ms-input-placeholder {
     -webkit-transition: color 300ms ease;
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
-.i-material__input::-ms-input-placeholder {
+.i-mUI__input::-ms-input-placeholder {
     -webkit-transition: color 300ms ease;
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
-.i-material__input::placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
-}
-
-.i-material__input::-webkit-input-placeholder {
+.i-mUI__input::placeholder {
     -webkit-transition: color 300ms ease;
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
 
-.i-material__input::-ms-input-placeholder {
+.i-mUI__input::-webkit-input-placeholder {
+    -webkit-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+    transition: color 300ms ease;
+}
+
+.i-mUI__input::-ms-input-placeholder {
     -webkit-transition: color 300ms ease;
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
 
 
-.i-material__input:not(:focus)::-webkit-input-placeholder {
+.i-mUI__input:not(:focus)::-webkit-input-placeholder {
     color: transparent;
 }
 
 
-.i-material__input:not(:focus):-ms-input-placeholder {
+.i-mUI__input:not(:focus):-ms-input-placeholder {
     color: transparent;
 }
 
 
-.i-material__input:not(:focus)::-ms-input-placeholder {
+.i-mUI__input:not(:focus)::-ms-input-placeholder {
     color: transparent;
 }
 
 
-.i-material__input:not(:focus)::placeholder {
+.i-mUI__input:not(:focus)::placeholder {
     color: transparent;
 }
 
-.i-material__input:not(:focus)::-webkit-input-placeholder {
+.i-mUI__input:not(:focus)::-webkit-input-placeholder {
     color: transparent;
 }
 
-.i-material__input:not(:focus)::-ms-input-placeholder {
+.i-mUI__input:not(:focus)::-ms-input-placeholder {
     color: transparent;
 }
 
-.i-material__input:not(:focus)::-moz-placeholder {
+.i-mUI__input:not(:focus)::-moz-placeholder {
     color: transparent;
 }
