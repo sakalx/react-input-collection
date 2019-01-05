@@ -3,77 +3,59 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const cssVarNames = new Map([
-  ['activeColor', '--i-material-color-active'],
-  ['hoverColor', '--i-material-color-hover'],
-  ['mainColor', '--i-material-color-main'],
+
+const cssVariables = new Map([
+  ['--i-mUI-color-active', null],
+  ['--i-mUI-color-hover', null],
+  ['--i-mUI-color-main', null],
 ]);
 
-class InputMaterial extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.refFieldset = React.createRef();
+const changeCssVar = (ref, key, value) => {
+  const currValue = cssVariables.get(key);
+
+  if (value !== currValue) {
+    const setCssVar = () => ref.current.style.setProperty(key, value);
+
+    setTimeout(setCssVar, 0);
+    cssVariables.set(key, value);
   }
+};
 
-  componentDidMount() {
-    const {activeColor, hoverColor, mainColor} = this.props;
+function InputMUI({
+                    activeColor = null,
+                    hoverColor = null,
+                    mainColor = null,
+                    className = '',
+                    style,
+                    inputStyle,
+                    underLineStyle,
+                    labelStyle,
+                    label = '',
+                    ...rest
+                  }) {
+  let refInputMUI = React.createRef();
 
-    if (!!activeColor || !!hoverColor || !!mainColor) {
-      this.changeCssVariables();
-    }
-  }
+  !!activeColor && changeCssVar(refInputMUI, '--i-mUI-color-active', activeColor);
+  !!hoverColor && changeCssVar(refInputMUI, '--i-mUI-color-hover', hoverColor);
+  !!mainColor && changeCssVar(refInputMUI, '--i-mUI-color-main', mainColor);
 
-  componentDidUpdate(prevProps) {
-    this.changeCssVariables(prevProps);
-  }
-
-  setCssVariable = (key, value) => {
-    this.refFieldset.current.style.setProperty(key, value);
-  };
-
-  changeCssVariables = (prevProps = {}) => {
-    Object.entries(this.props)
-      .forEach(([key, value]) => {
-        const cssVarKey = cssVarNames.get(key);
-
-        if (value !== prevProps[key] && cssVarKey) {
-          this.setCssVariable(cssVarKey, value)
-        }
-      });
-  };
-
-  render() {
-    const {
-      activeColor,
-      hoverColor,
-      mainColor,
-      containerClassName = '',
-      containerStyle,
-      inputStyle,
-      underLineStyle,
-      labelStyle,
-      label = '',
-      ...rest
-    } = this.props;
-
-    return (
-      <fieldset className={`i-material ${containerClassName}`} style={containerStyle} ref={this.refFieldset}>
-        <input className='i-material__input' style={inputStyle} {...rest}/>
-        <hr className='i-material__hr' style={underLineStyle}/>
-        <label className='i-material__label' style={labelStyle}>{label}</label>
-      </fieldset>
-    )
-  }
+  return (
+    <fieldset className={`i-mUI ${className}`} style={style} ref={refInputMUI}>
+      <input className='i-mUI__input' style={inputStyle} {...rest}/>
+      <hr className='i-mUI__hr' style={underLineStyle}/>
+      <label className='i-mUI__label' style={labelStyle}>{label}</label>
+    </fieldset>
+  )
 }
 
-export default InputMaterial;
+export default InputMUI;
 
-InputMaterial.propTypes = {
+InputMUI.propTypes = {
   activeColor: PropTypes.string,
   hoverColor: PropTypes.string,
   mainColor: PropTypes.string,
-  containerClassName: PropTypes.string,
-  containerStyle: PropTypes.object,
+  className: PropTypes.string,
+  style: PropTypes.object,
   inputStyle: PropTypes.object,
   underLineStyle: PropTypes.object,
   labelStyle: PropTypes.object,
