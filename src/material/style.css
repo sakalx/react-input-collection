@@ -14,54 +14,23 @@
 
 
 .i-mUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    background: transparent;
     border: none;
     border-bottom: 1px solid var(--i-mUI-color-main);
     border-radius: 0;
-    -webkit-box-shadow: none;
     box-shadow: none;
+    box-sizing: border-box;
     cursor: text;
     outline: none;
-    padding: 8px;
+    padding: .5em;
     width: 100%;
 }
 
 .i-mUI__input:hover {
     border-bottom: 1px solid var(--i-mUI-color-hover);
-}
-
-
-/*Underline*/
-.i-mUI__hr {
-    background: var(--i-mUI-color-active);
-    border: none;
-    bottom: 0;
-    content: '';
-    display: block;
-    font-size: 1px;
-    height: 2px;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    -webkit-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 200ms ease-out;
-    -o-transition: all 200ms ease-out;
-    transition: all 200ms ease-out;
-    visibility: hidden;
-    width: 100%;
-    will-change: transform, visibility;
-    z-index: 9;
-}
-
-.i-mUI__input:focus ~ .i-mUI__hr {
-    -webkit-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    transform: scaleX(1);
-    visibility: visible;
 }
 
 
@@ -94,6 +63,39 @@
     -webkit-transform: scale(.8);
     -ms-transform: scale(.8);
     transform: scale(.8);
+}
+
+
+/*Underline*/
+.i-mUI__underline {
+    background: var(--i-mUI-color-active);
+    border: none;
+    bottom: 0;
+    content: '';
+    display: block;
+    font-size: 1px;
+    height: 2px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    visibility: hidden;
+    width: 100%;
+    will-change: transform, visibility;
+    z-index: 9;
+}
+
+.i-mUI__input:focus ~ .i-mUI__underline {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+    visibility: visible;
 }
 
 
@@ -136,16 +138,13 @@
     color: transparent;
 }
 
-
 .i-mUI__input:not(:focus):-ms-input-placeholder {
     color: transparent;
 }
 
-
 .i-mUI__input:not(:focus)::-ms-input-placeholder {
     color: transparent;
 }
-
 
 .i-mUI__input:not(:focus)::placeholder {
     color: transparent;

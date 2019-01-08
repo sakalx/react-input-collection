@@ -10,17 +10,6 @@ const cssVariables = new Map([
   ['--i-mUI-color-main', null],
 ]);
 
-const changeCssVar = (ref, key, value) => {
-  const currValue = cssVariables.get(key);
-
-  if (value !== currValue) {
-    const setCssVar = () => ref.current.style.setProperty(key, value);
-
-    setTimeout(setCssVar, 0);
-    cssVariables.set(key, value);
-  }
-};
-
 function InputMUI({
                     activeColor = null,
                     hoverColor = null,
@@ -33,16 +22,27 @@ function InputMUI({
                     label = '',
                     ...rest
                   }) {
-  let refInputMUI = React.createRef();
+  const refInputMUI = React.createRef();
 
-  !!activeColor && changeCssVar(refInputMUI, '--i-mUI-color-active', activeColor);
-  !!hoverColor && changeCssVar(refInputMUI, '--i-mUI-color-hover', hoverColor);
-  !!mainColor && changeCssVar(refInputMUI, '--i-mUI-color-main', mainColor);
+  const changeCssVar = (key, value) => {
+    const currValue = cssVariables.get(key);
+
+    if (value !== currValue) {
+      const setCssVar = () => refInputMUI.current.style.setProperty(key, value);
+
+      setTimeout(setCssVar, 0);
+      cssVariables.set(key, value);
+    }
+  };
+
+  !!activeColor && changeCssVar('--i-mUI-color-active', activeColor);
+  !!hoverColor && changeCssVar('--i-mUI-color-hover', hoverColor);
+  !!mainColor && changeCssVar('--i-mUI-color-main', mainColor);
 
   return (
     <fieldset className={`i-mUI ${className}`} style={style} ref={refInputMUI}>
       <input className='i-mUI__input' style={inputStyle} {...rest}/>
-      <hr className='i-mUI__hr' style={underLineStyle}/>
+      <hr className='i-mUI__underline' style={underLineStyle}/>
       <label className='i-mUI__label' style={labelStyle}>{label}</label>
     </fieldset>
   )

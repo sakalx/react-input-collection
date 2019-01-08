@@ -1,52 +1,49 @@
-/*
 import React from 'react';
 import {render} from 'react-dom';
-import GlitchEffect from '../../src';
+import InputMaterial from '../../src/material';
+
+import InputNao from '../../src/nao';
+
 
 class App extends React.Component {
+
   state = {
-    disabled: false,
+    value: '',
+    mainColor: 'red',
   };
 
-  handleToggleGlitch = () => {
-    this.setState(state => ({disabled: !state.disabled}))
+  onChange = e => {
+    this.setState({value: e.target.value});
+  };
+
+  changeColor = () => {
+    this.setState({mainColor: 'gold'})
   };
 
   render() {
-    const {disabled} = this.state;
+
 
     return (
-      <div style={styles.wrap}>
-        <GlitchEffect disabled={disabled} style={styles.wallpaper}>
-          <img style={styles.wallpaper__img}
-               src={'https://raw.githubusercontent.com/sakalx/react-glitch-effect/master/static/img/store-1245758_1920.jpg'}/>
-        </GlitchEffect>
-
-        <button style={styles.button__toggle}
-                onClick={this.handleToggleGlitch}
-        >
-          Toggle
-        </button>
-
-        <GlitchEffect disabled={disabled} duration='1s' style={styles.title}>
-          <h1>Glitch Effect</h1>
-        </GlitchEffect>
-
-        <GlitchEffect onHover={true}>
-          <figure>
-            <figcaption style={styles.portrait__title}>
-              Hover me
-            </figcaption>
-            <img style={styles.portrait__img}
-                 src={'https://raw.githubusercontent.com/sakalx/react-glitch-effect/master/static/img/oldtimer-1245746_1920.jpg'}/>
-          </figure>
-        </GlitchEffect>
+      <div style={{marginTop: '22px'}}>
+        <InputMaterial
+          onChange={this.onChange}
+          value={this.state.value}
+          label='Name' activeColor={this.state.mainColor} placeholder={'test with placeholder'}
+        />
+        <br/><br/><br/>
+      <InputNao label='First Name'
+                  onChange={this.onChange}
+                  value={this.state.value}
+                  placeholder={'test with placeholder'}
+                   activeColor={this.state.mainColor}
+        />
+        <button onClick={this.changeColor}>change color</button>
       </div>
     )
   }
 }
 
-const styles = {
+/*const styles = {
   wrap: {
     alignItems: 'flex-start',
     display: 'flex',
@@ -89,7 +86,6 @@ const styles = {
     textShadow: '-1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5)',
     width: 125,
   },
+};*/
 
-};
-
-render(<App/>, document.getElementById("root"));*/
+render(<App/>, document.getElementById("root"));
