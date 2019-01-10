@@ -7,7 +7,7 @@ import {initCssVariables, replaceColors} from '../utility';
 const cssIdVariable = 'i-naoUI';
 const checkProp = initCssVariables(cssIdVariable);
 
-function InputNao({
+function InputNaoUI({
                     activeColor = null,
                     hoverColor = null,
                     mainColor = null,
@@ -39,9 +39,9 @@ function InputNao({
 }
 
 export const setColors = replaceColors(cssIdVariable);
-export default InputNao;
+export default InputNaoUI;
 
-InputNao.propTypes = {
+InputNaoUI.propTypes = {
   activeColor: PropTypes.string,
   hoverColor: PropTypes.string,
   mainColor: PropTypes.string,

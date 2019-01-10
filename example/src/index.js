@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import InputMaterial, {setColors} from '../../src/material';
 
 import InputNao from '../../src/nao';
+import InputMadoka from '../../src/madoka';
 
 
 class App extends React.Component {
@@ -38,6 +39,12 @@ class App extends React.Component {
                   value={this.state.value}
                   placeholder={'test with placeholder'}
                    activeColor={this.state.mainColor}
+        />
+        <br/><br/><br/>
+        <InputMadoka onChange={this.onChange} value={this.state.value} label='Name'
+                     placeholder={'test with placeholder'}
+                     activeColor={this.state.mainColor}
+                     hoverColor='green'
         />
         <button onClick={this.changeColor}>change color</button>
       </div>

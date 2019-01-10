@@ -12,7 +12,7 @@ export function initCssVariables(cssIdVariable) {
   return function (objProps) {
 
     for (const prop in objProps) {
-      if (!!prop) {
+      if (!!prop && objProps.hasOwnProperty(prop)) {
         const value = objProps[prop];
         const currValue = cssVariables.get(prop);
 
