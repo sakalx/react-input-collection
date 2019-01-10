@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
+import {initCssVariables, replaceColors} from '../utility';
 
-
-const cssVariables = new Map([
-  ['--i-mUI-color-active', null],
-  ['--i-mUI-color-hover', null],
-  ['--i-mUI-color-main', null],
-]);
+const cssIdVariable = 'i-mUI';
+const checkProp = initCssVariables(cssIdVariable);
 
 function InputMUI({
                     activeColor = null,
@@ -22,25 +19,10 @@ function InputMUI({
                     label = '',
                     ...rest
                   }) {
-  const refInputMUI = React.createRef();
-
-  const changeCssVar = (key, value) => {
-    const currValue = cssVariables.get(key);
-
-    if (value !== currValue) {
-      const setCssVar = () => refInputMUI.current.style.setProperty(key, value);
-
-      setTimeout(setCssVar, 0);
-      cssVariables.set(key, value);
-    }
-  };
-
-  !!activeColor && changeCssVar('--i-mUI-color-active', activeColor);
-  !!hoverColor && changeCssVar('--i-mUI-color-hover', hoverColor);
-  !!mainColor && changeCssVar('--i-mUI-color-main', mainColor);
+  checkProp({hoverColor, activeColor, mainColor});
 
   return (
-    <fieldset className={`i-mUI ${className}`} style={style} ref={refInputMUI}>
+    <fieldset className={`i-mUI ${className}`} style={style}>
       <input className='i-mUI__input' style={inputStyle} {...rest}/>
       <hr className='i-mUI__underline' style={underLineStyle}/>
       <label className='i-mUI__label' style={labelStyle}>{label}</label>
@@ -48,6 +30,7 @@ function InputMUI({
   )
 }
 
+export const setColors = replaceColors(cssIdVariable);
 export default InputMUI;
 
 InputMUI.propTypes = {
@@ -61,5 +44,18 @@ InputMUI.propTypes = {
   labelStyle: PropTypes.object,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ),
+  ]),
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ),
+  ]),
 };

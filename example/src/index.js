@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import InputMaterial from '../../src/material';
+import InputMaterial, {setColors} from '../../src/material';
 
 import InputNao from '../../src/nao';
 
@@ -18,6 +18,8 @@ class App extends React.Component {
 
   changeColor = () => {
     this.setState({mainColor: 'gold'})
+
+    setColors({mainColor: 'green'})
   };
 
   render() {

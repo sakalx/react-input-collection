@@ -1,8 +1,8 @@
 
-.i-naoUI {
-    --i-naoUI-color-main: #a3a3a3;
-    --i-naoUI-color-active: #2196f3;
-    --i-naoUI-color-hover: #3d3d3d;
+:root {
+    --i-naoUI-mainColor: #a3a3a3;
+    --i-naoUI-activeColor: #2196f3;
+    --i-naoUI-hoverColor: #3d3d3d;
 }
 
 .i-naoUI {
@@ -29,7 +29,7 @@
 }
 
 .i-naoUI__input:hover ~ .i-naoUI__underline {
-    stroke: var(--i-naoUI-color-hover);
+    stroke: var(--i-naoUI-hoverColor);
 }
 
 
@@ -41,7 +41,7 @@
     -webkit-transition-property: bottom, color, scale;
     -webkit-transition: all 300ms ease;
     bottom: 5px;
-    color: var(--i-naoUI-color-main);
+    color: var(--i-naoUI-mainColor);
     left: 0;
     pointer-events: none;
     position: absolute;
@@ -50,11 +50,11 @@
 }
 
 .i-naoUI__input:hover ~ .i-naoUI__label {
-    color: var(--i-naoUI-color-hover);
+    color: var(--i-naoUI-hoverColor);
 }
 
 .i-naoUI__input:focus ~ .i-naoUI__label {
-    color: var(--i-naoUI-color-active);
+    color: var(--i-naoUI-activeColor);
 }
 
 .i-naoUI__input:focus ~ .i-naoUI__label,
@@ -75,7 +75,7 @@
     left: 0;
     pointer-events: none;
     position: absolute;
-    stroke: var(--i-naoUI-color-main);
+    stroke: var(--i-naoUI-mainColor);
     top: 0;
     transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
     transition: transform 0.7s, satroke 0.7s;
@@ -83,7 +83,7 @@
 
 .i-naoUI__input:focus ~ .i-naoUI__underline {
     -webkit-transform: translate3d(-66.6%, 0, 0);
-    stroke: var(--i-naoUI-color-active);
+    stroke: var(--i-naoUI-activeColor);
     transform: translate3d(-66.6%, 0, 0);
 }
 

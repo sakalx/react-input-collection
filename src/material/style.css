@@ -1,7 +1,7 @@
-.i-mUI {
-    --i-mUI-color-main: #a3a3a3;
-    --i-mUI-color-active: #2196f3;
-    --i-mUI-color-hover: #3d3d3d;
+:root {
+    --i-mUI-mainColor: #a3a3a3;
+    --i-mUI-activeColor: #2196f3;
+    --i-mUI-hoverColor: #3d3d3d;
 }
 
 
@@ -19,7 +19,7 @@
     -webkit-box-sizing: border-box;
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--i-mUI-color-main);
+    border-bottom: 1px solid var(--i-mUI-mainColor);
     border-radius: 0;
     box-shadow: none;
     box-sizing: border-box;
@@ -30,14 +30,14 @@
 }
 
 .i-mUI__input:hover {
-    border-bottom: 1px solid var(--i-mUI-color-hover);
+    border-bottom: 1px solid var(--i-mUI-hoverColor);
 }
 
 
 /*Label*/
 .i-mUI__label {
     bottom: 0;
-    color: var(--i-mUI-color-main);
+    color: var(--i-mUI-mainColor);
     left: 0;
     pointer-events: none;
     position: absolute;
@@ -50,11 +50,11 @@
 }
 
 .i-mUI__input:hover ~ .i-mUI__label {
-    color: var(--i-mUI-color-hover);
+    color: var(--i-mUI-hoverColor);
 }
 
 .i-mUI__input:focus ~ .i-mUI__label {
-    color: var(--i-mUI-color-active);
+    color: var(--i-mUI-activeColor);
 }
 
 .i-mUI__input:focus ~ .i-mUI__label,
@@ -68,7 +68,7 @@
 
 /*Underline*/
 .i-mUI__underline {
-    background: var(--i-mUI-color-active);
+    background: var(--i-mUI-activeColor);
     border: none;
     bottom: 0;
     content: '';
@@ -105,16 +105,19 @@
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
+
 .i-mUI__input:-ms-input-placeholder {
     -webkit-transition: color 300ms ease;
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
+
 .i-mUI__input::-ms-input-placeholder {
     -webkit-transition: color 300ms ease;
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
+
 .i-mUI__input::placeholder {
     -webkit-transition: color 300ms ease;
     -o-transition: color 300ms ease;

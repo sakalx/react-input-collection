@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
+import {initCssVariables, replaceColors} from '../utility';
 
-
-const cssVariables = new Map([
-  ['--i-naoUI-color-active', null],
-  ['--i-naoUI-color-hover', null],
-  ['--i-naoUI-color-main', null],
-]);
+const cssIdVariable = 'i-naoUI';
+const checkProp = initCssVariables(cssIdVariable);
 
 function InputNao({
                     activeColor = null,
@@ -22,26 +19,10 @@ function InputNao({
                     label = '',
                     ...rest
                   }) {
-  const refInputNaoUI = React.createRef();
-
-  const changeCssVar = (key, value) => {
-    const currValue = cssVariables.get(key);
-
-    if (value !== currValue) {
-      const setCssVar = () => refInputNaoUI.current.style.setProperty(key, value);
-
-      setTimeout(setCssVar, 0);
-      cssVariables.set(key, value);
-    }
-  };
-
-  !!activeColor && changeCssVar('--i-naoUI-color-active', activeColor);
-  !!hoverColor && changeCssVar('--i-naoUI-color-hover', hoverColor);
-  !!mainColor && changeCssVar('--i-naoUI-color-main', mainColor);
+  checkProp({hoverColor, activeColor, mainColor});
 
   return (
-
-    <fieldset className={`i-naoUI ${className}`} style={style} ref={refInputNaoUI}>
+    <fieldset className={`i-naoUI ${className}`} style={style}>
       <input className='i-naoUI__input' style={inputStyle} {...rest}/>
       <label className='i-naoUI__label' style={labelStyle}>{label}</label>
       <svg
@@ -57,6 +38,7 @@ function InputNao({
   )
 }
 
+export const setColors = replaceColors(cssIdVariable);
 export default InputNao;
 
 InputNao.propTypes = {
@@ -70,5 +52,18 @@ InputNao.propTypes = {
   labelStyle: PropTypes.object,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ),
+  ]),
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ),
+  ]),
 };
