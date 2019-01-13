@@ -25,7 +25,7 @@
     box-sizing: border-box;
     cursor: text;
     outline: none;
-    padding: .5em;
+    padding: .7em;
     width: 100%;
 }
 
@@ -44,9 +44,9 @@
     -webkit-transition: all 300ms ease;
     -o-transition: all 300ms ease;
     transition: all 300ms ease;
-    -webkit-transition-property: bottom, color, scale;
-    -o-transition-property: bottom, color, scale;
-    transition-property: bottom, color, scale;
+    -webkit-transition-property: bottom, color, scale, font-size;
+    -o-transition-property: bottom, color, scale, font-size;
+    transition-property: bottom, color, scale, font-size;
 }
 
 .i-mUI__input:hover ~ .i-mUI__label {
@@ -60,9 +60,7 @@
 .i-mUI__input:focus ~ .i-mUI__label,
 .i-mUI__input:not([value=""]) ~ .i-mUI__label {
     bottom: 100%;
-    -webkit-transform: scale(.8);
-    -ms-transform: scale(.8);
-    transform: scale(.8);
+    font-size: small;
 }
 
 

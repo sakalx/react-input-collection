@@ -38,13 +38,6 @@ function InputMadokaUI({
   )
 }
 
-{/*    <fieldset className={`i-mUI ${className}`} style={style}>
-      <input className='i-mUI__input' style={inputStyle} {...rest}/>
-      <hr className='i-mUI__underline' style={underLineStyle}/>
-      <label className='i-mUI__label' style={labelStyle}>{label}</label>
-    </fieldset>*/
-}
-
 export const setColors = replaceColors(cssIdVariable);
 export default InputMadokaUI;
 

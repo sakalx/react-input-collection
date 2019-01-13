@@ -4,6 +4,7 @@ import InputMaterial, {setColors} from '../../src/material';
 
 import InputNao from '../../src/nao';
 import InputMadoka from '../../src/madoka';
+import InputJiro from '../../src/jiro';
 
 
 class App extends React.Component {
@@ -34,11 +35,11 @@ class App extends React.Component {
           label='Name' activeColor={this.state.mainColor} placeholder={'test with placeholder'}
         />
         <br/><br/><br/>
-      <InputNao label='First Name'
+        <InputNao label='First Name'
                   onChange={this.onChange}
                   value={this.state.value}
                   placeholder={'test with placeholder'}
-                   activeColor={this.state.mainColor}
+                  activeColor={this.state.mainColor}
         />
         <br/><br/><br/>
         <InputMadoka onChange={this.onChange} value={this.state.value} label='Name'
@@ -46,7 +47,14 @@ class App extends React.Component {
                      activeColor={this.state.mainColor}
                      hoverColor='green'
         />
-        <button onClick={this.changeColor}>change color</button>
+        <br/><br/><br/>
+        <InputJiro onChange={this.onChange}
+                   value={this.state.value}
+                   label='Label'
+                   placeholder={'test with placeholder'}
+
+        />
+        {/*<button onClick={this.changeColor}>change color</button>*/}
       </div>
     )
   }
