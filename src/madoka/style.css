@@ -1,7 +1,8 @@
 :root {
-    --i-madokaUI-mainColor: #a3a3a3;
-    --i-madokaUI-activeColor: #2196f3;
-    --i-madokaUI-hoverColor: #3d3d3d;
+    --i-madokaUI-activeTextColor: #101010;
+    --i-madokaUI-focusColor: #2196f3;
+    --i-madokaUI-hoverColor: #252525;
+    --i-madokaUI-mainColor: #727272;
 }
 
 
@@ -14,25 +15,35 @@
 }
 
 
+
 .i-madokaUI__input {
     -webkit-appearance: none;
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
     background: transparent;
-    border: none;
     border-radius: 0;
+    border: none;
     box-shadow: none;
     box-sizing: border-box;
+    color: var(--i-madokaUI-mainColor);
     cursor: text;
     outline: none;
     padding: .7em;
     width: 100%;
 }
 
+.i-madokaUI__input:hover {
+    color: var(--i-madokaUI-hoverColor);
+}
 
 .i-madokaUI__input:hover ~ .i-madokaUI__underline{
     stroke: var(--i-madokaUI-hoverColor);
 }
+
+.i-madokaUI__input:focus {
+    color: var(--i-madokaUI-activeTextColor);
+}
+
 
 
 /*Label*/
@@ -55,7 +66,7 @@
 }
 
 .i-madokaUI__input:focus ~ .i-madokaUI__label {
-    color: var(--i-madokaUI-activeColor);
+    color: var(--i-madokaUI-focusColor);
 }
 
 .i-madokaUI__input:focus ~ .i-madokaUI__label,
@@ -63,6 +74,7 @@
     bottom: 100%;
     font-size: small;
 }
+
 
 
 /*Underline*/
@@ -85,8 +97,9 @@
 
 .i-madokaUI__input:focus ~ .i-madokaUI__underline {
     stroke-dashoffset: 0;
-    stroke: var(--i-madokaUI-activeColor);
+    stroke: var(--i-madokaUI-focusColor);
 }
+
 
 
 /*Placeholder*/

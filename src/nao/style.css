@@ -1,9 +1,11 @@
-
 :root {
-    --i-naoUI-mainColor: #a3a3a3;
-    --i-naoUI-activeColor: #2196f3;
-    --i-naoUI-hoverColor: #3d3d3d;
+    --i-naoUI-activeTextColor: #101010;
+    --i-naoUI-focusColor: #2196f3;
+    --i-naoUI-hoverColor: #252525;
+    --i-naoUI-mainColor: #727272;
 }
+
+
 
 .i-naoUI {
     border: none;
@@ -11,6 +13,7 @@
     padding: 1em 0 0 0;
     position: relative;
 }
+
 
 
 .i-naoUI__input {
@@ -22,14 +25,23 @@
     border: none;
     box-shadow: none;
     box-sizing: border-box;
+    color: var(--i-naoUI-mainColor);
     cursor: text;
     outline: none;
     padding: .8em;
     width: 100%;
 }
 
+.i-naoUI__input:hover {
+    color: var(--i-naoUI-hoverColor);
+}
+
 .i-naoUI__input:hover ~ .i-naoUI__underline {
     stroke: var(--i-naoUI-hoverColor);
+}
+
+.i-naoUI__input:focus {
+    color: var(--i-naoUI-activeTextColor);
 }
 
 
@@ -39,8 +51,8 @@
     transition: all 300ms ease;
     -o-transition-property: bottom, color, scale, font-size;
     -o-transition: all 300ms ease;
-    -webkit-transition-property: bottom, color, scale, font-size;
     -webkit-transition: all 300ms ease;
+    -webkit-transition-property: bottom, color, scale, font-size;
     bottom: 5px;
     color: var(--i-naoUI-mainColor);
     left: 0;
@@ -54,7 +66,7 @@
 }
 
 .i-naoUI__input:focus ~ .i-naoUI__label {
-    color: var(--i-naoUI-activeColor);
+    color: var(--i-naoUI-focusColor);
 }
 
 .i-naoUI__input:focus ~ .i-naoUI__label,
@@ -81,7 +93,7 @@
 
 .i-naoUI__input:focus ~ .i-naoUI__underline {
     -webkit-transform: translate3d(-66.6%, 0, 0);
-    stroke: var(--i-naoUI-activeColor);
+    stroke: var(--i-naoUI-focusColor);
     transform: translate3d(-66.6%, 0, 0);
 }
 
@@ -123,7 +135,6 @@
     -o-transition: color 1s ease;
     transition: color 1s ease;
 }
-
 
 .i-naoUI__input:not(:focus)::-webkit-input-placeholder {
     color: transparent;

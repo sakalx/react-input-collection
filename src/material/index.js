@@ -8,7 +8,8 @@ const cssIdVariable = 'i-mUI';
 const checkProp = initCssVariables(cssIdVariable);
 
 function InputMUI({
-                    activeColor = null,
+                    activeTextColor = null,
+                    focusColor = null,
                     hoverColor = null,
                     mainColor = null,
                     className = '',
@@ -19,7 +20,7 @@ function InputMUI({
                     label = '',
                     ...rest
                   }) {
-  checkProp({hoverColor, activeColor, mainColor});
+  checkProp({activeTextColor, focusColor, hoverColor, mainColor});
 
   return (
     <fieldset className={`i-mUI ${className}`} style={style}>
@@ -34,7 +35,8 @@ export const setColors = replaceColors(cssIdVariable);
 export default InputMUI;
 
 InputMUI.propTypes = {
-  activeColor: PropTypes.string,
+  activeTextColor: PropTypes.string,
+  focusColor: PropTypes.string,
   hoverColor: PropTypes.string,
   mainColor: PropTypes.string,
   className: PropTypes.string,

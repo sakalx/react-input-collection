@@ -8,7 +8,8 @@ const cssIdVariable = 'i-madokaUI';
 const checkProp = initCssVariables(cssIdVariable);
 
 function InputMadokaUI({
-                         activeColor = null,
+                         activeTextColor = null,
+                         focusColor = null,
                          hoverColor = null,
                          mainColor = null,
                          className = '',
@@ -19,7 +20,7 @@ function InputMadokaUI({
                          label = '',
                          ...rest
                        }) {
-  checkProp({hoverColor, activeColor, mainColor});
+  checkProp({activeTextColor, focusColor, hoverColor, mainColor});
 
   return (
     <fieldset className={`i-madokaUI ${className} input input--madoka`} style={style}>
@@ -42,7 +43,8 @@ export const setColors = replaceColors(cssIdVariable);
 export default InputMadokaUI;
 
 InputMadokaUI.propTypes = {
-  activeColor: PropTypes.string,
+  activeTextColor: PropTypes.string,
+  focusColor: PropTypes.string,
   hoverColor: PropTypes.string,
   mainColor: PropTypes.string,
   className: PropTypes.string,

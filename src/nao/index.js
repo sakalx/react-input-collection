@@ -8,18 +8,19 @@ const cssIdVariable = 'i-naoUI';
 const checkProp = initCssVariables(cssIdVariable);
 
 function InputNaoUI({
-                    activeColor = null,
-                    hoverColor = null,
-                    mainColor = null,
-                    className = '',
-                    style,
-                    inputStyle,
-                    underLineStyle,
-                    labelStyle,
-                    label = '',
-                    ...rest
-                  }) {
-  checkProp({hoverColor, activeColor, mainColor});
+                      activeTextColor = null,
+                      focusColor = null,
+                      hoverColor = null,
+                      mainColor = null,
+                      className = '',
+                      style,
+                      inputStyle,
+                      underLineStyle,
+                      labelStyle,
+                      label = '',
+                      ...rest
+                    }) {
+  checkProp({activeTextColor, focusColor, hoverColor, mainColor});
 
   return (
     <fieldset className={`i-naoUI ${className}`} style={style}>
@@ -32,7 +33,8 @@ function InputNaoUI({
         viewBox='0 0 1200 60'
         preserveAspectRatio='none'
       >
-        <path d='M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0'/>
+        <path
+          d='M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0'/>
       </svg>
     </fieldset>
   )
@@ -42,7 +44,8 @@ export const setColors = replaceColors(cssIdVariable);
 export default InputNaoUI;
 
 InputNaoUI.propTypes = {
-  activeColor: PropTypes.string,
+  activeTextColor: PropTypes.string,
+  focusColor: PropTypes.string,
   hoverColor: PropTypes.string,
   mainColor: PropTypes.string,
   className: PropTypes.string,

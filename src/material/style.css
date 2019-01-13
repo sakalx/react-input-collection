@@ -1,7 +1,8 @@
 :root {
-    --i-mUI-mainColor: #a3a3a3;
-    --i-mUI-activeColor: #2196f3;
-    --i-mUI-hoverColor: #3d3d3d;
+    --i-mUI-activeTextColor: #101010;
+    --i-mUI-focusColor: #2196f3;
+    --i-mUI-hoverColor: #252525;
+    --i-mUI-mainColor: #727272;
 }
 
 
@@ -11,6 +12,7 @@
     padding: 0;
     position: relative;
 }
+
 
 
 .i-mUI__input {
@@ -23,6 +25,7 @@
     border-radius: 0;
     box-shadow: none;
     box-sizing: border-box;
+    color: var(--i-mUI-mainColor);
     cursor: text;
     outline: none;
     padding: .7em;
@@ -31,7 +34,13 @@
 
 .i-mUI__input:hover {
     border-bottom: 1px solid var(--i-mUI-hoverColor);
+    color: var(--i-mUI-hoverColor);
 }
+
+.i-mUI__input:focus {
+    color: var(--i-mUI-activeTextColor);
+}
+
 
 
 /*Label*/
@@ -54,7 +63,7 @@
 }
 
 .i-mUI__input:focus ~ .i-mUI__label {
-    color: var(--i-mUI-activeColor);
+    color: var(--i-mUI-focusColor);
 }
 
 .i-mUI__input:focus ~ .i-mUI__label,
@@ -64,9 +73,10 @@
 }
 
 
+
 /*Underline*/
 .i-mUI__underline {
-    background: var(--i-mUI-activeColor);
+    background: var(--i-mUI-focusColor);
     border: none;
     bottom: 0;
     content: '';
@@ -95,6 +105,7 @@
     transform: scaleX(1);
     visibility: visible;
 }
+
 
 
 /*Placeholder*/
@@ -133,7 +144,6 @@
     -o-transition: color 300ms ease;
     transition: color 300ms ease;
 }
-
 
 .i-mUI__input:not(:focus)::-webkit-input-placeholder {
     color: transparent;

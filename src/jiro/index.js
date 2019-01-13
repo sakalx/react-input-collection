@@ -8,6 +8,7 @@ const cssIdVariable = 'i-jiroUI';
 const checkProp = initCssVariables(cssIdVariable);
 
 function InputJiroUI({
+                       activeTextColor = null,
                        focusColor = null,
                        hoverColor = null,
                        mainColor = null,
@@ -18,7 +19,7 @@ function InputJiroUI({
                        label = '',
                        ...rest
                      }) {
-  checkProp({hoverColor, focusColor, mainColor});
+  checkProp({activeTextColor, focusColor, hoverColor, mainColor});
 
   return (
     <fieldset className='i-jiroUI'>
@@ -35,6 +36,7 @@ export const setColors = replaceColors(cssIdVariable);
 export default InputJiroUI;
 
 InputJiroUI.propTypes = {
+  activeTextColor: PropTypes.string,
   focusColor: PropTypes.string,
   hoverColor: PropTypes.string,
   mainColor: PropTypes.string,
