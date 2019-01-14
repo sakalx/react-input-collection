@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import './style.css';
 import {initCssVariables, replaceColors} from '../utility';
 
-const cssIdVariable = 'i-madokaUI';
+const cssIdVariable = 'i-ichiroUI';
 const checkProp = initCssVariables(cssIdVariable);
 
-function InputMadokaUI({
+function InputIchiroUI({
                          activeTextColor = null,
                          focusColor = null,
                          hoverColor = null,
@@ -23,26 +23,18 @@ function InputMadokaUI({
   checkProp({activeTextColor, focusColor, hoverColor, mainColor});
 
   return (
-    <fieldset className={`i-madokaUI ${className}`} style={style}>
-      <input className='i-madokaUI__input' style={inputStyle} {...rest}/>
-      <label className='i-madokaUI__label' style={labelStyle}>{label}</label>
-      <svg
-        className='i-madokaUI__underline'
-        style={underLineStyle}
-        width='100%' height='100%'
-        viewBox='0 0 404 77'
-        preserveAspectRatio='none'
-      >
-        <path d='m0,0l404,0l0,77l-404,0l0,-77z'/>
-      </svg>
+    <fieldset className={`i-ichiroUI ${className}`} style={style}>
+      <input className='i-ichiroUI__input' style={inputStyle} {...rest}/>
+      <hr className='i-ichiroUI__underline' style={underLineStyle}/>
+      <label className='i-ichiroUI__label' style={labelStyle}>{label}</label>
     </fieldset>
   )
 }
 
 export const setColors = replaceColors(cssIdVariable);
-export default InputMadokaUI;
+export default InputIchiroUI;
 
-InputMadokaUI.propTypes = {
+InputIchiroUI.propTypes = {
   activeTextColor: PropTypes.string,
   focusColor: PropTypes.string,
   hoverColor: PropTypes.string,

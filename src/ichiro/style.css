@@ -1,0 +1,174 @@
+:root {
+    --i-ichiroUI-focusColor: #2196f3;
+    --i-ichiroUI-activeTextColor: #f2f2f2;
+    --i-ichiroUI-hoverColor: #252525;
+    --i-ichiroUI-mainColor: #727272;
+}
+
+
+
+.i-ichiroUI {
+    border: none;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+}
+
+
+
+.i-ichiroUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -webkit-box-sizing: border-box;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--i-ichiroUI-mainColor);
+    cursor: text;
+    outline: none;
+    padding: .7em;
+    width: 100%;
+}
+
+.i-ichiroUI__input:hover {
+    color: var(--i-ichiroUI-hoverColor);
+}
+.i-ichiroUI__input:focus {
+    color: var(--i-jiroUI-activeTextColor);
+}
+
+
+
+/*Label*/
+.i-ichiroUI__label {
+    -khtml-user-select: none;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    bottom: 0;
+    color: var(--i-ichiroUI-mainColor);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all .3s ease-out;
+    transition-property: bottom, font-size;
+    user-select: none;
+    width: 100%;
+}
+
+.i-ichiroUI__input:hover ~ .i-ichiroUI__label {
+    color: var(--i-ichiroUI-hoverColor);
+}
+
+.i-ichiroUI__input:focus ~ .i-ichiroUI__label {
+    color: var(--i-ichiroUI-focusColor);
+}
+
+.i-ichiroUI__input:focus ~ .i-ichiroUI__label,
+.i-ichiroUI__input:not([value=""]) ~ .i-ichiroUI__label {
+    bottom: 100%;
+    font-size: small;
+}
+
+
+
+/*Underline*/
+.i-ichiroUI__underline {
+    background: var(--i-ichiroUI-mainColor);
+    border: none;
+    bottom: 0;
+    content: '';
+    display: block;
+    font-size: 1px;
+    height: 1px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    transition-property: bottom, color;
+    transition: all .3s ease-out;
+    width: 100%;
+    z-index: -1;
+}
+
+.i-ichiroUI__input:hover ~ .i-ichiroUI__underline {
+    background: var(--i-ichiroUI-hoverColor);
+}
+
+.i-ichiroUI__input:focus ~ .i-ichiroUI__underline {
+    background: var(--i-ichiroUI-focusColor);
+    height: 100%;
+}
+
+
+
+/*Placeholder*/
+.i-ichiroUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-ichiroUI__input:-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-ichiroUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-ichiroUI__input::placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-ichiroUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-ichiroUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-ichiroUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-ichiroUI__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-ichiroUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+
+.i-ichiroUI__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-ichiroUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-ichiroUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-ichiroUI__input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}

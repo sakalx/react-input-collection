@@ -134,8 +134,8 @@
 
 /*Label title*/
 .i-jiroUI__label--title {
-    -o-transition-property: bottom, font-size;
     -o-transition: all .3s .3s;
+    -o-transition-property: bottom, font-size;
     -webkit-transition: all .3s .3s;
     -webkit-transition-property: bottom, font-size;
     bottom: 0;

@@ -5,6 +5,7 @@ import InputMaterial, {setColors} from '../../src/material';
 import InputNao from '../../src/nao';
 import InputMadoka from '../../src/madoka';
 import InputJiro from '../../src/jiro';
+import InputIchiro from '../../src/ichiro';
 
 
 class App extends React.Component {
@@ -19,7 +20,7 @@ class App extends React.Component {
   };
 
   changeColor = () => {
-    this.setState({mainColor: 'gold'})
+    this.setState({mainColor: 'gold'});
 
     setColors({mainColor: 'green'})
   };
@@ -32,19 +33,19 @@ class App extends React.Component {
         <InputMaterial
           onChange={this.onChange}
           value={this.state.value}
-          label='Name' activeColor={this.state.mainColor} placeholder={'test with placeholder'}
+          label='Name' focusColor={this.state.mainColor} placeholder={'test with placeholder'}
         />
         <br/><br/><br/>
         <InputNao label='First Name'
                   onChange={this.onChange}
                   value={this.state.value}
                   placeholder={'test with placeholder'}
-                  activeColor={this.state.mainColor}
+                  focusColor={this.state.mainColor}
         />
         <br/><br/><br/>
         <InputMadoka onChange={this.onChange} value={this.state.value} label='Name'
                      placeholder={'test with placeholder'}
-                     activeColor={this.state.mainColor}
+                     focusColor={this.state.mainColor}
                      hoverColor='green'
         />
         <br/><br/><br/>
@@ -54,7 +55,13 @@ class App extends React.Component {
                    placeholder={'test with placeholder'}
 
         />
-        {/*<button onClick={this.changeColor}>change color</button>*/}
+        <br/><br/><br/>
+        <InputIchiro onChange={this.onChange}
+                   value={this.state.value}
+                   label='Input Ichiro'
+                   placeholder={'placeholder'}
+        />
+    {/*    <button onClick={this.changeColor}>change color</button>*/}
       </div>
     )
   }

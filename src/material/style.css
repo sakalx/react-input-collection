@@ -50,12 +50,12 @@
     left: 0;
     pointer-events: none;
     position: absolute;
-    -webkit-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-    -webkit-transition-property: bottom, color, scale, font-size;
-    -o-transition-property: bottom, color, scale, font-size;
-    transition-property: bottom, color, scale, font-size;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transition-property: bottom, color, font-size;
+    -o-transition-property: bottom, color, font-size;
+    transition-property: bottom, color, font-size;
 }
 
 .i-mUI__input:hover ~ .i-mUI__label {
@@ -90,12 +90,14 @@
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 200ms ease-out;
-    -o-transition: all 200ms ease-out;
-    transition: all 200ms ease-out;
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
     visibility: hidden;
     width: 100%;
-    will-change: transform, visibility;
+    -webkit-transition-property: transform, visibility;
+    -o-transition-property: transform, visibility;
+    transition-property: transform, visibi.3;
     z-index: 9;
 }
 

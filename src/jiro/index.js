@@ -22,12 +22,12 @@ function InputJiroUI({
   checkProp({activeTextColor, focusColor, hoverColor, mainColor});
 
   return (
-    <fieldset className='i-jiroUI'>
-					<input className='i-jiroUI__input' {...rest}/>
-					<label className='i-jiroUI__label'>
-            <span className='i-jiroUI__label--title'>Cat's Name</span>
-					</label>
-				</fieldset>
+    <fieldset className={`i-jiroUI ${className}`} style={style}>
+      <input className='i-jiroUI__input' style={inputStyle} {...rest}/>
+      <label className='i-jiroUI__label'>
+        <span className='i-jiroUI__label--title' style={labelStyle}>{label}</span>
+      </label>
+    </fieldset>
   )
 }
 

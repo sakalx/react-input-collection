@@ -53,12 +53,12 @@
     left: 0;
     pointer-events: none;
     position: absolute;
-    -webkit-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-    -webkit-transition-property: bottom, color, scale, font-size;
-    -o-transition-property: bottom, color, scale, font-size;
-    transition-property: bottom, color, scale, font-size;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transition-property: bottom, color, font-size;
+    -o-transition-property: bottom, color, font-size;
+    transition-property: bottom, color, font-size;
 }
 
 .i-madokaUI__input:hover ~ .i-madokaUI__label {
