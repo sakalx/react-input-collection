@@ -1,0 +1,156 @@
+:root {
+    --i-akiraUI-focusColor: #2196f3;
+    --i-akiraUI-activeTextColor: #f2f2f2;
+    --i-akiraUI-hoverColor: #252525;
+    --i-akiraUI-mainColor: #727272;
+}
+
+.i-akiraUI {
+    border: none;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+}
+
+
+.i-akiraUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -webkit-box-sizing: border-box;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--i-akiraUI-mainColor);
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--i-akiraUI-mainColor);
+    cursor: text;
+    outline: none;
+    padding: .9em;
+    -webkit-transition: -webkit-box-shadow .3s ease-in-out;
+    transition: -webkit-box-shadow .3s ease-in-out;
+    -o-transition: box-shadow .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out;
+    width: 100%;
+}
+
+.i-akiraUI__input:hover {
+    border-bottom: 1px solid var(--i-akiraUI-hoverColor);
+    color: var(--i-akiraUI-hoverColor);
+}
+
+.i-akiraUI__input:focus {
+    border-bottom: 1px solid var(--i-akiraUI-focusColor);
+    -webkit-box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-focusColor),
+    inset 0 0 0 .2em var(--i-akiraUI-focusColor);
+    box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-focusColor),
+    inset 0 0 0 .2em var(--i-akiraUI-focusColor);
+}
+
+
+
+/*Label*/
+.i-akiraUI__label {
+    -khtml-user-select: none;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-transition: all .3s ease-in-out;
+    -o-transition-property: bottom, left, font-size, color;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-transition: all .3s ease-in-out;
+    -webkit-transition-property: bottom, left, font-size, color;
+    -webkit-user-select: none;
+    bottom: 0;
+    color: var(--i-akiraUI-mainColor);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    transition-property: bottom, left, font-size, color;
+    user-select: none;
+}
+
+.i-akiraUI__input:hover ~ .i-akiraUI__label {
+    color: var(--i-akiraUI-hoverColor);
+}
+
+.i-akiraUI__input:focus ~ .i-akiraUI__label {
+    color: var(--i-akiraUI-activeTextColor);
+}
+
+.i-akiraUI__input:focus ~ .i-akiraUI__label,
+.i-akiraUI__input:not([value=""]) ~ .i-akiraUI__label {
+    bottom: 100%;
+    font-size: small;
+    left: 4px;
+}
+
+
+
+/*Placeholder*/
+.i-akiraUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-akiraUI__input:-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-akiraUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-akiraUI__input::placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-akiraUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-akiraUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-akiraUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-akiraUI__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-akiraUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+
+.i-akiraUI__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-akiraUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-akiraUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-akiraUI__input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}

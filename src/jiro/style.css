@@ -97,6 +97,7 @@
     -webkit-transform-origin: 50% 0;
     -webkit-transform: scale3d(1, 0, 1);
     background: var(--i-jiroUI-mainColor);
+    border-radius: 4px;
     transform-origin: 50% 0;
     transform: scale3d(1, 0, 1);
     z-index: -1;
@@ -106,6 +107,7 @@
     -o-transition-delay: 0s;
     -webkit-transition-delay: 0s;
     border-top: 2px solid var(--i-jiroUI-focusColor);
+    border-radius: 4px;
     transition-delay: 0s;
 }
 

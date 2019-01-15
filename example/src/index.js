@@ -6,6 +6,7 @@ import InputNao from '../../src/nao';
 import InputMadoka from '../../src/madoka';
 import InputJiro from '../../src/jiro';
 import InputIchiro from '../../src/ichiro';
+import InputAkira from '../../src/akira';
 
 
 class App extends React.Component {
@@ -60,8 +61,16 @@ class App extends React.Component {
                    value={this.state.value}
                    label='Input Ichiro'
                    placeholder={'placeholder'}
+                     hoverColor={this.state.mainColor}
+                     focusColor={'blue'}
         />
-    {/*    <button onClick={this.changeColor}>change color</button>*/}
+        <br/><br/><br/>
+        <InputAkira onChange={this.onChange}
+                     value={this.state.value}
+                     label='Input Akira'
+                     placeholder={'placeholder Akira'}
+        />
+        {/*<button onClick={this.changeColor}>change color</button>*/}
       </div>
     )
   }
