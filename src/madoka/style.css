@@ -23,6 +23,7 @@
     background: transparent;
     border-radius: 0;
     border: none;
+    border-bottom: 1px solid var(--i-madokaUI-mainColor);
     box-shadow: none;
     box-sizing: border-box;
     color: var(--i-madokaUI-mainColor);
@@ -33,14 +34,12 @@
 }
 
 .i-madokaUI__input:hover {
+    border-bottom: 1px solid var(--i-madokaUI-hoverColor);
     color: var(--i-madokaUI-hoverColor);
 }
 
-.i-madokaUI__input:hover ~ .i-madokaUI__underline{
-    stroke: var(--i-madokaUI-hoverColor);
-}
-
 .i-madokaUI__input:focus {
+    border: none;
     color: var(--i-madokaUI-activeTextColor);
 }
 
@@ -86,13 +85,17 @@
     pointer-events: none;
     position: absolute;
     stroke-dasharray: 962;
-    stroke-dashoffset: 558;
+    stroke-dashoffset: 962;
     stroke-width: 3px;
     stroke: var(--i-madokaUI-mainColor);
     top: 0;
     transform: scale3d(1, -1, 1);
     -o-transition: stroke-dashoffset .5s;
     transition: stroke-dashoffset .5s;
+}
+
+.i-madokaUI__input:hover ~ .i-madokaUI__underline{
+    stroke: var(--i-madokaUI-hoverColor);
 }
 
 .i-madokaUI__input:focus ~ .i-madokaUI__underline {

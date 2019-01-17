@@ -7,7 +7,7 @@ import InputMadoka from '../../src/madoka';
 import InputJiro from '../../src/jiro';
 import InputIchiro from '../../src/ichiro';
 import InputAkira from '../../src/akira';
-
+import InputYoko from '../../src/yoko';
 
 class App extends React.Component {
 
@@ -58,18 +58,29 @@ class App extends React.Component {
         />
         <br/><br/><br/>
         <InputIchiro onChange={this.onChange}
-                   value={this.state.value}
-                   label='Input Ichiro'
-                   placeholder={'placeholder'}
+                     value={this.state.value}
+                     label='Input Ichiro'
+                     placeholder={'placeholder'}
                      hoverColor={this.state.mainColor}
                      focusColor={'blue'}
         />
         <br/><br/><br/>
         <InputAkira onChange={this.onChange}
-                     value={this.state.value}
-                     label='Input Akira'
-                     placeholder={'placeholder Akira'}
+                    value={this.state.value}
+                    label='Input Akira'
+                    placeholder={'placeholder Akira'}
+                    focusColor={this.state.mainColor}
         />
+        <br/><br/><br/>
+
+        <InputYoko onChange={this.onChange}
+                    value={this.state.value}
+                    label='InputYoko'
+                    placeholder={'placeholder Yoko'}
+        />
+        <br/><br/><br/>
+        <br/><br/><br/>
+
         {/*<button onClick={this.changeColor}>change color</button>*/}
       </div>
     )

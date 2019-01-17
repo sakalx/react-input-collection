@@ -30,6 +30,8 @@
     outline: none;
     padding: .7em;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .i-ichiroUI__input:hover {
@@ -57,7 +59,7 @@
     pointer-events: none;
     position: absolute;
     transition: all .3s ease-out;
-    transition-property: bottom, font-size;
+    transition-property: bottom, font-size, color;
     user-select: none;
     width: 100%;
 }
@@ -95,7 +97,7 @@
     transition-property: bottom, color;
     transition: all .3s ease-out;
     width: 100%;
-    z-index: -1;
+    z-index: 0;
 }
 
 .i-ichiroUI__input:hover ~ .i-ichiroUI__underline {

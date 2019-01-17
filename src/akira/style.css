@@ -1,6 +1,6 @@
 :root {
-    --i-akiraUI-focusColor: #2196f3;
-    --i-akiraUI-activeTextColor: #f2f2f2;
+    --i-akiraUI-focusColor: #FFFCFF;
+    --i-akiraUI-activeTextColor: #101010;
     --i-akiraUI-hoverColor: #252525;
     --i-akiraUI-mainColor: #727272;
 }
@@ -40,11 +40,12 @@
 }
 
 .i-akiraUI__input:focus {
-    border-bottom: 1px solid var(--i-akiraUI-focusColor);
-    -webkit-box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-focusColor),
-    inset 0 0 0 .2em var(--i-akiraUI-focusColor);
-    box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-focusColor),
-    inset 0 0 0 .2em var(--i-akiraUI-focusColor);
+    border-bottom: 1px solid var(--i-akiraUI-mainColor);
+    color: var(--i-akiraUI-activeTextColor);
+    -webkit-box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-mainColor),
+    inset 0 0 0 .2em var(--i-akiraUI-mainColor);
+    box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-mainColor),
+    inset 0 0 0 .2em var(--i-akiraUI-mainColor);
 }
 
 
@@ -56,11 +57,11 @@
     -moz-user-select: none;
     -ms-user-select: none;
     -o-transition: all .3s ease-in-out;
-    -o-transition-property: bottom, left, font-size, color;
+    -o-transition-property: bottom, left, font-size;
     -webkit-font-smoothing: antialiased;
     -webkit-touch-callout: none;
     -webkit-transition: all .3s ease-in-out;
-    -webkit-transition-property: bottom, left, font-size, color;
+    -webkit-transition-property: bottom, left, font-size;
     -webkit-user-select: none;
     bottom: 0;
     color: var(--i-akiraUI-mainColor);
@@ -68,7 +69,7 @@
     pointer-events: none;
     position: absolute;
     transition: all .3s ease-in-out;
-    transition-property: bottom, left, font-size, color;
+    transition-property: bottom, left, font-size;
     user-select: none;
 }
 
@@ -77,14 +78,14 @@
 }
 
 .i-akiraUI__input:focus ~ .i-akiraUI__label {
-    color: var(--i-akiraUI-activeTextColor);
+    color: var(--i-akiraUI-focusColor);
 }
 
 .i-akiraUI__input:focus ~ .i-akiraUI__label,
 .i-akiraUI__input:not([value=""]) ~ .i-akiraUI__label {
     bottom: 100%;
     font-size: small;
-    left: 4px;
+    left: 3px;
 }
 
 

@@ -30,6 +30,8 @@
     outline: none;
     padding: .7em;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .i-jiroUI__input:hover {
@@ -100,7 +102,7 @@
     border-radius: 4px;
     transform-origin: 50% 0;
     transform: scale3d(1, 0, 1);
-    z-index: -1;
+    z-index: 0;
 }
 
 .i-jiroUI__input:focus + .i-jiroUI__label::before {

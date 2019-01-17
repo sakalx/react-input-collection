@@ -28,12 +28,12 @@ function InputMadokaUI({
       <label className='i-madokaUI__label' style={labelStyle}>{label}</label>
       <svg
         className='i-madokaUI__underline'
-        style={underLineStyle}
-        width='100%' height='100%'
-        viewBox='0 0 404 77'
         preserveAspectRatio='none'
+        style={underLineStyle}
+        viewBox='0 0 400 45'
+        width='100%' height='100%'
       >
-        <path d='m0,0l404,0l0,77l-404,0l0,-77z'/>
+        <rect height='100%' width='100%'/>
       </svg>
     </fieldset>
   )
