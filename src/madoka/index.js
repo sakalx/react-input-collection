@@ -15,7 +15,6 @@ function InputMadokaUI({
                          className = '',
                          style,
                          inputStyle,
-                         underLineStyle,
                          labelStyle,
                          label = '',
                          ...rest
@@ -29,7 +28,6 @@ function InputMadokaUI({
       <svg
         className='i-madokaUI__underline'
         preserveAspectRatio='none'
-        style={underLineStyle}
         viewBox='0 0 400 45'
         width='100%' height='100%'
       >
@@ -50,7 +48,6 @@ InputMadokaUI.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   inputStyle: PropTypes.object,
-  underLineStyle: PropTypes.object,
   labelStyle: PropTypes.object,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,

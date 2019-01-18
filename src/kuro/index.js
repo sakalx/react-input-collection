@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import './style.css';
 import {initCssVariables, replaceColors} from '../utility';
 
-const cssIdVariable = 'i-yokoUI';
+const cssIdVariable = 'i-kuroUI';
 const checkProp = initCssVariables(cssIdVariable);
 
-function InputYokoUI({
+function InputKuroUI({
                        activeTextColor = null,
                        focusColor = null,
                        hoverColor = null,
@@ -22,18 +22,22 @@ function InputYokoUI({
   checkProp({activeTextColor, focusColor, hoverColor, mainColor});
 
   return (
-    <fieldset className={`i-yokoUI ${className}`} style={style}>
-      <input className='i-yokoUI__input' style={inputStyle} {...rest}/>
-      <label className='i-yokoUI__label' style={labelStyle}>{label}</label>
-      <span className='i-yokoUI__underline'/>
+    <fieldset className={`i-kuroUI ${className}`} style={style}>
+      <input className='i-kuroUI__input' style={inputStyle} {...rest}/>
+
+      <legend>
+        Choose your favorite monster
+      </legend>
+
+      <label className='i-kuroUI__label' style={labelStyle}>{label}</label>
     </fieldset>
   )
 }
 
 export const setColors = replaceColors(cssIdVariable);
-export default InputYokoUI;
+export default InputKuroUI;
 
-InputYokoUI.propTypes = {
+InputKuroUI.propTypes = {
   activeTextColor: PropTypes.string,
   focusColor: PropTypes.string,
   hoverColor: PropTypes.string,

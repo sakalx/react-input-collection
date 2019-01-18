@@ -15,7 +15,6 @@ function InputMUI({
                     className = '',
                     style,
                     inputStyle,
-                    underLineStyle,
                     labelStyle,
                     label = '',
                     ...rest
@@ -25,7 +24,7 @@ function InputMUI({
   return (
     <fieldset className={`i-mUI ${className}`} style={style}>
       <input className='i-mUI__input' style={inputStyle} {...rest}/>
-      <hr className='i-mUI__underline' style={underLineStyle}/>
+      <hr className='i-mUI__underline'/>
       <label className='i-mUI__label' style={labelStyle}>{label}</label>
     </fieldset>
   )
@@ -42,7 +41,6 @@ InputMUI.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   inputStyle: PropTypes.object,
-  underLineStyle: PropTypes.object,
   labelStyle: PropTypes.object,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,

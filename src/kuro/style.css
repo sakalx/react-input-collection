@@ -1,0 +1,258 @@
+:root {
+    --i-kuroUI-focusColor: #2196f3;
+    --i-kuroUI-activeTextColor: #f2f2f2;
+    --i-kuroUI-hoverColor: #252525;
+    --i-kuroUI-mainColor: #727272;
+}
+
+legend {
+    transition: all .8s linear;
+
+    min-width: 100%;
+
+}
+
+.i-kuroUI {
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+.i-kuroUI__input {
+
+}
+
+.i-kuroUI__input:focus ~ legend {
+
+    min-width: 1%;
+}
+
+.i-kuroUI__label {
+    -khtml-user-select: none;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-transition: all .3s;
+    -o-transition-property: bottom, font-size, color;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-transition: all .3s;
+    -webkit-transition-property: bottom, font-size, color;
+    -webkit-user-select: none;
+    bottom: 0;
+    color: var(--i-yokoUI-mainColor);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all .3s;
+    transition-property: bottom, font-size, color;
+    user-select: none;
+    width: calc(100% - 4px);
+
+height: 75%;
+    border: 2px solid red;
+    border-top: none;
+
+}
+
+
+.i-yokoUI {
+    border: none;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+}
+
+
+.i-yokoUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -webkit-box-sizing: border-box;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--i-yokoUI-mainColor);
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--i-yokoUI-mainColor);
+    cursor: text;
+    outline: none;
+    padding: .7em;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: color .6s linear;
+    -o-transition: color .6s linear;
+    transition: color .6s linear;
+}
+
+.i-yokoUI__input:hover {
+    border-bottom: 1px solid var(--i-yokoUI-hoverColor);
+    color: var(--i-yokoUI-hoverColor);
+}
+
+.i-yokoUI__input:focus {
+    border-bottom: 1px solid var(--i-yokoUI-focusColor);
+    color: var(--i-yokoUI-activeTextColor);
+}
+
+
+/*Label*/
+.i-yokoUI__label {
+    -khtml-user-select: none;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-transition: all .3s;
+    -o-transition-property: bottom, font-size, color;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-transition: all .3s;
+    -webkit-transition-property: bottom, font-size, color;
+    -webkit-user-select: none;
+    bottom: 0;
+    color: var(--i-yokoUI-mainColor);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all .3s;
+    transition-property: bottom, font-size, color;
+    user-select: none;
+    width: 100%;
+}
+
+.i-yokoUI__input:hover ~ .i-yokoUI__label {
+    color: var(--i-yokoUI-hoverColor);
+}
+
+.i-yokoUI__input:focus ~ .i-yokoUI__label {
+    color: var(--i-yokoUI-focusColor);
+}
+
+.i-yokoUI__input:focus ~ .i-yokoUI__label,
+.i-yokoUI__input:not([value=""]) ~ .i-yokoUI__label {
+    bottom: 100%;
+    font-size: small;
+}
+
+
+/*Underline*/
+.i-yokoUI__underline {
+    -webkit-transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transition-property: height, left, top, width, -webkit-transition-delay;
+    -o-transition-property: height, left, top, width, -o-transition-delay;
+    transition-property: height, left, top, transition-delay, width, -webkit-transition-delay, -o-transition-delay;
+}
+
+.i-yokoUI__underline:before,
+.i-yokoUI__underline:after {
+    content: '';
+    position: absolute;
+    -webkit-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    z-index: 0;
+}
+
+.i-yokoUI__underline:before {
+    top: -1px;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    border: 1px solid var(--i-yokoUI-focusColor);
+    border-left: 0;
+    border-right: 0;
+}
+
+.i-yokoUI__underline:after {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background: var(--i-yokoUI-focusColor);
+}
+
+.i-yokoUI__input:focus ~ .i-yokoUI__underline:before {
+    left: 0;
+    width: 100%;
+}
+
+.i-yokoUI__input:focus ~ .i-yokoUI__underline:after {
+    -webkit-transition-delay: .4s;
+    -o-transition-delay: .4s;
+    transition-delay: .4s;
+    top: 0;
+    height: 100%;
+}
+
+
+/*Placeholder*/
+.i-yokoUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-yokoUI__input:-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-yokoUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-yokoUI__input::placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-yokoUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-yokoUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-yokoUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-yokoUI__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-yokoUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+
+.i-yokoUI__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-yokoUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-yokoUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-yokoUI__input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}

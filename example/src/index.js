@@ -8,6 +8,7 @@ import InputJiro from '../../src/jiro';
 import InputIchiro from '../../src/ichiro';
 import InputAkira from '../../src/akira';
 import InputYoko from '../../src/yoko';
+import InputKuro from '../../src/kuro';
 
 class App extends React.Component {
 
@@ -80,7 +81,14 @@ class App extends React.Component {
         />
         <br/><br/><br/>
         <br/><br/><br/>
+        <InputKuro onChange={this.onChange}
+                   value={this.state.value}
+                   label='Input Kuro'
+                   // placeholder={'placeholder Kuro'}
+        />
 
+        <br/><br/><br/>
+        <br/><br/><br/>
         {/*<button onClick={this.changeColor}>change color</button>*/}
       </div>
     )

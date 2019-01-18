@@ -15,7 +15,6 @@ function InputIchiroUI({
                          className = '',
                          style,
                          inputStyle,
-                         underLineStyle,
                          labelStyle,
                          label = '',
                          ...rest
@@ -25,7 +24,7 @@ function InputIchiroUI({
   return (
     <fieldset className={`i-ichiroUI ${className}`} style={style}>
       <input className='i-ichiroUI__input' style={inputStyle} {...rest}/>
-      <hr className='i-ichiroUI__underline' style={underLineStyle}/>
+      <hr className='i-ichiroUI__underline'/>
       <label className='i-ichiroUI__label' style={labelStyle}>{label}</label>
     </fieldset>
   )
@@ -42,7 +41,6 @@ InputIchiroUI.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   inputStyle: PropTypes.object,
-  underLineStyle: PropTypes.object,
   labelStyle: PropTypes.object,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,

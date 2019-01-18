@@ -15,7 +15,6 @@ function InputNaoUI({
                       className = '',
                       style,
                       inputStyle,
-                      underLineStyle,
                       labelStyle,
                       label = '',
                       ...rest
@@ -28,7 +27,6 @@ function InputNaoUI({
       <label className='i-naoUI__label' style={labelStyle}>{label}</label>
       <svg
         className='i-naoUI__underline'
-        style={underLineStyle}
         width='300%' height='100%'
         viewBox='0 0 1200 60'
         preserveAspectRatio='none'
@@ -51,7 +49,6 @@ InputNaoUI.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   inputStyle: PropTypes.object,
-  underLineStyle: PropTypes.object,
   labelStyle: PropTypes.object,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
