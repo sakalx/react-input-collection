@@ -6,29 +6,28 @@
 }
 
 legend {
-    transition: all .8s linear;
-
+    transition: all .2s;
     min-width: 100%;
-
+    visibility: hidden;
+    font-size: small;
+    padding: 0 .3em;
+    font-weight: bold;
 }
 
+.i-kuroUI__input:focus ~ legend {
+    min-width: 1%;
+    margin-left: .7em;
+}
+
+
 .i-kuroUI {
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
+    border: none;
+    border-top: 2px solid red;
     overflow: hidden;
     padding: 0;
     position: relative;
 }
 
-.i-kuroUI__input {
-
-}
-
-.i-kuroUI__input:focus ~ legend {
-
-    min-width: 1%;
-}
 
 .i-kuroUI__label {
     -khtml-user-select: none;
@@ -43,37 +42,62 @@ legend {
     -webkit-transition-property: bottom, font-size, color;
     -webkit-user-select: none;
     bottom: 0;
-    color: var(--i-yokoUI-mainColor);
+
+    color: red;
     left: 0;
     pointer-events: none;
     position: absolute;
     transition: all .3s;
-    transition-property: bottom, font-size, color;
-    user-select: none;
-    width: calc(100% - 4px);
 
-height: 75%;
+    transition-property: bottom, font-size, color, margin-left, font-weight;
+    user-select: none;
+
+}
+
+.i-kuroUI__input:focus ~ .i-kuroUI__label {
+    bottom: 70%;
+    font-size: small;
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+.i-kuroUI__underline {
+    box-sizing: border-box;
+
+    background: transparent;
     border: 2px solid red;
     border-top: none;
 
-}
-
-
-.i-yokoUI {
-    border: none;
-    overflow: visible;
+    bottom: 0;
+    content: '';
+    display: block;
+    font-size: 1px;
+    height: 1px;
+    left: 0;
+    margin: 0;
     padding: 0;
-    position: relative;
+    position: absolute;
+    transition: height .2s;
+
+
+    width: 100%;
+    z-index: 0;
+}
+
+.i-kuroUI__input:focus ~ .i-kuroUI__underline {
+    height: 90%;
+
+
 }
 
 
-.i-yokoUI__input {
+.i-kuroUI__input {
     -webkit-appearance: none;
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--i-yokoUI-mainColor);
+    border-bottom: 2px solid red;
     border-radius: 0;
     box-shadow: none;
     box-sizing: border-box;
@@ -94,8 +118,8 @@ height: 75%;
     color: var(--i-yokoUI-hoverColor);
 }
 
-.i-yokoUI__input:focus {
-    border-bottom: 1px solid var(--i-yokoUI-focusColor);
+.i-kuroUI__input:focus {
+
     color: var(--i-yokoUI-activeTextColor);
 }
 

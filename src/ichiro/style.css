@@ -94,8 +94,8 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    transition-property: bottom, color;
     transition: all .3s ease-out;
+    transition-property: height, background;
     width: 100%;
     z-index: 0;
 }

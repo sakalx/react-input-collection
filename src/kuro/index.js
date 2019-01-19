@@ -26,10 +26,11 @@ function InputKuroUI({
       <input className='i-kuroUI__input' style={inputStyle} {...rest}/>
 
       <legend>
-        Choose your favorite monster
+        {label}
       </legend>
-
+      <hr className='i-kuroUI__underline'/>
       <label className='i-kuroUI__label' style={labelStyle}>{label}</label>
+
     </fieldset>
   )
 }
