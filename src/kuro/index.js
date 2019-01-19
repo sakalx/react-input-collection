@@ -24,13 +24,9 @@ function InputKuroUI({
   return (
     <fieldset className={`i-kuroUI ${className}`} style={style}>
       <input className='i-kuroUI__input' style={inputStyle} {...rest}/>
-
-      <legend>
-        {label}
-      </legend>
-      <hr className='i-kuroUI__underline'/>
+      <legend className='i-kuroUI__legend'>{label}</legend>
       <label className='i-kuroUI__label' style={labelStyle}>{label}</label>
-
+      <hr className='i-kuroUI__underline'/>
     </fieldset>
   )
 }

@@ -84,12 +84,13 @@ class App extends React.Component {
         <InputKuro onChange={this.onChange}
                    value={this.state.value}
                    label='Input Kuro'
-                   // placeholder={'placeholder Kuro'}
+                   placeholder={'placeholder Kuro'}
+                   focusColor={this.state.mainColor}
         />
 
         <br/><br/><br/>
         <br/><br/><br/>
-        {/*<button onClick={this.changeColor}>change color</button>*/}
+        <button onClick={this.changeColor}>change color</button>
       </div>
     )
   }
