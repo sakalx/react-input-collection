@@ -6,14 +6,11 @@
 }
 
 
-
 .i-jiroUI {
     border: none;
-    overflow: visible;
     padding: 0;
     position: relative;
 }
-
 
 
 .i-jiroUI__input {
@@ -29,8 +26,8 @@
     cursor: text;
     outline: none;
     padding: .7em;
-    width: 100%;
     position: relative;
+    width: 100%;
     z-index: 1;
 }
 
@@ -41,7 +38,6 @@
 .i-jiroUI__input:focus {
     color: var(--i-jiroUI-activeTextColor);
 }
-
 
 
 /*Label*/
@@ -67,10 +63,6 @@
     color: var(--i-jiroUI-hoverColor);
 }
 
-.i-jiroUI__input:hover ~ .i-jiroUI__label::before {
-    border-top: 2px solid var(--i-jiroUI-hoverColor);
-}
-
 .i-jiroUI__label::before,
 .i-jiroUI__label::after {
     -o-transition: transform .3s;
@@ -80,8 +72,7 @@
     left: 0;
     position: absolute;
     top: 0;
-    transition: -webkit-transform .3s;
-    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
     width: 100%;
 }
 
@@ -105,11 +96,15 @@
     z-index: 0;
 }
 
+.i-jiroUI__input:hover ~ .i-jiroUI__label::before {
+    border-top: 2px solid var(--i-jiroUI-hoverColor);
+}
+
 .i-jiroUI__input:focus + .i-jiroUI__label::before {
     -o-transition-delay: 0s;
     -webkit-transition-delay: 0s;
-    border-top: 2px solid var(--i-jiroUI-focusColor);
     border-radius: 4px;
+    border-top: 2px solid var(--i-jiroUI-focusColor);
     transition-delay: 0s;
 }
 
@@ -135,7 +130,6 @@
 }
 
 
-
 /*Label title*/
 .i-jiroUI__label--title {
     -o-transition: all .3s .3s;
@@ -155,7 +149,6 @@
     bottom: 100%;
     font-size: small;
 }
-
 
 
 /*Placeholder*/

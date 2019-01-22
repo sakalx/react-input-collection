@@ -8,11 +8,9 @@
 
 .i-mUI {
     border: none;
-    overflow: visible;
     padding: 0;
     position: relative;
 }
-
 
 
 .i-mUI__input {
@@ -20,9 +18,11 @@
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
     background: transparent;
-    border: none;
     border-bottom: 1px solid var(--i-mUI-mainColor);
+    border-left: none;
     border-radius: 0;
+    border-right: none;
+    border-top: none;
     box-shadow: none;
     box-sizing: border-box;
     color: var(--i-mUI-mainColor);
@@ -33,7 +33,7 @@
 }
 
 .i-mUI__input:hover {
-    border-bottom: 1px solid var(--i-mUI-hoverColor);
+    border-bottom-color: var(--i-mUI-hoverColor);
     color: var(--i-mUI-hoverColor);
 }
 
@@ -42,19 +42,18 @@
 }
 
 
-
 /*Label*/
 .i-mUI__label {
+    -o-transition: all .3s ease;
+    -o-transition-property: bottom, color, font-size;
+    -webkit-transition: all .3s ease;
+    -webkit-transition-property: bottom, color, font-size;
     bottom: 0;
     color: var(--i-mUI-mainColor);
     left: 0;
     pointer-events: none;
     position: absolute;
-    -webkit-transition: all .3s ease;
-    -o-transition: all .3s ease;
     transition: all .3s ease;
-    -webkit-transition-property: bottom, color, font-size;
-    -o-transition-property: bottom, color, font-size;
     transition-property: bottom, color, font-size;
 }
 
@@ -73,9 +72,14 @@
 }
 
 
-
 /*Underline*/
 .i-mUI__underline {
+    -ms-transform: scaleX(0);
+    -o-transition: all .3s ease-out;
+    -o-transition-property: transform, visibility;
+    -webkit-transform: scaleX(0);
+    -webkit-transition: all .3s ease-out;
+    -webkit-transition-property: transform, visibility;
     background: var(--i-mUI-focusColor);
     border: none;
     bottom: 0;
@@ -87,64 +91,57 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    -webkit-transform: scaleX(0);
-    -ms-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
     transition: all .3s ease-out;
+    transition-property: transform, visibility;
     visibility: hidden;
     width: 100%;
-    -webkit-transition-property: transform, visibility;
-    -o-transition-property: transform, visibility;
-    transition-property: transform, visibility;
     z-index: 9;
 }
 
 .i-mUI__input:focus ~ .i-mUI__underline {
-    -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
     transform: scaleX(1);
     visibility: visible;
 }
 
 
-
 /*Placeholder*/
 .i-mUI__input::-webkit-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -o-transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-mUI__input:-ms-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-mUI__input::-ms-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-mUI__input::placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-mUI__input::-webkit-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-mUI__input::-ms-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-mUI__input:not(:focus)::-webkit-input-placeholder {

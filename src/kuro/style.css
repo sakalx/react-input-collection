@@ -7,7 +7,9 @@
 
 
 .i-kuroUI {
-    border: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
     border-top: 2px solid var(--i-kuroUI-focusColor);
     overflow: hidden;
     padding: 0;
@@ -20,8 +22,8 @@
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
     background: transparent;
-    border: none;
     border-radius: 0;
+    border: none;
     box-shadow: none;
     box-sizing: border-box;
     color: var(--i-kuroUI-mainColor);
@@ -128,7 +130,6 @@
     border-bottom: 2px solid var(--i-kuroUI-focusColor);
     height: 90%;
 }
-
 
 
 /*Placeholder*/

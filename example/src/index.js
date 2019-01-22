@@ -41,14 +41,15 @@ class App extends React.Component {
           label='Name' focusColor={this.state.mainColor} placeholder={'test with placeholder'}
         />
         <br/><br/><br/>
-        <InputNao label='First Name'
+        <InputNao label='Input Nao'
                   onChange={this.onChange}
                   value={this.state.value}
                   placeholder={'test with placeholder'}
                   focusColor={this.state.mainColor}
         />
         <br/><br/><br/>
-        <InputMadoka onChange={this.onChange} value={this.state.value} label='Name'
+        <InputMadoka onChange={this.onChange} value={this.state.value}
+                     label='Input Madoka'
                      placeholder={'test with placeholder'}
                      focusColor={this.state.mainColor}
                      hoverColor='green'
@@ -56,7 +57,7 @@ class App extends React.Component {
         <br/><br/><br/>
         <InputJiro onChange={this.onChange}
                    value={this.state.value}
-                   label='Label'
+                   label='Input Jiro'
                    placeholder={'test with placeholder'}
 
         />

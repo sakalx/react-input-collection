@@ -4,7 +4,8 @@ const getCssVarName = (cssId, prop) => `--${cssId}-${prop}`;
 export function initCssVariables(cssIdVariable) {
 
   const cssVariables = new Map([
-    ['activeColor', null],
+    ['activeTextColor', null],
+    ['focusColor', null],
     ['hoverColor', null],
     ['mainColor', null],
   ]);
@@ -34,6 +35,7 @@ export function replaceColors(cssIdVariable) {
     for (const prop in objProps) {
       if (!!prop && objProps.hasOwnProperty(prop)) {
         const key = getCssVarName(cssIdVariable, prop);
+
         setCssProp(key, objProps[prop]);
       }
     }

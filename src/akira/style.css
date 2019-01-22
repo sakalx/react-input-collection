@@ -7,47 +7,45 @@
 
 .i-akiraUI {
     border: none;
-    overflow: visible;
     padding: 0;
     position: relative;
 }
 
 
 .i-akiraUI__input {
+    -o-transition: box-shadow .3s ease-in-out;
     -webkit-appearance: none;
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
+    -webkit-transition: -webkit-box-shadow .3s ease-in-out;
     background: transparent;
-    border: none;
     border-bottom: 1px solid var(--i-akiraUI-mainColor);
+    border-left: none;
     border-radius: 0;
+    border-right: none;
+    border-top: none;
     box-shadow: none;
     box-sizing: border-box;
     color: var(--i-akiraUI-mainColor);
     cursor: text;
     outline: none;
     padding: .9em;
-    -webkit-transition: -webkit-box-shadow .3s ease-in-out;
     transition: -webkit-box-shadow .3s ease-in-out;
-    -o-transition: box-shadow .3s ease-in-out;
     transition: box-shadow .3s ease-in-out;
     width: 100%;
 }
 
 .i-akiraUI__input:hover {
-    border-bottom: 1px solid var(--i-akiraUI-hoverColor);
+    border-bottom-color: var(--i-akiraUI-hoverColor);
     color: var(--i-akiraUI-hoverColor);
 }
 
 .i-akiraUI__input:focus {
+    -webkit-box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-mainColor), inset 0 0 0 .2em var(--i-akiraUI-mainColor);
     border-bottom: 1px solid var(--i-akiraUI-mainColor);
+    box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-mainColor), inset 0 0 0 .2em var(--i-akiraUI-mainColor);
     color: var(--i-akiraUI-activeTextColor);
-    -webkit-box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-mainColor),
-    inset 0 0 0 .2em var(--i-akiraUI-mainColor);
-    box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-mainColor),
-    inset 0 0 0 .2em var(--i-akiraUI-mainColor);
 }
-
 
 
 /*Label*/
@@ -87,7 +85,6 @@
     font-size: small;
     left: 3px;
 }
-
 
 
 /*Placeholder*/

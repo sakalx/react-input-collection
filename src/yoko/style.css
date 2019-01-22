@@ -15,40 +15,39 @@
 }
 
 
-
 .i-yokoUI__input {
+    -o-transition: color .6s linear;
     -webkit-appearance: none;
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
+    -webkit-transition: color .6s linear;
     background: transparent;
-    border: none;
     border-bottom: 1px solid var(--i-yokoUI-mainColor);
+    border-left: none;
     border-radius: 0;
+    border-right: none;
+    border-top: none;
     box-shadow: none;
     box-sizing: border-box;
     color: var(--i-yokoUI-mainColor);
     cursor: text;
     outline: none;
     padding: .7em;
-    width: 100%;
     position: relative;
-    z-index: 1;
-    -webkit-transition: color .6s linear;
-    -o-transition: color .6s linear;
     transition: color .6s linear;
+    width: 100%;
+    z-index: 1;
 }
 
 .i-yokoUI__input:hover {
-    border-bottom: 1px solid var(--i-yokoUI-hoverColor);
+    border-bottom-color: var(--i-yokoUI-hoverColor);
     color: var(--i-yokoUI-hoverColor);
 }
 
 .i-yokoUI__input:focus {
-    border-bottom: 1px solid var(--i-yokoUI-focusColor);
+    border-bottom-color: var(--i-yokoUI-focusColor);
     color: var(--i-yokoUI-activeTextColor);
 }
-
-
 
 
 /*Label*/
@@ -90,7 +89,6 @@
 }
 
 
-
 /*Underline*/
 .i-yokoUI__underline {
     -webkit-transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
@@ -100,32 +98,34 @@
     -o-transition-property: height, left, top, width, -o-transition-delay;
     transition-property: height, left, top, transition-delay, width, -webkit-transition-delay, -o-transition-delay;
 }
+
 .i-yokoUI__underline:before,
 .i-yokoUI__underline:after {
+    -o-transition: inherit;
+    -webkit-transition: inherit;
     content: '';
     position: absolute;
-    -webkit-transition: inherit;
-    -o-transition: inherit;
     transition: inherit;
     z-index: 0;
 }
 
 .i-yokoUI__underline:before {
-    top: -1px;
-    left: 50%;
+    border-bottom: 1px solid var(--i-yokoUI-focusColor);
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--i-yokoUI-focusColor);
     height: 100%;
+    left: 50%;
+    top: -1px;
     width: 0;
-    border: 1px solid var(--i-yokoUI-focusColor);
-    border-left: 0;
-    border-right: 0;
 }
 
 .i-yokoUI__underline:after {
-    bottom: 0;
-    left: 0;
-    height: 0;
-    width: 100%;
     background: var(--i-yokoUI-focusColor);
+    bottom: 0;
+    height: 0;
+    left: 0;
+    width: 100%;
 }
 
 .i-yokoUI__input:focus ~ .i-yokoUI__underline:before {
@@ -134,13 +134,12 @@
 }
 
 .i-yokoUI__input:focus ~ .i-yokoUI__underline:after {
-    -webkit-transition-delay: .4s;
     -o-transition-delay: .4s;
-    transition-delay: .4s;
-    top: 0;
+    -webkit-transition-delay: .4s;
     height: 100%;
+    top: 0;
+    transition-delay: .4s;
 }
-
 
 
 /*Placeholder*/

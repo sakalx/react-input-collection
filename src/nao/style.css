@@ -6,14 +6,12 @@
 }
 
 
-
 .i-naoUI {
     border: none;
     overflow: hidden;
     padding: 1em 0 0 0;
     position: relative;
 }
-
 
 
 .i-naoUI__input {
@@ -43,7 +41,6 @@
 .i-naoUI__input:focus {
     color: var(--i-naoUI-activeTextColor);
 }
-
 
 
 /*Label*/
@@ -76,7 +73,6 @@
 }
 
 
-
 /*Underline*/
 .i-naoUI__underline {
     -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
@@ -96,7 +92,6 @@
     stroke: var(--i-naoUI-focusColor);
     transform: translate3d(-66.6%, 0, 0);
 }
-
 
 
 /*Placeholder*/

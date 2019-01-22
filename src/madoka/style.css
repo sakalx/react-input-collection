@@ -6,14 +6,11 @@
 }
 
 
-
 .i-madokaUI {
     border: none;
-    overflow: visible;
     padding: 0;
     position: relative;
 }
-
 
 
 .i-madokaUI__input {
@@ -21,9 +18,11 @@
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
     background: transparent;
-    border-radius: 0;
-    border: none;
     border-bottom: 1px solid var(--i-madokaUI-mainColor);
+    border-left: none;
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
     box-shadow: none;
     box-sizing: border-box;
     color: var(--i-madokaUI-mainColor);
@@ -34,7 +33,7 @@
 }
 
 .i-madokaUI__input:hover {
-    border-bottom: 1px solid var(--i-madokaUI-hoverColor);
+    border-bottom-color: var(--i-madokaUI-hoverColor);
     color: var(--i-madokaUI-hoverColor);
 }
 
@@ -44,19 +43,18 @@
 }
 
 
-
 /*Label*/
 .i-madokaUI__label {
+    -o-transition: all .3s ease;
+    -o-transition-property: bottom, color, font-size;
+    -webkit-transition: all .3s ease;
+    -webkit-transition-property: bottom, color, font-size;
     bottom: 0;
     color: var(--i-madokaUI-mainColor);
     left: 0;
     pointer-events: none;
     position: absolute;
-    -webkit-transition: all .3s ease;
-    -o-transition: all .3s ease;
     transition: all .3s ease;
-    -webkit-transition-property: bottom, color, font-size;
-    -o-transition-property: bottom, color, font-size;
     transition-property: bottom, color, font-size;
 }
 
@@ -73,7 +71,6 @@
     bottom: 100%;
     font-size: small;
 }
-
 
 
 /*Underline*/
@@ -94,7 +91,7 @@
     transition: stroke-dashoffset .5s;
 }
 
-.i-madokaUI__input:hover ~ .i-madokaUI__underline{
+.i-madokaUI__input:hover ~ .i-madokaUI__underline {
     stroke: var(--i-madokaUI-hoverColor);
 }
 
@@ -104,42 +101,41 @@
 }
 
 
-
 /*Placeholder*/
 .i-madokaUI__input::-webkit-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-madokaUI__input:-ms-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-madokaUI__input::-ms-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-madokaUI__input::placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-madokaUI__input::-webkit-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 .i-madokaUI__input::-ms-input-placeholder {
-    -webkit-transition: color 300ms ease;
-    -o-transition: color 300ms ease;
-    transition: color 300ms ease;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
 
