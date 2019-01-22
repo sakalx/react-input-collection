@@ -97,7 +97,7 @@
     width: 100%;
     -webkit-transition-property: transform, visibility;
     -o-transition-property: transform, visibility;
-    transition-property: transform, visibi.3;
+    transition-property: transform, visibility;
     z-index: 9;
 }
 

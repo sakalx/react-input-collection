@@ -9,6 +9,9 @@ import InputIchiro from '../../src/ichiro';
 import InputAkira from '../../src/akira';
 import InputYoko from '../../src/yoko';
 import InputKuro from '../../src/kuro';
+import InputMinoru from '../../src/minoru';
+
+
 
 class App extends React.Component {
 
@@ -88,6 +91,14 @@ class App extends React.Component {
                    focusColor={this.state.mainColor}
         />
 
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <InputMinoru onChange={this.onChange}
+                   value={this.state.value}
+                   label='Input Minoru'
+                   placeholder={'placeholder Minoru'}
+                 focusColor={this.state.mainColor}
+        />
         <br/><br/><br/>
         <br/><br/><br/>
         <button onClick={this.changeColor}>change color</button>
