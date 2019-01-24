@@ -10,6 +10,7 @@ import InputAkira from '../../src/akira';
 import InputYoko from '../../src/yoko';
 import InputKuro from '../../src/kuro';
 import InputMinoru from '../../src/minoru';
+import InputSoda from '../../src/soda';
 
 
 
@@ -102,7 +103,24 @@ class App extends React.Component {
         />
         <br/><br/><br/>
         <br/><br/><br/>
-        <button onClick={this.changeColor}>change color</button>
+
+
+        <InputSoda onChange={this.onChange}
+                     value={this.state.value}
+
+                     // label='Input Input Soda'
+                     // placeholder={'placeholder Soda'}
+                     // focusColor={this.state.mainColor}
+        />
+        <br/><br/><br/>
+     {/*   <InputSoda onChange={this.onChange}
+                   value={this.state.value}
+          // label='Input Input Soda'
+          // placeholder={'placeholder Soda'}
+          // focusColor={this.state.mainColor}
+        />*/}
+        <br/><br/><br/>
+        {/*<button onClick={this.changeColor}>change color</button>*/}
       </div>
     )
   }
