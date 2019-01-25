@@ -75,11 +75,9 @@
 /*Underline*/
 .i-mUI__underline {
     -ms-transform: scaleX(0);
-    -o-transition: all .3s ease-out;
-    -o-transition-property: transform, visibility;
+    -o-transition: transform .3s ease-out;
     -webkit-transform: scaleX(0);
-    -webkit-transition: all .3s ease-out;
-    -webkit-transition-property: transform, visibility;
+    -webkit-transition: transform .3s ease-out;
     background: var(--i-mUI-focusColor);
     border: none;
     bottom: 0;
@@ -92,9 +90,7 @@
     padding: 0;
     position: absolute;
     transform: scaleX(0);
-    transition: all .3s ease-out;
-    transition-property: transform, visibility;
-    visibility: hidden;
+    transition: transform .3s ease-out;
     width: 100%;
     z-index: 9;
 }
@@ -103,7 +99,6 @@
     -ms-transform: scaleX(1);
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    visibility: visible;
 }
 
 

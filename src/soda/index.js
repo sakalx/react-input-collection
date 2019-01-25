@@ -1,57 +1,28 @@
-import React, {memo}  from 'react';
+import React, {memo} from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
-import {initCssVariables, replaceColors} from '../utility';
+import {initCssVariables, replaceColors, setCssProp} from '../utility';
 
 const cssIdVariable = 'i-sodaUI';
 const checkProp = initCssVariables(cssIdVariable);
 
 
+const handleRippleEffect = ({nativeEvent}) => {
+  // optional: invoke this only when ripple not exist
+  const middleOfRect = nativeEvent.target.offsetWidth / 2;
+  const top = nativeEvent.offsetY - middleOfRect + 'px';
+  const left = nativeEvent.offsetX - middleOfRect + 'px';
 
-const showRippleEffect = event => {
-  const top = event.offsetY;
-  const left = event.offsetX;
-  const underline = event.target.previousElementSibling;
-
-  underline.style.top = top - underline.offsetHeight / 2 + 'px';
-  underline.style.left = left - underline.offsetHeight / 2  + 'px';
-  underline.style.transform = 'scale(2)';
+  setCssProp('--i-sodaUI-ripple-top', top);
+  setCssProp('--i-sodaUI-ripple-left', left);
 };
-
-const handleClick = callBack => ({nativeEvent}) => {
-  showRippleEffect(nativeEvent);
-  !!callBack && callBack();
-};
-
-const handleFocusIn = callBack => ({nativeEvent}) => {
-  const underline = nativeEvent.target.previousElementSibling;
-  const rect = nativeEvent.target.getBoundingClientRect();
-
-  underline.style.height = underline.style.width = Math.max(rect.width, rect.height) + 'px';
-  showRippleEffect(nativeEvent);
-
-  //
-  !!callBack && callBack();
-};
-
-
-const handleFocusOut = callBack => ({target}) => {
-  const underline = target.previousElementSibling;
-  underline.style.transform = 'scale(0)';
-  !!callBack && callBack();
-};
-
-
 
 function InputSodaUI({
                        activeTextColor = null,
                        focusColor = null,
                        hoverColor = null,
                        mainColor = null,
-                       onBlur = null,
-                       onClick = null,
-                       onFocus = null,
                        className = '',
                        style,
                        inputStyle,
@@ -61,21 +32,15 @@ function InputSodaUI({
                      }) {
   checkProp({activeTextColor, focusColor, hoverColor, mainColor});
 
-
-
   return (
-    <fieldset className={`i-sodaUI ${className}`} style={style}>
-      <span className='i-sodaUI__underline'/>
-      <input
-        className='i-sodaUI__input'
-        onBlur={handleFocusOut(onBlur)}
-        onClick={handleClick(onClick)}
-        onFocus={handleFocusIn(onFocus)}
-        style={inputStyle}
-        {...rest}
-      />
+    <fieldset
+      className={`i-sodaUI ${className}`}
+      style={style}
+      onClick={handleRippleEffect}
+    >
+      <input className='i-sodaUI__input' style={inputStyle} {...rest}/>
       <label className='i-sodaUI__label' style={labelStyle}>{label}</label>
-
+      <span className='i-sodaUI__ripple'/>
     </fieldset>
   )
 }

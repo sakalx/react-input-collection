@@ -8,7 +8,6 @@
 
 .i-yokoUI {
     border: none;
-    overflow: visible;
     padding: 0;
     position: relative;
 }
@@ -189,7 +188,6 @@
 .i-yokoUI__input:not(:focus)::-ms-input-placeholder {
     color: transparent;
 }
-
 
 .i-yokoUI__input:not(:focus)::placeholder {
     color: transparent;

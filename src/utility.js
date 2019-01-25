@@ -1,5 +1,8 @@
-const setCssProp = (prop, value) => document.documentElement.style.setProperty(prop, value);
+const rootStyle = document.documentElement.style;
+
+
 const getCssVarName = (cssId, prop) => `--${cssId}-${prop}`;
+export const setCssProp = (prop, value) => rootStyle.setProperty(prop, value);
 
 export function initCssVariables(cssIdVariable) {
 
@@ -41,5 +44,3 @@ export function replaceColors(cssIdVariable) {
     }
   }
 }
-
-

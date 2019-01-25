@@ -1,30 +1,17 @@
 :root {
     --i-sodaUI-focusColor: #2196f3;
-    --i-sodaUI-activeTextColor: #f2f2f2;
+    --i-sodaUI-activeTextColor: #000;
     --i-sodaUI-hoverColor: #252525;
     --i-sodaUI-mainColor: #727272;
+    --i-sodaUI-ripple-top: 0;
+    --i-sodaUI-ripple-left: 0;
 }
 
 
 .i-sodaUI {
     border: none;
-    overflow: hidden;
     padding: 0;
     position: relative;
-}
-
-
-
-.i-sodaUI__underline {
-    position: absolute;
-    background: rgba(0,0,0,.15);
-    border-radius: 100%;
-    pointer-events: none;
-    transform: scale(0);
-    transition: transform .4s ease-in-out;
-}
-.i-sodaUI__underline.show {
-    transform: scale(2);
 }
 
 
@@ -33,7 +20,10 @@
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
     background: transparent;
+    border-top: none;
     border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--i-sodaUI-mainColor);
     border-radius: 0;
     box-shadow: none;
     box-sizing: border-box;
@@ -41,174 +31,187 @@
     cursor: text;
     outline: none;
     padding: .7em;
+    position: relative;
     width: 100%;
+    z-index: 1;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    -webkit-transition-property: border-bottom-left-radius, border-bottom-right-radius;
+    -o-transition-property: border-bottom-left-radius, border-bottom-right-radius;
+    transition-property: border-bottom-left-radius, border-bottom-right-radius;
 }
 
-.i-yokoUI__input:hover {
-    border-bottom-color: var(--i-yokoUI-hoverColor);
-    color: var(--i-yokoUI-hoverColor);
+.i-sodaUI__input:hover {
+    border-bottom-color: var(--i-sodaUI-hoverColor);
+    color: var(--i-sodaUI-hoverColor);
 }
 
-.i-yokoUI__input:focus {
-    border-bottom-color: var(--i-yokoUI-focusColor);
-    color: var(--i-yokoUI-activeTextColor);
+.i-sodaUI__input:focus {
+    border-bottom-color: var(--i-sodaUI-focusColor);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: var(--i-sodaUI-focusColor);
 }
 
 
 /*Label*/
-.i-yokoUI__label {
+.i-sodaUI__label {
     -khtml-user-select: none;
     -moz-osx-font-smoothing: grayscale;
     -moz-user-select: none;
     -ms-user-select: none;
-    -o-transition: all .3s;
-    -o-transition-property: bottom, font-size, color;
+    -o-transition: all .3s ease-in-out;
+    -o-transition-property: bottom, font-size;
     -webkit-font-smoothing: antialiased;
     -webkit-touch-callout: none;
-    -webkit-transition: all .3s;
-    -webkit-transition-property: bottom, font-size, color;
+    -webkit-transition: all .3s ease-in-out;
+    -webkit-transition-property: bottom, font-size;
     -webkit-user-select: none;
     bottom: 0;
-    color: var(--i-yokoUI-mainColor);
+    color: var(--i-sodaUI-mainColor);
     left: 0;
     pointer-events: none;
     position: absolute;
-    transition: all .3s;
-    transition-property: bottom, font-size, color;
+    transition: all .3s ease-in-out;
+    transition-property: bottom, font-size;
     user-select: none;
     width: 100%;
+    z-index: 1;
 }
 
-.i-yokoUI__input:hover ~ .i-yokoUI__label {
-    color: var(--i-yokoUI-hoverColor);
+.i-sodaUI__input:hover ~ .i-sodaUI__label {
+    color: var(--i-sodaUI-hoverColor);
 }
 
-.i-yokoUI__input:focus ~ .i-yokoUI__label {
-    color: var(--i-yokoUI-focusColor);
+.i-sodaUI__input:focus ~ .i-sodaUI__label {
+    color: var(--i-sodaUI-focusColor);
 }
 
-.i-yokoUI__input:focus ~ .i-yokoUI__label,
-.i-yokoUI__input:not([value=""]) ~ .i-yokoUI__label {
+.i-sodaUI__input:focus ~ .i-sodaUI__label,
+.i-sodaUI__input:not([value=""]) ~ .i-sodaUI__label {
     bottom: 100%;
     font-size: small;
 }
 
 
-/*Underline*/
-.i-yokoUI__underline {
-    -webkit-transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
-    -o-transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
-    transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
-    -webkit-transition-property: height, left, top, width, -webkit-transition-delay;
-    -o-transition-property: height, left, top, width, -o-transition-delay;
-    transition-property: height, left, top, transition-delay, width, -webkit-transition-delay, -o-transition-delay;
-}
-
-.i-yokoUI__underline:before,
-.i-yokoUI__underline:after {
-    -o-transition: inherit;
-    -webkit-transition: inherit;
-    content: '';
+/*Ripple effect*/
+.i-sodaUI__ripple {
+    border-radius: 4px;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
     position: absolute;
-    transition: inherit;
-    z-index: 0;
-}
-
-.i-yokoUI__underline:before {
-    border-bottom: 1px solid var(--i-yokoUI-focusColor);
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid var(--i-yokoUI-focusColor);
-    height: 100%;
-    left: 50%;
-    top: -1px;
-    width: 0;
-}
-
-.i-yokoUI__underline:after {
-    background: var(--i-yokoUI-focusColor);
-    bottom: 0;
-    height: 0;
-    left: 0;
-    width: 100%;
-}
-
-.i-yokoUI__input:focus ~ .i-yokoUI__underline:before {
-    left: 0;
-    width: 100%;
-}
-
-.i-yokoUI__input:focus ~ .i-yokoUI__underline:after {
-    -o-transition-delay: .4s;
-    -webkit-transition-delay: .4s;
-    height: 100%;
     top: 0;
-    transition-delay: .4s;
+    width: 100%;
+}
+
+.i-sodaUI__ripple:before,
+.i-sodaUI__ripple:after {
+    content: '';
+    left: var(--i-sodaUI-ripple-left);
+    pointer-events: none;
+    position: absolute;
+    -webkit-transition: -webkit-transform .3s .1s;
+    -o-transition: transform .3s .1s;
+    transition: transform .3s .1s, -webkit-transform .3s .1s;
+    width: 100%;
+
+}
+
+.i-sodaUI__ripple:before {
+    background: var(--i-sodaUI-focusColor);
+    border-radius: 100%;
+    opacity: .2;
+    padding-top: 100%;
+    top: var(--i-sodaUI-ripple-top);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.i-sodaUI__ripple:after {
+    border-bottom: 2px solid var(--i-sodaUI-focusColor);
+    bottom: 0;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+}
+
+.i-sodaUI__input:focus ~ .i-sodaUI__ripple:before {
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+}
+
+.i-sodaUI__input:focus ~ .i-sodaUI__ripple:after {
+    -webkit-transform: scaleX(2);
+    -ms-transform: scaleX(2);
+    transform: scaleX(2);
 }
 
 
 /*Placeholder*/
-.i-yokoUI__input::-webkit-input-placeholder {
+.i-sodaUI__input::-webkit-input-placeholder {
     -webkit-transition: color .3s ease-in-out;
     -o-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 }
 
-.i-yokoUI__input:-ms-input-placeholder {
+.i-sodaUI__input:-ms-input-placeholder {
     -webkit-transition: color .3s ease-in-out;
     -o-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 }
 
-.i-yokoUI__input::-ms-input-placeholder {
+.i-sodaUI__input::-ms-input-placeholder {
     -webkit-transition: color .3s ease-in-out;
     -o-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 }
 
-.i-yokoUI__input::placeholder {
+.i-sodaUI__input::placeholder {
     -webkit-transition: color .3s ease-in-out;
     -o-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 }
 
-.i-yokoUI__input::-webkit-input-placeholder {
+.i-sodaUI__input::-webkit-input-placeholder {
     -webkit-transition: color .3s ease-in-out;
     -o-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 }
 
-.i-yokoUI__input::-ms-input-placeholder {
+.i-sodaUI__input::-ms-input-placeholder {
     -webkit-transition: color .3s ease-in-out;
     -o-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
 }
 
-.i-yokoUI__input:not(:focus)::-webkit-input-placeholder {
+.i-sodaUI__input:not(:focus)::-webkit-input-placeholder {
     color: transparent;
 }
 
-.i-yokoUI__input:not(:focus):-ms-input-placeholder {
+.i-sodaUI__input:not(:focus):-ms-input-placeholder {
     color: transparent;
 }
 
-.i-yokoUI__input:not(:focus)::-ms-input-placeholder {
+.i-sodaUI__input:not(:focus)::-ms-input-placeholder {
     color: transparent;
 }
 
-
-.i-yokoUI__input:not(:focus)::placeholder {
+.i-sodaUI__input:not(:focus)::placeholder {
     color: transparent;
 }
 
-.i-yokoUI__input:not(:focus)::-webkit-input-placeholder {
+.i-sodaUI__input:not(:focus)::-webkit-input-placeholder {
     color: transparent;
 }
 
-.i-yokoUI__input:not(:focus)::-ms-input-placeholder {
+.i-sodaUI__input:not(:focus)::-ms-input-placeholder {
     color: transparent;
 }
 
-.i-yokoUI__input:not(:focus)::-moz-placeholder {
+.i-sodaUI__input:not(:focus)::-moz-placeholder {
     color: transparent;
 }
