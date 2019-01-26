@@ -12,6 +12,12 @@
     border: none;
     padding: 0;
     position: relative;
+    transition: all .4s ease-in-out;
+}
+
+.notValid {
+    border-bottom: 2px solid #b31217;
+    background: rgba(179, 23, 18, 0.2);
 }
 
 

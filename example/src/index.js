@@ -13,12 +13,12 @@ import InputMinoru from '../../src/minoru';
 import InputSoda, {setColors as sodaCoalr} from '../../src/soda';
 
 
-
 class App extends React.Component {
 
   state = {
     value: '',
     mainColor: 'red',
+    error: false,
   };
 
   onChange = e => {
@@ -26,10 +26,12 @@ class App extends React.Component {
   };
 
   changeColor = () => {
-    this.setState({mainColor: 'gold'});
+    this.setState({
+      mainColor: 'gold',
+      error: !this.state.error,
+    });
 
     setColors({mainColor: 'green'});
-    sodaCoalr({mainColor: 'pink'});
   };
 
   render() {
@@ -81,9 +83,9 @@ class App extends React.Component {
         <br/><br/><br/>
 
         <InputYoko onChange={this.onChange}
-                    value={this.state.value}
-                    label='InputYoko'
-                    placeholder={'placeholder Yoko'}
+                   value={this.state.value}
+                   label='InputYoko'
+                   placeholder={'placeholder Yoko'}
         />
         <br/><br/><br/>
         <br/><br/><br/>
@@ -97,28 +99,30 @@ class App extends React.Component {
         <br/><br/><br/>
         <br/><br/><br/>
         <InputMinoru onChange={this.onChange}
-                   value={this.state.value}
-                   label='Input Minoru'
-                   placeholder={'placeholder Minoru'}
-                 focusColor={this.state.mainColor}
-        />
-        <br/><br/><br/>
-        <br/><br/><br/>
-
-
-        <InputSoda onChange={this.onChange}
                      value={this.state.value}
-
-                     label='Input Input Soda'
-                     placeholder={'placeholder Soda'}
-                   mainColor={this.state.mainColor}
+                     label='Input Minoru'
+                     placeholder={'placeholder Minoru'}
+                     focusColor={this.state.mainColor}
         />
         <br/><br/><br/>
-        <InputSoda onChange={this.onChange}
-                   value={this.state.value}
+        <br/><br/><br/>
+
+
+        <InputSoda
+          onChange={this.onChange}
+          value={this.state.value}
+          error={this.state.error}
+
           label='Input Input Soda'
           placeholder={'placeholder Soda'}
-          mainColor={this.state.mainColor}
+
+        />
+        <br/><br/><br/>
+        <InputSoda onChange={this.onChange}
+                   value={this.state.value}
+                   label='Input Input Soda'
+                   placeholder={'placeholder Soda'}
+
         />
         <br/><br/><br/>
         <button onClick={this.changeColor}>change color</button>

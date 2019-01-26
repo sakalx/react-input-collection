@@ -1,12 +1,10 @@
-import React, {memo} from 'react';
+import React, {useState, useRef, useMemo, memo} from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
-import {initCssVariables, replaceColors, setCssProp} from '../utility';
+import {replaceColors, setCssProp} from '../utility';
 
-const cssIdVariable = 'i-sodaUI';
-const checkProp = initCssVariables(cssIdVariable);
-
+export const setTheme = replaceColors('i-sodaUI');
 
 const handleRippleEffect = ({nativeEvent}) => {
   // optional: invoke this only when ripple not exist
@@ -19,24 +17,63 @@ const handleRippleEffect = ({nativeEvent}) => {
 };
 
 function InputSodaUI({
-                       activeTextColor = null,
-                       focusColor = null,
-                       hoverColor = null,
-                       mainColor = null,
                        className = '',
                        style,
                        inputStyle,
                        labelStyle,
                        label = '',
+                       error = null,
                        ...rest
                      }) {
-  checkProp({activeTextColor, focusColor, hoverColor, mainColor});
+
+  const sodaInputRef = useRef(null);
+
+  //const [currError, setCurrError] = useState(null);
+
+
+  //
+  // if (error !== currError) {
+  //   setCurrError(error);
+  //
+  //   console.log(sodaInputRef);
+  //
+  //   const handleValidationUi = () =>
+  //     sodaInputRef.current.classList.toggle('notValid');
+  //
+  //   //setTimeout(handleValidationUi, 0);
+  // }
+
+
+  useMemo(() => {
+
+    switch (error) {
+      case true:
+        // handle remove UI isValid
+        // handle show UI NotValid
+        break;
+      case false:
+        // handle remove UI NotValid
+        // handle show UI isValid
+        break;
+      default:
+      // handle remove UI NotValid && UI isValid
+    }
+
+
+    const handleValidUi = () =>
+      sodaInputRef.current.classList.toggle('notValid');
+
+
+    setTimeout(handleValidUi, 0);
+  }, [error]);
+
 
   return (
     <fieldset
       className={`i-sodaUI ${className}`}
       style={style}
       onClick={handleRippleEffect}
+      ref={sodaInputRef}
     >
       <input className='i-sodaUI__input' style={inputStyle} {...rest}/>
       <label className='i-sodaUI__label' style={labelStyle}>{label}</label>
@@ -45,14 +82,9 @@ function InputSodaUI({
   )
 }
 
-export const setColors = replaceColors(cssIdVariable);
 export default memo(InputSodaUI);
 
 InputSodaUI.propTypes = {
-  activeTextColor: PropTypes.string,
-  focusColor: PropTypes.string,
-  hoverColor: PropTypes.string,
-  mainColor: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object,
   inputStyle: PropTypes.object,
