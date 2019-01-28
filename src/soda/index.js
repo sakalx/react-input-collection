@@ -1,20 +1,13 @@
-import React, {useState, useRef, useMemo, memo} from 'react';
+import React, {useRef, memo} from 'react';
 import PropTypes from 'prop-types';
 
+import useValidation, {handleErrorUI} from '../utility2/validation-hook';
+import setUpTheme, {setCssProp} from '../utility2/theme';
+
 import './style.css';
-import {replaceColors, setCssProp} from '../utility';
 
-export const setTheme = replaceColors('i-sodaUI');
 
-const handleRippleEffect = ({nativeEvent}) => {
-  // optional: invoke this only when ripple not exist
-  const middleOfRect = nativeEvent.target.offsetWidth / 2;
-  const top = nativeEvent.offsetY - middleOfRect + 'px';
-  const left = nativeEvent.offsetX - middleOfRect + 'px';
-
-  setCssProp('--i-sodaUI-ripple-top', top);
-  setCssProp('--i-sodaUI-ripple-left', left);
-};
+const cssId = 'i-sodaUI';
 
 function InputSodaUI({
                        className = '',
@@ -25,63 +18,36 @@ function InputSodaUI({
                        error = null,
                        ...rest
                      }) {
-
-  const sodaInputRef = useRef(null);
-
-  //const [currError, setCurrError] = useState(null);
+  const errElement = useRef(null);
+  useValidation(errElement, error);
 
 
-  //
-  // if (error !== currError) {
-  //   setCurrError(error);
-  //
-  //   console.log(sodaInputRef);
-  //
-  //   const handleValidationUi = () =>
-  //     sodaInputRef.current.classList.toggle('notValid');
-  //
-  //   //setTimeout(handleValidationUi, 0);
-  // }
+  const handleRippleEffect = ({nativeEvent}) => {
+    // TODO: invoke this only when not clicked
+    const middleOfRect = nativeEvent.target.offsetWidth / 2;
+    const top = nativeEvent.offsetY - middleOfRect + 'px';
+    const left = nativeEvent.offsetX - middleOfRect + 'px';
 
-
-  useMemo(() => {
-
-    switch (error) {
-      case true:
-        // handle remove UI isValid
-        // handle show UI NotValid
-        break;
-      case false:
-        // handle remove UI NotValid
-        // handle show UI isValid
-        break;
-      default:
-      // handle remove UI NotValid && UI isValid
-    }
-
-
-    const handleValidUi = () =>
-      sodaInputRef.current.classList.toggle('notValid');
-
-
-    setTimeout(handleValidUi, 0);
-  }, [error]);
-
+    handleErrorUI(errElement, null);
+    setCssProp(`--${cssId}-ripple-top`, top);
+    setCssProp(`--${cssId}-ripple-left`, left);
+  };
 
   return (
     <fieldset
-      className={`i-sodaUI ${className}`}
+      className={`${cssId} ${className}`}
       style={style}
       onClick={handleRippleEffect}
-      ref={sodaInputRef}
     >
-      <input className='i-sodaUI__input' style={inputStyle} {...rest}/>
-      <label className='i-sodaUI__label' style={labelStyle}>{label}</label>
-      <span className='i-sodaUI__ripple'/>
+      <input className={`${cssId}__input`} style={inputStyle} {...rest}/>
+      <label className={`${cssId}__label`} style={labelStyle}>{label}</label>
+      <span className={`${cssId}__ripple`}/>
+      <span className='errUI' ref={errElement}/>
     </fieldset>
   )
 }
 
+export const theme = setUpTheme(cssId);
 export default memo(InputSodaUI);
 
 InputSodaUI.propTypes = {

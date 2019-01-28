@@ -1,0 +1,121 @@
+.errUI {
+    bottom: 0;
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 30px;
+}
+
+.errUI:before {
+    -ms-transform-origin: inherit;
+    -ms-transform: rotate(0deg);
+    -o-transition: transform .4s ease, bottom .4s ease .3s, background-color .2s ease .6s;
+    -webkit-transform-origin: inherit;
+    -webkit-transform: rotate(0deg);
+    -webkit-transition: bottom .4s ease .3s, background-color .2s ease .6s, -webkit-transform .4s ease;
+    background-color: transparent;
+    bottom: -25px;
+    content: "";
+    height: 26px;
+    position: absolute;
+    right: 15px;
+    transform-origin: inherit;
+    transform: rotate(0deg);
+    transition: transform .4s ease, bottom .4s ease .3s, background-color .2s ease .6s;
+    width: 3px;
+}
+
+.errUI:after {
+    -ms-transform-origin: inherit;
+    -ms-transform: rotate(0deg);
+    -o-transition: transform .4s ease, visibility .4s ease, bottom .4s ease .3s, background-color .2s ease .6s, height .2s ease .6s;
+    -webkit-transform-origin: inherit;
+    -webkit-transform: rotate(0deg);
+    -webkit-transition: visibility .4s ease, bottom .4s ease .3s, background-color .2s ease .6s, height .2s ease .6s, -webkit-transform .4s ease;
+    background-color: transparent;
+    bottom: -25px;
+    content: "";
+    height: 26px;
+    position: absolute;
+    right: 15px;
+    transform-origin: inherit;
+    transform: rotate(0deg);
+    transition: transform .4s ease, visibility .4s ease, bottom .4s ease .3s, background-color .2s ease .6s, height .2s ease .6s;
+    visibility: hidden;
+    width: 3px;
+}
+
+
+/*Valid UI*/
+.valid:before {
+    -ms-transform-origin: inherit;
+    -ms-transform: rotate(40deg);
+    -o-transition: bottom .4s ease, transform .4s ease .3s;
+    -webkit-transform-origin: inherit;
+    -webkit-transform: rotate(40deg);
+    -webkit-transition: bottom .4s ease, -webkit-transform .4s ease .3s;
+    background-color: #4CAF50;
+    bottom: 10px;
+    right: 16px;
+    transform-origin: inherit;
+    transform: rotate(40deg);
+    transition: bottom .4s ease, transform .4s ease .3s;
+    visibility: visible;
+}
+
+.valid:after {
+    -ms-transform-origin: inherit;
+    -ms-transform: rotate(-45deg);
+    -o-transition: bottom .4s ease, visibility .4s ease .3s, transform .4s ease .3s;
+    -webkit-transform-origin: inherit;
+    -webkit-transform: rotate(-45deg);
+    -webkit-transition: bottom .4s ease, visibility .4s ease .3s, -webkit-transform .4s ease .3s;
+    background-color: #4CAF50;
+    bottom: 10px;
+    height: 15px;
+    transform-origin: inherit;
+    transform: rotate(-45deg);
+    transition: bottom .4s ease, visibility .4s ease .3s, transform .4s ease .3s;
+    visibility: visible;
+}
+
+
+/*Not valid UI*/
+.not-valid:before {
+    -ms-transform: rotate(40deg);
+    -o-transition: bottom .4s ease, transform .4s ease .3s;
+    -webkit-transform: rotate(40deg);
+    -webkit-transition: bottom .4s ease, -webkit-transform .4s ease .3s;
+    background-color: #ff5252;
+    bottom: 5px;
+    transform: rotate(40deg);
+    transition: bottom .4s ease, transform .4s ease .3s;
+    visibility: visible;
+}
+
+.not-valid:after {
+    -ms-transform: rotate(-45deg);
+    -o-transition: bottom .4s ease, transform .4s ease .3s;
+    -webkit-transform: rotate(-45deg);
+    -webkit-transition: bottom .4s ease, -webkit-transform .4s ease .3s;
+    background-color: #ff5252;
+    bottom: 5px;
+    height: 26px;
+    transform: rotate(-45deg);
+    transition: bottom .4s ease, transform .4s ease .3s;
+    visibility: visible;
+}
+
+
+/*Input validation UI*/
+.input-valid {
+    padding-right: 35px !important;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.input-not-valid {
+    box-shadow: inset  0 -6px 5px -5px #ff5252 !important;
+}

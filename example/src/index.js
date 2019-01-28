@@ -122,6 +122,7 @@ class App extends React.Component {
                    value={this.state.value}
                    label='Input Input Soda'
                    placeholder={'placeholder Soda'}
+                   error={false}
 
         />
         <br/><br/><br/>

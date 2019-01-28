@@ -15,11 +15,6 @@
     transition: all .4s ease-in-out;
 }
 
-.notValid {
-    border-bottom: 2px solid #b31217;
-    background: rgba(179, 23, 18, 0.2);
-}
-
 
 .i-sodaUI__input {
     -webkit-appearance: none;
@@ -43,9 +38,9 @@
     -webkit-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    -webkit-transition-property: border-bottom-left-radius, border-bottom-right-radius;
-    -o-transition-property: border-bottom-left-radius, border-bottom-right-radius;
-    transition-property: border-bottom-left-radius, border-bottom-right-radius;
+    -webkit-transition-property: box-shadow, border-bottom-left-radius, border-bottom-right-radius;
+    -o-transition-property: box-shadow, border-bottom-left-radius, border-bottom-right-radius;
+    transition-property: box-shadow, border-bottom-left-radius, border-bottom-right-radius;
 }
 
 .i-sodaUI__input:hover {
