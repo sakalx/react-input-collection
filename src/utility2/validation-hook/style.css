@@ -1,3 +1,9 @@
+:root {
+    --i-errUI-validColor: #4CAF50;
+    --i-errUI-notValidColor: #ff5252;
+}
+
+
 .errUI {
     bottom: 0;
     display: inline-block;
@@ -56,7 +62,7 @@
     -webkit-transform-origin: inherit;
     -webkit-transform: rotate(40deg);
     -webkit-transition: bottom .4s ease, -webkit-transform .4s ease .3s;
-    background-color: #4CAF50;
+    background-color: var(--i-errUI-validColor);
     bottom: 10px;
     right: 16px;
     transform-origin: inherit;
@@ -72,7 +78,7 @@
     -webkit-transform-origin: inherit;
     -webkit-transform: rotate(-45deg);
     -webkit-transition: bottom .4s ease, visibility .4s ease .3s, -webkit-transform .4s ease .3s;
-    background-color: #4CAF50;
+    background-color: var(--i-errUI-validColor);
     bottom: 10px;
     height: 15px;
     transform-origin: inherit;
@@ -88,7 +94,7 @@
     -o-transition: bottom .4s ease, transform .4s ease .3s;
     -webkit-transform: rotate(40deg);
     -webkit-transition: bottom .4s ease, -webkit-transform .4s ease .3s;
-    background-color: #ff5252;
+    background-color: var(--i-errUI-notValidColor);
     bottom: 5px;
     transform: rotate(40deg);
     transition: bottom .4s ease, transform .4s ease .3s;
@@ -100,7 +106,7 @@
     -o-transition: bottom .4s ease, transform .4s ease .3s;
     -webkit-transform: rotate(-45deg);
     -webkit-transition: bottom .4s ease, -webkit-transform .4s ease .3s;
-    background-color: #ff5252;
+    background-color: var(--i-errUI-notValidColor);;
     bottom: 5px;
     height: 26px;
     transform: rotate(-45deg);
@@ -117,5 +123,5 @@
 }
 
 .input-not-valid {
-    box-shadow: inset  0 -6px 5px -5px #ff5252 !important;
+    box-shadow: 0 2px 0 0 var(--i-errUI-notValidColor) !important;
 }

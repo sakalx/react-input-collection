@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import InputMaterial, {setColors} from '../../src/material';
+import InputMaterial from '../../src/material';
 
 import InputNao from '../../src/nao';
 import InputMadoka from '../../src/madoka';
@@ -10,7 +10,7 @@ import InputAkira from '../../src/akira';
 import InputYoko from '../../src/yoko';
 import InputKuro from '../../src/kuro';
 import InputMinoru from '../../src/minoru';
-import InputSoda, {setColors as sodaCoalr} from '../../src/soda';
+import InputSoda from '../../src/soda';
 
 
 class App extends React.Component {
@@ -27,11 +27,9 @@ class App extends React.Component {
 
   changeColor = () => {
     this.setState({
-      mainColor: 'gold',
       error: !this.state.error,
     });
 
-    setColors({mainColor: 'green'});
   };
 
   render() {
@@ -39,10 +37,15 @@ class App extends React.Component {
 
     return (
       <div style={{marginTop: '22px'}}>
+        <button onClick={this.changeColor}>change color</button>
+
         <InputMaterial
           onChange={this.onChange}
           value={this.state.value}
-          label='Name' focusColor={this.state.mainColor} placeholder={'test with placeholder'}
+          label='InputMaterial'
+          error={this.state.error}
+          placeholder={'test with placeholder'
+          }
         />
         <br/><br/><br/>
         <InputNao label='Input Nao'

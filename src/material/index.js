@@ -1,43 +1,48 @@
-import React from 'react';
+import React, {useRef, memo} from 'react';
 import PropTypes from 'prop-types';
 
-import './style.css';
-import {initCssVariables, replaceColors} from '../utility';
+import useValidation, {handleErrorUI} from '../utility2/validation-hook';
+import setUpTheme from '../utility2/theme';
 
-const cssIdVariable = 'i-mUI';
-const checkProp = initCssVariables(cssIdVariable);
+import './style.css';
+
+
+const cssId = 'i-mUI';
 
 function InputMUI({
-                    activeTextColor = null,
-                    focusColor = null,
-                    hoverColor = null,
-                    mainColor = null,
                     className = '',
                     style,
                     inputStyle,
                     labelStyle,
                     label = '',
+                    error = null,
                     ...rest
                   }) {
-  checkProp({activeTextColor, focusColor, hoverColor, mainColor});
+  const errElement = useRef(null);
+  useValidation(errElement, error);
+
+  const handleClick = () => {
+    handleErrorUI(errElement, null);
+  };
 
   return (
-    <fieldset className={`i-mUI ${className}`} style={style}>
-      <input className='i-mUI__input' style={inputStyle} {...rest}/>
-      <hr className='i-mUI__underline'/>
-      <label className='i-mUI__label' style={labelStyle}>{label}</label>
+    <fieldset
+      className={`${cssId} ${className}`}
+      style={style}
+      onClick={handleClick}
+    >
+      <input className= {`${cssId}__input`} style={inputStyle} {...rest}/>
+      <hr className={`${cssId}__underline`}/>
+      <label className={`${cssId}__label`} style={labelStyle}>{label}</label>
+      <span className='errUI' ref={errElement}/>
     </fieldset>
   )
 }
 
-export const setColors = replaceColors(cssIdVariable);
-export default InputMUI;
+export const theme = setUpTheme(cssId);
+export default memo(InputMUI);
 
 InputMUI.propTypes = {
-  activeTextColor: PropTypes.string,
-  focusColor: PropTypes.string,
-  hoverColor: PropTypes.string,
-  mainColor: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object,
   inputStyle: PropTypes.object,

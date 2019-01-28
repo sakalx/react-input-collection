@@ -23,7 +23,7 @@ function InputSodaUI({
 
 
   const handleRippleEffect = ({nativeEvent}) => {
-    // TODO: invoke this only when not clicked
+    // TODO: invoke this only when has not clicked before
     const middleOfRect = nativeEvent.target.offsetWidth / 2;
     const top = nativeEvent.offsetY - middleOfRect + 'px';
     const left = nativeEvent.offsetX - middleOfRect + 'px';

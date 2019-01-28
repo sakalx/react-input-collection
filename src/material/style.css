@@ -14,9 +14,11 @@
 
 
 .i-mUI__input {
+    -o-transition: box-shadow .3s;
     -webkit-appearance: none;
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
+    -webkit-transition: -webkit-box-shadow .3s;
     background: transparent;
     border-bottom: 1px solid var(--i-mUI-mainColor);
     border-left: none;
@@ -29,6 +31,8 @@
     cursor: text;
     outline: none;
     padding: .7em;
+    transition: -webkit-box-shadow .3s;
+    transition: box-shadow .3s;
     width: 100%;
 }
 
