@@ -136,7 +136,7 @@
     -o-transition-property: bottom, font-size;
     -webkit-transition: all .3s .3s;
     -webkit-transition-property: bottom, font-size;
-    bottom: 0;
+    bottom: 5px;
     display: block;
     position: absolute;
     transition: all .3s .3s;

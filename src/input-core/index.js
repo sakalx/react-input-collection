@@ -51,7 +51,13 @@ InputCore.propTypes = {
   className: PropTypes.string,
   cssId: PropTypes.string,
   inputStyle: PropTypes.object,
-  label: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    ),
+  ]),
   labelStyle: PropTypes.object,
   onChange: PropTypes.func.isRequired,
   onClick: PropTypes.func,

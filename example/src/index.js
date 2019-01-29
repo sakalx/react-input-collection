@@ -4,7 +4,7 @@ import InputMaterial from '../../src/components/material';
 
 import InputNao from '../../src/components/nao';
 import InputMadoka from '../../src/components/madoka';
-import InputJiro from '../../src/jiro';
+import InputJiro from '../../src/components/jiro';
 import InputIchiro from '../../src/ichiro';
 import InputAkira from '../../src/akira';
 import InputYoko from '../../src/yoko';
@@ -65,7 +65,7 @@ class App extends React.Component {
                    value={this.state.value}
                    label='Input Jiro'
                    placeholder={'test with placeholder'}
-
+                   error={!this.state.error}
         />
         <br/><br/><br/>
         <InputIchiro onChange={this.onChange}
