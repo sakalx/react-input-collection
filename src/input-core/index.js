@@ -12,26 +12,23 @@ function InputCore({
                      inputStyle,
                      label = '',
                      labelStyle,
-                     onClick = null,
+                     onFocus,
                      style,
                      ...rest
                    }) {
   const errElement = useRef(null);
   useValidation(errElement, error);
 
-  const handleClick = event => {
+  const handleFocus = event => {
     handleErrorUI(errElement, null);
-    onClick && onClick(event);
+    !!onFocus && onFocus(event)
   };
 
   return (
-    <fieldset
-      className={`${cssId} ${className}`}
-      style={style}
-      onClick={handleClick}
-    >
+    <fieldset className={`${cssId} ${className}`} style={style}>
       <input
         className={`${cssId}__input`}
+        onFocus={handleFocus}
         style={inputStyle}
         {...rest}
       />

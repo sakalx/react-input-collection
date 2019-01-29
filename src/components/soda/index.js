@@ -1,4 +1,4 @@
-import React, {useRef, memo} from 'react';
+import React, {memo} from 'react';
 
 import InputCore from '../../input-core'
 import setUpTheme, {setCssProp} from '../../theme';
@@ -7,20 +7,27 @@ import './style.css';
 
 const cssId = 'i-sodaUI';
 
-function InputSodaUI(props) {
+function InputSodaUI({onClick, ...rest}) {
 
-  const handleRippleEffect = ({nativeEvent}) => {
-    // TODO: invoke this only when has not clicked before
-    const middleOfRect = nativeEvent.target.offsetWidth / 2;
-    const top = nativeEvent.offsetY - middleOfRect + 'px';
-    const left = nativeEvent.offsetX - middleOfRect + 'px';
+  const handleRippleEffect = event => {
+    !!onClick && onClick(event);
+
+    const borderRadius = getComputedStyle(event.target).borderBottomLeftRadius;
+    const focused = parseInt(borderRadius) !== 0;
+
+    if (focused) return;
+    const {nativeEvent: {target, offsetY, offsetX}} = event;
+
+    const middleOfRect = target.offsetWidth / 2;
+    const top = offsetY - middleOfRect + 'px';
+    const left = offsetX - middleOfRect + 'px';
 
     setCssProp(`--${cssId}-ripple-top`, top);
     setCssProp(`--${cssId}-ripple-left`, left);
   };
 
   return (
-    <InputCore cssId={cssId} onClick={handleRippleEffect} {...props}>
+    <InputCore cssId={cssId} onClick={handleRippleEffect} {...rest}>
       <span className={`${cssId}__ripple`}/>
     </InputCore>
   )
