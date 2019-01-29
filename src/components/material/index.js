@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 
-import Wrap from '../../wraper'
+import InputCore from '../../input-core'
 import setUpTheme from '../../theme';
 import './style.css';
 
@@ -9,9 +9,9 @@ const cssId = 'i-mUI';
 
 function InputMUI(props) {
   return (
-    <Wrap cssId={cssId} {...props}>
+    <InputCore cssId={cssId} {...props}>
       <hr className={`${cssId}__underline`}/>
-    </Wrap>
+    </InputCore>
   )
 }
 

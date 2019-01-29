@@ -1,31 +1,15 @@
 import React, {memo} from 'react';
-import PropTypes from 'prop-types';
 
-import Wrap from '../../wraper'
+import InputCore from '../../input-core'
 import setUpTheme from '../../theme';
 import './style.css';
 
 
 const cssId = 'i-naoUI';
 
-function InputNaoUI({
-                      className,
-                      style,
-                      inputStyle,
-                      labelStyle,
-                      label = '',
-                      error,
-                      ...rest
-                    }) {
+function InputNaoUI(props) {
   return (
-    <Wrap
-      className={className}
-      cssId={cssId}
-      error={error}
-      style={style}
-    >
-      <input className={`${cssId}__input`} style={inputStyle} {...rest}/>
-      <label className={`${cssId}__label`} style={labelStyle}>{label}</label>
+    <InputCore cssId={cssId} {...props}>
       <svg
         className={`${cssId}__underline`}
         width='300%' height='100%'
@@ -35,32 +19,9 @@ function InputNaoUI({
         <path
           d='M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0'/>
       </svg>
-    </Wrap>
+    </InputCore>
   )
 }
 
 export const theme = setUpTheme(cssId);
 export default memo(InputNaoUI);
-
-InputNaoUI.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  inputStyle: PropTypes.object,
-  labelStyle: PropTypes.object,
-  label: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    ),
-  ]),
-  defaultValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    ),
-  ]),
-};

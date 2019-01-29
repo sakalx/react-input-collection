@@ -48,18 +48,18 @@ class App extends React.Component {
           }
         />
         <br/><br/><br/>
-        {/*<InputNao label='Input Nao'*/}
-                  {/*onChange={this.onChange}*/}
-                  {/*value={this.state.value}*/}
-                  {/*placeholder={'test with placeholder'}*/}
-                  {/*error={this.state.error}*/}
-        {/*/>*/}
+        <InputNao label='Input Nao'
+                  onChange={this.onChange}
+                  value={this.state.value}
+                  placeholder={'test with placeholder'}
+                  error={this.state.error}
+        />
         <br/><br/><br/>
-        {/*<InputMadoka onChange={this.onChange} value={this.state.value}*/}
-                     {/*label='Input Madoka'*/}
-                     {/*placeholder={'test with placeholder'}*/}
-                     {/*error={this.state.error}*/}
-        {/*/>*/}
+        <InputMadoka onChange={this.onChange} value={this.state.value}
+                     label='Input Madoka'
+                     placeholder={'test with placeholder'}
+                     error={this.state.error}
+        />
         <br/><br/><br/>
         <InputJiro onChange={this.onChange}
                    value={this.state.value}
