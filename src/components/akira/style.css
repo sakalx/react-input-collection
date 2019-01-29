@@ -61,7 +61,7 @@
     -webkit-transition: all .3s ease-in-out;
     -webkit-transition-property: bottom, left, font-size;
     -webkit-user-select: none;
-    bottom: 0;
+    bottom: 5px;
     color: var(--i-akiraUI-mainColor);
     left: 0;
     pointer-events: none;

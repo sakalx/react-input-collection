@@ -57,7 +57,7 @@
     -webkit-transition: all .3s;
     -webkit-transition-property: bottom, font-size, margin-left, font-weight;
     -webkit-user-select: none;
-    bottom: 0;
+    bottom: 5px;
     color: var(--i-kuroUI-mainColor);
     left: 0;
     pointer-events: none;

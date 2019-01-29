@@ -19,9 +19,9 @@ function InputCore({
   const errElement = useRef(null);
   useValidation(errElement, error);
 
-  const handleClick = () => {
+  const handleClick = event => {
     handleErrorUI(errElement, null);
-    onClick && onClick();
+    onClick && onClick(event);
   };
 
   return (

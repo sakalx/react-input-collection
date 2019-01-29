@@ -14,11 +14,11 @@
 
 
 .i-yokoUI__input {
-    -o-transition: color .6s linear;
+    -o-transition: color .6s linear, box-shadow .3s linear;
     -webkit-appearance: none;
     -webkit-box-shadow: none;
     -webkit-box-sizing: border-box;
-    -webkit-transition: color .6s linear;
+    -webkit-transition: color .6s linear, box-shadow .3s linear;
     background: transparent;
     border-bottom: 1px solid var(--i-yokoUI-mainColor);
     border-left: none;
@@ -32,7 +32,7 @@
     outline: none;
     padding: .7em;
     position: relative;
-    transition: color .6s linear;
+    transition: color .6s linear, box-shadow .3s linear;
     width: 100%;
     z-index: 1;
 }
@@ -61,7 +61,7 @@
     -webkit-transition: all .3s;
     -webkit-transition-property: bottom, font-size, color;
     -webkit-user-select: none;
-    bottom: 0;
+    bottom: 5px;
     color: var(--i-yokoUI-mainColor);
     left: 0;
     pointer-events: none;
@@ -82,7 +82,7 @@
 
 .i-yokoUI__input:focus ~ .i-yokoUI__label,
 .i-yokoUI__input:not([value=""]) ~ .i-yokoUI__label {
-    bottom: 100%;
+    bottom: 110%;
     font-size: small;
 }
 
@@ -108,13 +108,13 @@
 }
 
 .i-yokoUI__underline:before {
-    border-bottom: 1px solid var(--i-yokoUI-focusColor);
+    border-bottom: 2px solid var(--i-yokoUI-focusColor);
     border-left: none;
     border-right: none;
-    border-top: 1px solid var(--i-yokoUI-focusColor);
+    border-top: 2px solid var(--i-yokoUI-focusColor);
     height: 100%;
     left: 50%;
-    top: -1px;
+    top: -2px;
     width: 0;
 }
 

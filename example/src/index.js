@@ -5,12 +5,12 @@ import InputMaterial from '../../src/components/material';
 import InputNao from '../../src/components/nao';
 import InputMadoka from '../../src/components/madoka';
 import InputJiro from '../../src/components/jiro';
-import InputIchiro from '../../src/ichiro';
-import InputAkira from '../../src/akira';
-import InputYoko from '../../src/yoko';
-import InputKuro from '../../src/kuro';
-import InputMinoru from '../../src/minoru';
-import InputSoda from '../../src/soda';
+import InputIchiro from '../../src/components/ichiro';
+import InputAkira from '../../src/components/akira';
+import InputYoko from '../../src/components/yoko';
+import InputKuro from '../../src/components/kuro';
+import InputMinoru from '../../src/components/minoru';
+import InputSoda from '../../src/components/soda';
 
 
 class App extends React.Component {
@@ -72,15 +72,14 @@ class App extends React.Component {
                      value={this.state.value}
                      label='Input Ichiro'
                      placeholder={'placeholder'}
-                     hoverColor={this.state.mainColor}
-                     focusColor={'blue'}
+                     error={this.state.error}
         />
         <br/><br/><br/>
         <InputAkira onChange={this.onChange}
                     value={this.state.value}
                     label='Input Akira'
                     placeholder={'placeholder Akira'}
-                    focusColor={this.state.mainColor}
+                    error={this.state.error}
         />
         <br/><br/><br/>
 
@@ -88,6 +87,7 @@ class App extends React.Component {
                    value={this.state.value}
                    label='InputYoko'
                    placeholder={'placeholder Yoko'}
+                   error={!this.state.error}
         />
         <br/><br/><br/>
         <br/><br/><br/>
@@ -95,7 +95,7 @@ class App extends React.Component {
                    value={this.state.value}
                    label='Input Kuro'
                    placeholder={'placeholder Kuro'}
-                   focusColor={this.state.mainColor}
+                   error={!this.state.error}
         />
 
         <br/><br/><br/>
@@ -104,23 +104,28 @@ class App extends React.Component {
                      value={this.state.value}
                      label='Input Minoru'
                      placeholder={'placeholder Minoru'}
-                     focusColor={this.state.mainColor}
+                     error={this.state.error}
+
         />
         <br/><br/><br/>
         <br/><br/><br/>
 
 
-     {/*   <InputSoda
+        <InputSoda
           onChange={this.onChange}
           value={this.state.value}
           error={this.state.error}
-
           label='Input Input Soda'
           placeholder={'placeholder Soda'}
-
-        />*/}
+        />
         <br/><br/><br/>
-
+        <InputSoda
+          onChange={this.onChange}
+          value={this.state.value}
+          error={!this.state.error}
+          label='Input Input Soda'
+          placeholder={'placeholder Soda'}
+        />
         <br/><br/><br/>
         <button onClick={this.changeColor}>change color</button>
       </div>

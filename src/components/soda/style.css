@@ -69,7 +69,7 @@
     -webkit-transition: all .3s ease-in-out;
     -webkit-transition-property: bottom, font-size;
     -webkit-user-select: none;
-    bottom: 0;
+    bottom: 5px;
     color: var(--i-sodaUI-mainColor);
     left: 0;
     pointer-events: none;

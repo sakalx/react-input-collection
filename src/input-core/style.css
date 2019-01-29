@@ -117,9 +117,13 @@
 
 /*Input validation UI*/
 .input-valid {
-    padding-right: 35px !important;
     -o-text-overflow: ellipsis;
+    -o-transition: box-shadow .3s linear;
+    -webkit-transition: -webkit-box-shadow .3s linear;
+    padding-right: 35px !important;
     text-overflow: ellipsis;
+    transition: -webkit-box-shadow .3s linear;
+    transition: box-shadow .3s linear;
 }
 
 .input-not-valid {
