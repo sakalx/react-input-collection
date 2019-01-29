@@ -49,7 +49,7 @@
     -o-transition-property: bottom, color, font-size;
     -webkit-transition: all .3s ease;
     -webkit-transition-property: bottom, color, font-size;
-    bottom: 0;
+    bottom: 5px;
     color: var(--i-madokaUI-mainColor);
     left: 0;
     pointer-events: none;

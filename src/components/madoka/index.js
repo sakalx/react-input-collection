@@ -1,50 +1,47 @@
-import React from 'react';
+import React, {memo} from 'react';
 import PropTypes from 'prop-types';
 
+import Wrap from '../../wraper'
+import setUpTheme from '../../theme';
 import './style.css';
-import {initCssVariables, replaceColors} from '../utility';
 
-const cssIdVariable = 'i-madokaUI';
-const checkProp = initCssVariables(cssIdVariable);
+
+const cssId = 'i-madokaUI';
 
 function InputMadokaUI({
-                         activeTextColor = null,
-                         focusColor = null,
-                         hoverColor = null,
-                         mainColor = null,
-                         className = '',
+                         className,
                          style,
                          inputStyle,
                          labelStyle,
                          label = '',
-                         ...rest
+                         error,
+                         rest
                        }) {
-  checkProp({activeTextColor, focusColor, hoverColor, mainColor});
-
   return (
-    <fieldset className={`i-madokaUI ${className}`} style={style}>
-      <input className='i-madokaUI__input' style={inputStyle} {...rest}/>
-      <label className='i-madokaUI__label' style={labelStyle}>{label}</label>
+    <Wrap
+      className={className}
+      cssId={cssId}
+      error={error}
+      style={style}
+    >
+      <input className={`${cssId}__input`} style={inputStyle} {...rest}/>
+      <label className={`${cssId}__label`} style={labelStyle}>{label}</label>
       <svg
-        className='i-madokaUI__underline'
+        className={`${cssId}__underline`}
         preserveAspectRatio='none'
         viewBox='0 0 400 45'
         width='100%' height='100%'
       >
         <rect height='100%' width='100%'/>
       </svg>
-    </fieldset>
+    </Wrap>
   )
 }
 
-export const setColors = replaceColors(cssIdVariable);
-export default InputMadokaUI;
+export const theme = setUpTheme(cssId);
+export default memo(InputMadokaUI);
 
 InputMadokaUI.propTypes = {
-  activeTextColor: PropTypes.string,
-  focusColor: PropTypes.string,
-  hoverColor: PropTypes.string,
-  mainColor: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object,
   inputStyle: PropTypes.object,

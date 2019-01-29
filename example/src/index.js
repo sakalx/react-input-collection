@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import InputMaterial from '../../src/components/material';
 
 import InputNao from '../../src/components/nao';
-import InputMadoka from '../../src/madoka';
+import InputMadoka from '../../src/components/madoka';
 import InputJiro from '../../src/jiro';
 import InputIchiro from '../../src/ichiro';
 import InputAkira from '../../src/akira';
@@ -43,24 +43,23 @@ class App extends React.Component {
           onChange={this.onChange}
           value={this.state.value}
           label='InputMaterial'
-          error={this.state.error}
+          error={!this.state.error}
           placeholder={'test with placeholder'
           }
         />
         <br/><br/><br/>
-        <InputNao label='Input Nao'
-                  onChange={this.onChange}
-                  value={this.state.value}
-                  placeholder={'test with placeholder'}
-                  error={this.state.error}
-        />
+        {/*<InputNao label='Input Nao'*/}
+                  {/*onChange={this.onChange}*/}
+                  {/*value={this.state.value}*/}
+                  {/*placeholder={'test with placeholder'}*/}
+                  {/*error={this.state.error}*/}
+        {/*/>*/}
         <br/><br/><br/>
-        <InputMadoka onChange={this.onChange} value={this.state.value}
-                     label='Input Madoka'
-                     placeholder={'test with placeholder'}
-                     focusColor={this.state.mainColor}
-                     hoverColor='green'
-        />
+        {/*<InputMadoka onChange={this.onChange} value={this.state.value}*/}
+                     {/*label='Input Madoka'*/}
+                     {/*placeholder={'test with placeholder'}*/}
+                     {/*error={this.state.error}*/}
+        {/*/>*/}
         <br/><br/><br/>
         <InputJiro onChange={this.onChange}
                    value={this.state.value}
@@ -111,7 +110,7 @@ class App extends React.Component {
         <br/><br/><br/>
 
 
-        <InputSoda
+     {/*   <InputSoda
           onChange={this.onChange}
           value={this.state.value}
           error={this.state.error}
@@ -119,15 +118,9 @@ class App extends React.Component {
           label='Input Input Soda'
           placeholder={'placeholder Soda'}
 
-        />
+        />*/}
         <br/><br/><br/>
-        <InputSoda onChange={this.onChange}
-                   value={this.state.value}
-                   label='Input Input Soda'
-                   placeholder={'placeholder Soda'}
-                   error={false}
 
-        />
         <br/><br/><br/>
         <button onClick={this.changeColor}>change color</button>
       </div>

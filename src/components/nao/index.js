@@ -24,7 +24,6 @@ function InputNaoUI({
       error={error}
       style={style}
     >
-
       <input className={`${cssId}__input`} style={inputStyle} {...rest}/>
       <label className={`${cssId}__label`} style={labelStyle}>{label}</label>
       <svg
