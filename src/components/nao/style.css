@@ -82,7 +82,7 @@
     pointer-events: none;
     position: absolute;
     stroke: var(--i-naoUI-mainColor);
-    top: 0;
+    top: 2px;
     transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
     transition: transform 0.7s, satroke 0.7s;
 }

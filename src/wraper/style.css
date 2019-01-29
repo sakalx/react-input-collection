@@ -123,5 +123,5 @@
 }
 
 .input-not-valid {
-    box-shadow: 0 2px 0 0 var(--i-errUI-notValidColor) !important;
+    box-shadow: inset 0 -2px 0 0 var(--i-errUI-notValidColor) !important;
 }

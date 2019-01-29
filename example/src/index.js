@@ -1,8 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
-import InputMaterial from '../../src/material';
+import InputMaterial from '../../src/components/material';
 
-import InputNao from '../../src/nao';
+import InputNao from '../../src/components/nao';
 import InputMadoka from '../../src/madoka';
 import InputJiro from '../../src/jiro';
 import InputIchiro from '../../src/ichiro';
@@ -52,7 +52,7 @@ class App extends React.Component {
                   onChange={this.onChange}
                   value={this.state.value}
                   placeholder={'test with placeholder'}
-                  focusColor={this.state.mainColor}
+                  error={this.state.error}
         />
         <br/><br/><br/>
         <InputMadoka onChange={this.onChange} value={this.state.value}

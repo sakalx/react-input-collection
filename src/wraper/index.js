@@ -2,6 +2,7 @@ import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 
 import useValidation, {handleErrorUI} from '../hooks/validation';
+import './style.css';
 
 function Wrap({
                 children,

@@ -1,6 +1,4 @@
 import {useState} from 'react';
-import './style.css';
-
 
 function useValidation(element, err) {
   const [currErr, setCurrErr] = useState(null);

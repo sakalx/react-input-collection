@@ -1,8 +1,8 @@
 import React, {useRef, memo} from 'react';
 import PropTypes from 'prop-types';
 
-import useValidation, {handleErrorUI} from '../utility2/validation-hook';
-import setUpTheme, {setCssProp} from '../utility2/theme';
+import useValidation, {handleErrorUI} from '../hooks/validation';
+import setUpTheme, {setCssProp} from '../theme';
 
 import './style.css';
 
