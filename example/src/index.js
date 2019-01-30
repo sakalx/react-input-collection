@@ -120,6 +120,7 @@ class App extends React.Component {
         />
         <br/><br/><br/>
         <InputSoda
+          disabled={this.state.error}
           onChange={this.onChange}
           value={this.state.value}
           error={false}

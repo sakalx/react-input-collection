@@ -1,13 +1,14 @@
 import React, {useRef, useLayoutEffect} from 'react';
 import PropTypes from 'prop-types';
 
-import handleErrorUI from '../utility/handle-error-ui';
+import {handleDisabledUI, handleErrorUI} from '../utility';
 import './style.css';
 
 function InputCore({
                      children,
                      className = '',
                      cssId = '',
+                     disabled=false,
                      error = null,
                      inputStyle,
                      label = '',
@@ -18,10 +19,8 @@ function InputCore({
                    }) {
   const errElement = useRef(null);
 
-  useLayoutEffect(() => {
-    handleErrorUI(errElement, error);
-  },[error]);
-
+  useLayoutEffect(() => handleDisabledUI(errElement, disabled),[disabled]);
+  useLayoutEffect(() => handleErrorUI(errElement, error),[error]);
 
   const handleFocus = event => {
     handleErrorUI(errElement, null);
@@ -32,6 +31,7 @@ function InputCore({
     <fieldset className={`${cssId} ${className}`} style={style}>
       <input
         className={`${cssId}__input`}
+        disabled={disabled}
         onFocus={handleFocus}
         style={inputStyle}
         {...rest}
