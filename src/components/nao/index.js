@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-naoUI';
 
-function InputNaoUI(props) {
+function InputNao(props) {
   return (
     <InputCore cssId={cssId} {...props}>
       <svg
@@ -24,4 +24,4 @@ function InputNaoUI(props) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputNaoUI);
+export default memo(InputNao);

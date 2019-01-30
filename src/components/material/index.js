@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-mUI';
 
-function InputMUI(props) {
+function InputMaterial(props) {
   return (
     <InputCore cssId={cssId} {...props}>
       <hr className={`${cssId}__underline`}/>
@@ -16,4 +16,4 @@ function InputMUI(props) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputMUI);
+export default memo(InputMaterial);

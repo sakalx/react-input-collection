@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-yokoUI';
 
-function InputYokoUI(props) {
+function InputYoko(props) {
   return (
     <InputCore cssId={cssId} {...props}>
       <span className={`${cssId}__underline`}/>
@@ -16,4 +16,4 @@ function InputYokoUI(props) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputYokoUI);
+export default memo(InputYoko);

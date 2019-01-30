@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-sodaUI';
 
-function InputSodaUI({onClick, ...rest}) {
+function InputSoda({onClick, ...rest}) {
 
   const handleRippleEffect = event => {
     !!onClick && onClick(event);
@@ -34,4 +34,4 @@ function InputSodaUI({onClick, ...rest}) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputSodaUI);
+export default memo(InputSoda);

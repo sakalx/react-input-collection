@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-madokaUI';
 
-function InputMadokaUI(props) {
+function InputMadoka(props) {
   return (
     <InputCore cssId={cssId} {...props}>
       <svg
@@ -23,4 +23,4 @@ function InputMadokaUI(props) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputMadokaUI);
+export default memo(InputMadoka);

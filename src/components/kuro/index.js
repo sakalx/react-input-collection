@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-kuroUI';
 
-function InputKuroUI({label, ...rest}) {
+function InputKuro({label, ...rest}) {
   return (
     <InputCore cssId={cssId} label={label} {...rest}>
       <legend className={`${cssId}__legend`}>{label}</legend>
@@ -17,4 +17,4 @@ function InputKuroUI({label, ...rest}) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputKuroUI);
+export default memo(InputKuro);

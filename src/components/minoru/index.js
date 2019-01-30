@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-minoruUI';
 
-function InputMinoruUI({label, ...rest}) {
+function InputMinoru({label, ...rest}) {
   const labelTitle = (() =>
     <span className={`${cssId}__label--title`}>{label}</span>)();
 
@@ -19,4 +19,4 @@ function InputMinoruUI({label, ...rest}) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputMinoruUI);
+export default memo(InputMinoru);

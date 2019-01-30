@@ -7,11 +7,11 @@ import './style.css';
 
 const cssId = 'i-akiraUI';
 
-function InputAkiraUI(props) {
+function InputAkira(props) {
   return (
     <InputCore cssId={cssId} {...props}/>
   )
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputAkiraUI);
+export default memo(InputAkira);

@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-jiroUI';
 
-function InputJiroUI({label, ...rest}) {
+function InputJiro({label, ...rest}) {
   const labelTitle = (() =>
     <span className={`${cssId}__label--title`}>{label}</span>)();
 
@@ -17,4 +17,4 @@ function InputJiroUI({label, ...rest}) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputJiroUI);
+export default memo(InputJiro);

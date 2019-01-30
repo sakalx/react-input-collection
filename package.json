@@ -39,18 +39,23 @@
   },
   "keywords": [
     "animations",
-    "collection",
-    "components",
+    "component",
     "efect",
     "form",
     "front-end",
     "input",
+    "input-field",
     "interface",
     "react",
+    "text-field",
     "ui"
   ],
-  "author": "sakal",
+  "author": "Sakal Serhii",
   "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
   "peerDependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0"

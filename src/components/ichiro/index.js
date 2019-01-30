@@ -7,7 +7,7 @@ import './style.css';
 
 const cssId = 'i-ichiroUI';
 
-function InputIchiroUI(props) {
+function InputIchiro(props) {
   return (
     <InputCore cssId={cssId} {...props}>
       <hr className={`${cssId}__underline`}/>
@@ -16,4 +16,4 @@ function InputIchiroUI(props) {
 }
 
 export const theme = setUpTheme(cssId);
-export default memo(InputIchiroUI);
+export default memo(InputIchiro);
