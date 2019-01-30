@@ -1,35 +1,23 @@
-import {useState} from 'react';
-
-function useValidation(element, err) {
-  const [currErr, setCurrErr] = useState(null);
-
-  if (err !== currErr) {
-    setCurrErr(err);
-    setTimeout(handleErrorUI, 66, element, err);
-  }
-}
-
-
-export function handleErrorUI({current}, err) {
+function handleErrorUI({current}, err) {
   const inputClassList = Array.prototype.find.call(current.parentElement.children,
     node => node.nodeName === 'INPUT').classList;
 
   switch (err) {
     case null:
-      inputClassList.remove('input-valid', 'input-not-valid');
+      inputClassList.remove('input-validation', 'input-validation--not_valid');
       current.classList.remove('valid', 'not-valid');
       break;
 
     case true:
-      inputClassList.add('input-not-valid', 'input-valid');
+      inputClassList.add('input-validation--not_valid', 'input-validation');
       current.classList.add('not-valid');
       current.classList.remove('valid');
       current.style.transformOrigin = 'center';
       break;
 
     case false:
-      inputClassList.add('input-valid');
-      inputClassList.remove('input-not-valid');
+      inputClassList.add('input-validation');
+      inputClassList.remove('input-validation--not_valid');
 
       current.classList.add('valid');
       current.classList.remove('not-valid');
@@ -41,4 +29,4 @@ export function handleErrorUI({current}, err) {
   }
 }
 
-export default useValidation;
+export default handleErrorUI

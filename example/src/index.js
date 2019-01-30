@@ -122,7 +122,7 @@ class App extends React.Component {
         <InputSoda
           onChange={this.onChange}
           value={this.state.value}
-          error={!this.state.error}
+          error={false}
           label='Input Input Soda'
           placeholder={'placeholder Soda'}
         />

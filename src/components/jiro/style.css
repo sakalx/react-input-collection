@@ -78,10 +78,10 @@
 
 .i-jiroUI__label::before {
     -o-transition-delay: .3s;
-    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, -2px, 0);
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, -1px, 0);
     -webkit-transition-delay: .3s;
-    border-top: 2px solid var(--i-jiroUI-mainColor);
-    transform: translate3d(0, 100%, 0) translate3d(0, -2px, 0);
+    border-top: 1px solid var(--i-jiroUI-mainColor);
+    transform: translate3d(0, 100%, 0) translate3d(0, -1px, 0);
     transition-delay: .3s;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .i-jiroUI__input:hover ~ .i-jiroUI__label::before {
-    border-top: 2px solid var(--i-jiroUI-hoverColor);
+    border-top-color: var(--i-jiroUI-hoverColor);
 }
 
 .i-jiroUI__input:focus + .i-jiroUI__label::before {

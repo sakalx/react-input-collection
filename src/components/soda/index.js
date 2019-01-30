@@ -13,9 +13,9 @@ function InputSodaUI({onClick, ...rest}) {
     !!onClick && onClick(event);
 
     const borderRadius = getComputedStyle(event.target).borderBottomLeftRadius;
-    const focused = parseInt(borderRadius) !== 0;
+    const hasRipple = parseInt(borderRadius) !== 0;
 
-    if (focused) return;
+    if (hasRipple) return;
     const {nativeEvent: {target, offsetY, offsetX}} = event;
 
     const middleOfRect = target.offsetWidth / 2;

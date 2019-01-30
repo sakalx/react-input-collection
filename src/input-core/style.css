@@ -116,7 +116,7 @@
 
 
 /*Input validation UI*/
-.input-valid {
+.input-validation {
     -o-text-overflow: ellipsis;
     -o-transition: box-shadow .3s linear;
     -webkit-transition: -webkit-box-shadow .3s linear;
@@ -126,6 +126,6 @@
     transition: box-shadow .3s linear;
 }
 
-.input-not-valid {
+.input-validation--not_valid {
     box-shadow: inset 0 -2px 0 0 var(--i-errUI-notValidColor) !important;
 }

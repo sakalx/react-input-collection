@@ -1,7 +1,7 @@
-import React, {useRef} from 'react';
+import React, {useRef, useLayoutEffect} from 'react';
 import PropTypes from 'prop-types';
 
-import useValidation, {handleErrorUI} from '../hooks/validation';
+import handleErrorUI from '../utility/handle-error-ui';
 import './style.css';
 
 function InputCore({
@@ -17,7 +17,11 @@ function InputCore({
                      ...rest
                    }) {
   const errElement = useRef(null);
-  useValidation(errElement, error);
+
+  useLayoutEffect(() => {
+    handleErrorUI(errElement, error);
+  },[error]);
+
 
   const handleFocus = event => {
     handleErrorUI(errElement, null);
