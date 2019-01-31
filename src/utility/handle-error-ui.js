@@ -1,7 +1,7 @@
 function handleErrorUI({current}, err) {
   const inputClassList = Array.prototype.find.call(current.parentElement.children,
     node => node.nodeName === 'INPUT').classList;
-
+  console.log(err);
   switch (err) {
     case null:
       inputClassList.remove('input-validation', 'input-validation--not_valid');
