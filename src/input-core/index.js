@@ -13,7 +13,6 @@ function InputCore({
                      inputStyle,
                      label = '',
                      labelStyle,
-                     onFocus,
                      style,
                      ...rest
                    }) {
@@ -22,17 +21,11 @@ function InputCore({
   useLayoutEffect(() => handleDisabledUI(errElement, disabled),[disabled]);
   useLayoutEffect(() => handleErrorUI(errElement, error),[error]);
 
-  const handleFocus = event => {
-    //handleErrorUI(errElement, null);
-    !!onFocus && onFocus(event);
-  };
-  console.log(error);
   return (
     <fieldset className={`${cssId} ${className}`} style={style}>
       <input
         className={`${cssId}__input`}
         disabled={disabled}
-        onFocus={handleFocus}
         style={inputStyle}
         {...rest}
       />

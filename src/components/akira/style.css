@@ -1,6 +1,6 @@
 :root {
     --i-akiraUI-activeTextColor: #101010;
-    --i-akiraUI-focusColor: #FFFCFF;
+    --i-akiraUI-focusColor: #2196f3;
     --i-akiraUI-hoverColor: #252525;
     --i-akiraUI-mainColor: #727272;
 }
@@ -41,9 +41,9 @@
 }
 
 .i-akiraUI__input:focus {
-    -webkit-box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-mainColor), inset 0 0 0 .2em var(--i-akiraUI-mainColor);
-    border-bottom: 1px solid var(--i-akiraUI-mainColor);
-    box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-mainColor), inset 0 0 0 .2em var(--i-akiraUI-mainColor);
+    -webkit-box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-focusColor), inset 0 0 0 .2em var(--i-akiraUI-focusColor);
+    border-bottom: 1px solid var(--i-akiraUI-focusColor);
+    box-shadow: 0 -1.5em 0 0 var(--i-akiraUI-focusColor), inset 0 0 0 .2em var(--i-akiraUI-focusColor);
     color: var(--i-akiraUI-activeTextColor);
 }
 
@@ -76,7 +76,7 @@
 }
 
 .i-akiraUI__input:focus ~ .i-akiraUI__label {
-    color: var(--i-akiraUI-focusColor);
+    color: var(--i-akiraUI-activeTextColor);
 }
 
 .i-akiraUI__input:focus ~ .i-akiraUI__label,

@@ -12,82 +12,84 @@ import InputNao, {theme as naoTheme} from '../../src/components/nao';
 import InputSoda, {theme as sodaTheme} from '../../src/components/soda';
 import InputYoko, {theme as yokoTheme} from '../../src/components/yoko';
 
+import {camelCaseToString, isColorValid} from './utility';
+
 const initStateValues = {
-  activeTextColor: '',
-  focusColor: '',
-  hoverColor: '',
-  mainColor: '',
+  activeTextColor: new Map([
+    ['value', ''],
+    ['error', null],
+  ]),
+  focusColor: new Map([
+    ['value', ''],
+    ['error', null],
+  ]),
+  hoverColor: new Map([
+    ['value', ''],
+    ['error', null],
+  ]),
+  mainColor: new Map([
+    ['value', ''],
+    ['error', null],
+  ]),
 };
-
-const initStateErrors = {
-  activeTextColor: new Set(),
-  focusColor: new Set(),
-  hoverColor: new Set(),
-  mainColor: new Set(),
-};
-
-const isColorValid = value =>
-  /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(value);
 
 function App() {
-  const [akiraState, setInputAkira] = useState(initStateValues);
-  const [ichiroState, setInputIchiro] = useState(initStateValues);
-  const [jiroState, setInputJiro] = useState(initStateValues);
-  const [kuroState, setInputKuro] = useState(initStateValues);
-  const [madokaState, setInputMadoka] = useState(initStateValues);
-  const [materialState, setInputMaterial] = useState(initStateValues);
-  const [minoruState, setInputMinoru] = useState(initStateValues);
-  const [naoState, setInputNao] = useState(initStateValues);
-  const [sodaState, setInputSoda] = useState(initStateValues);
-  const [yokoState, setInputYoko] = useState(initStateValues);
-  const [errorState, setError] = useState(initStateErrors);
+  const [akiraState, setAkiraState] = useState(initStateValues);
+  const [ichiroState, setIchiroState] = useState(initStateValues);
+  const [jiroState, setJiroState] = useState(initStateValues);
+  const [kuroState, setKuroState] = useState(initStateValues);
+  const [madokaState, setMadokaState] = useState(initStateValues);
+  const [materialState, setMaterialState] = useState(initStateValues);
+  const [minoruState, setMinoruState] = useState(initStateValues);
+  const [naoState, setNaoState] = useState(initStateValues);
+  const [sodaState, setSodaState] = useState(initStateValues);
+  const [yokoState, setYokoState] = useState(initStateValues);
 
-  const handleChangeValue = prop => event => {
+  const handleChangeValue = (prop, setState) => event => {
     event.persist();
-    setInputAkira(prevState => ({
-        ...prevState,
-        [prop]: event.target.value
-      })
-    );
+    setState(prevState => {
+      prevState[prop].set('value', event.target.value);
+      return prevState;
+    });
   };
 
+  const handleFocus = (prop, setState) => () => {
+    setState(prevState => {
+      prevState[prop].set('error', null);
+      return prevState;
+    });
+  };
 
-  const handleChangeTheme = componentName => () => {
-    Object.entries(akiraState).forEach(([prop, value]) => {
+  const handleChangeTheme = (state, setState) => () => {
+    Object.entries(state).forEach(([prop, mapObj]) => {
+      const value = mapObj.get('value');
+      const isValid = isColorValid(value);
 
-      setError(prevErrState => {
-        if (isColorValid(value)) {
-          akiraTheme({[prop]: value});
-          prevErrState[prop].delete(componentName);
-          return prevErrState;
-        } else {
-          prevErrState[prop].add(componentName);
-          return prevErrState;
-        }
+      isValid && akiraTheme({[prop]: value});
+      setState(prevState => {
+        prevState[prop].set('error', !isValid);
+        return prevState;
       });
     });
-   // console.log(errorState);
   };
 
   return (
     <main>
       <fieldset>
         <legend>Change theme :</legend>
-        <InputAkira
-          value={akiraState.activeTextColor}
-          onChange={handleChangeValue('activeTextColor')}
-          label='Active text color'
-          placeholder='#fff'
-          error={errorState.activeTextColor.has('akira')}
-        />
-        <br/>
-      {/*  <InputAkira
-          value={akiraState.focusColor}
-          onChange={handleChangeValue('focusColor')}
-          label='Focus color'
-          placeholder='#555'
-        />*/}
-        <button onClick={handleChangeTheme('akira')}>CHANGE</button>
+        {
+          Object.keys(akiraState).map((prop, index) =>
+            <InputAkira
+              key={String(index)}
+              label={camelCaseToString(prop)}
+              placeholder='#fff'
+              error={akiraState[prop].get('error')}
+              onChange={handleChangeValue(prop, setAkiraState)}
+              onFocus={handleFocus(prop, setAkiraState)}
+              value={akiraState[prop].get('value')}
+            />)
+        }
+        <button onClick={handleChangeTheme(akiraState, setAkiraState)}>CHANGE</button>
       </fieldset>
     </main>
   )
