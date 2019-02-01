@@ -76,7 +76,7 @@
 }
 
 .i-akiraUI__input:focus ~ .i-akiraUI__label {
-    color: var(--i-akiraUI-activeTextColor);
+    color: whitesmoke; /* FIXME */
 }
 
 .i-akiraUI__input:focus ~ .i-akiraUI__label,

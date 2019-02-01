@@ -14,6 +14,8 @@ import InputYoko, {theme as yokoTheme} from '../../src/components/yoko';
 
 import {camelCaseToString, isColorValid} from './utility';
 
+import './style.css';
+
 const initStateValues = {
   activeTextColor: new Map([
     ['value', ''],
@@ -75,22 +77,27 @@ function App() {
 
   return (
     <main>
-      <fieldset>
-        <legend>Change theme :</legend>
-        {
-          Object.keys(akiraState).map((prop, index) =>
-            <InputAkira
-              key={String(index)}
-              label={camelCaseToString(prop)}
-              placeholder='#fff'
-              error={akiraState[prop].get('error')}
-              onChange={handleChangeValue(prop, setAkiraState)}
-              onFocus={handleFocus(prop, setAkiraState)}
-              value={akiraState[prop].get('value')}
-            />)
-        }
-        <button onClick={handleChangeTheme(akiraState, setAkiraState)}>CHANGE</button>
-      </fieldset>
+      <section style={{background: '#8ee5ee'}}>
+        <h1>AKIRA INPUT UI</h1>
+        <div className={'wrap'}>
+        {Object.keys(akiraState).map((prop, index) =>
+          <InputAkira
+            key={String(index)}
+            label={camelCaseToString(prop)}
+            placeholder='#hex color'
+            error={akiraState[prop].get('error')}
+            onChange={handleChangeValue(prop, setAkiraState)}
+            onFocus={handleFocus(prop, setAkiraState)}
+            value={akiraState[prop].get('value')}
+            className={'input-field'}
+          />
+
+        )}
+        </div>
+        <button onClick={handleChangeTheme(akiraState, setAkiraState)}>
+          CHANGE THEME
+        </button>
+      </section>
     </main>
   )
 }

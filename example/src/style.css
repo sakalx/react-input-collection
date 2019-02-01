@@ -1,0 +1,46 @@
+h1 {
+    color: rgba(0,0,0, .6);
+    text-align: center;
+}
+
+h1:hover::first-letter {
+    color: rgba(255,255,255, .9);
+}
+
+h1::first-letter {
+    color: rgba(0,0,0, .7);
+    font-size: 250%;
+}
+
+section {
+    padding: 5%;
+}
+
+button {
+    background: rgba(0,0,0, .3);
+    border-radius: 8px;
+    color: rgba(255,255,255, .9);
+    cursor: pointer;
+    font-size: 24px;
+    margin: 15px;
+    outline: none;
+    padding: 5px;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    width: 280px;
+    transition: background .3s;
+}
+
+button:hover {
+    background: rgba(0,0,0, .4);
+}
+
+.input-field {
+    margin: 25px;
+    width: 300px;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
