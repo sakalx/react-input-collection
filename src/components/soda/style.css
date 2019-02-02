@@ -1,10 +1,10 @@
 :root {
-    --i-sodaUI-focusColor: #2196f3;
     --i-sodaUI-activeTextColor: #000;
+    --i-sodaUI-focusColor: #2196f3;
     --i-sodaUI-hoverColor: #252525;
     --i-sodaUI-mainColor: #727272;
-    --i-sodaUI-ripple-top: 0;
     --i-sodaUI-ripple-left: 0;
+    --i-sodaUI-ripple-top: 0;
 }
 
 
