@@ -3,13 +3,13 @@ h1 {
     text-align: center;
 }
 
-h1:hover::first-letter {
-    color: rgba(255,255,255, .9);
-}
-
 h1::first-letter {
     color: rgba(0,0,0, .7);
     font-size: 250%;
+}
+
+h1:hover::first-letter {
+    color: rgba(255,255,255, .9);
 }
 
 section {
@@ -36,11 +36,11 @@ button:hover {
 
 .input-field {
     margin: 25px;
-    width: 300px;
+    width: 280px;
 }
 
 .wrap {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }

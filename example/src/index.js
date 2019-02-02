@@ -16,23 +16,12 @@ import {camelCaseToString, isColorValid} from './utility';
 
 import './style.css';
 
+// ['value', error]
 const initStateValues = {
-  activeTextColor: new Map([
-    ['value', ''],
-    ['error', null],
-  ]),
-  focusColor: new Map([
-    ['value', ''],
-    ['error', null],
-  ]),
-  hoverColor: new Map([
-    ['value', ''],
-    ['error', null],
-  ]),
-  mainColor: new Map([
-    ['value', ''],
-    ['error', null],
-  ]),
+  activeTextColor: ['', null],
+  focusColor: ['', null],
+  hoverColor: ['', null],
+  mainColor: ['', null],
 };
 
 function App() {
@@ -49,52 +38,76 @@ function App() {
 
   const handleChangeValue = (prop, setState) => event => {
     event.persist();
-    setState(prevState => {
-      prevState[prop].set('value', event.target.value);
-      return prevState;
-    });
+
+    setState(prevState => ({
+      ...prevState,
+      [prop]: [event.target.value, prevState[prop][1]],
+    }));
   };
+
 
   const handleFocus = (prop, setState) => () => {
-    setState(prevState => {
-      prevState[prop].set('error', null);
-      return prevState;
-    });
+    setState(prevState => ({
+      ...prevState,
+      [prop]: [prevState[prop][0], null],
+    }));
   };
 
-  const handleChangeTheme = (state, setState) => () => {
-    Object.entries(state).forEach(([prop, mapObj]) => {
-      const value = mapObj.get('value');
+  const handleChangeTheme = (state, setState, setTheme) => () => {
+    Object.entries(state).forEach(([prop, [value]]) => {
       const isValid = isColorValid(value);
 
-      isValid && akiraTheme({[prop]: value});
-      setState(prevState => {
-        prevState[prop].set('error', !isValid);
-        return prevState;
-      });
+      isValid && setTheme({[prop]: value});
+
+      setState(prevState => ({
+        ...prevState,
+        [prop]: [value, !isValid],
+      }));
     });
   };
 
   return (
     <main>
+      {/* AKIRA */}
       <section style={{background: '#8ee5ee'}}>
         <h1>AKIRA INPUT UI</h1>
         <div className={'wrap'}>
-        {Object.keys(akiraState).map((prop, index) =>
-          <InputAkira
-            key={String(index)}
-            label={camelCaseToString(prop)}
-            placeholder='#hex color'
-            error={akiraState[prop].get('error')}
-            onChange={handleChangeValue(prop, setAkiraState)}
-            onFocus={handleFocus(prop, setAkiraState)}
-            value={akiraState[prop].get('value')}
-            className={'input-field'}
-          />
-
-        )}
+          {Object.keys(akiraState).map((prop, index) =>
+            <InputAkira
+              key={String(index)}
+              label={camelCaseToString(prop)}
+              placeholder='#hex color'
+              error={akiraState[prop][1]}
+              onChange={handleChangeValue(prop, setAkiraState)}
+              onFocus={handleFocus(prop, setAkiraState)}
+              value={akiraState[prop][0]}
+              className={'input-field'}
+            />
+          )}
         </div>
-        <button onClick={handleChangeTheme(akiraState, setAkiraState)}>
+        <button onClick={handleChangeTheme(akiraState, setAkiraState, akiraTheme)}>
+          CHANGE THEME
+        </button>
+      </section>
+
+      {/* ICHIRO */}
+      <section style={{background: '#8ee5ee'}}>
+        <h1>ICHIRO INPUT UI</h1>
+        <div className={'wrap'}>
+          {Object.keys(ichiroState).map((prop, index) =>
+            <InputIchiro
+              key={String(index)}
+              label={camelCaseToString(prop)}
+              placeholder='#hex color'
+              error={ichiroState[prop][1]}
+              onChange={handleChangeValue(prop, setIchiroState)}
+              onFocus={handleFocus(prop, setIchiroState)}
+              value={ichiroState[prop][0]}
+              className={'input-field'}
+            />
+          )}
+        </div>
+        <button onClick={handleChangeTheme(ichiroState, setIchiroState, ichiroTheme)}>
           CHANGE THEME
         </button>
       </section>
