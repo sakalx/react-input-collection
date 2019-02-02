@@ -6,10 +6,5 @@ export const camelCaseToString = string =>
         : word[0].toLowerCase() + word.slice(1)
     ).join(' ');
 
-export const stringToCamelCase = string =>
-  string.replace(/(?:^\w|[A-Z]|\b\w)/g,
-    (letter, index) =>
-      index === 0
-        ? letter.toLowerCase()
-        : letter.toUpperCase()
-  ).replace(/\s+/g, '');
+export const swapName = string =>
+  string.replace(/(\w{5})(\w+)/, '$2 $1');
