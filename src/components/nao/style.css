@@ -46,16 +46,16 @@
 /*Label*/
 .i-naoUI__label {
     -o-transition: all 300ms ease;
-    -o-transition-property: bottom, color, font-size;
+    -o-transition-property: bottom, font-size;
     -webkit-transition: all 300ms ease;
-    -webkit-transition-property: bottom, color, font-size;
+    -webkit-transition-property: bottom, font-size;
     bottom: 5px;
     color: var(--i-naoUI-mainColor);
     left: 0;
     pointer-events: none;
     position: absolute;
     transition: all 300ms ease;
-    transition-property: bottom, color, font-size;
+    transition-property: bottom, font-size;
 }
 
 .i-naoUI__input:hover ~ .i-naoUI__label {

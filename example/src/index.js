@@ -18,16 +18,16 @@ import ExampleSection from './ExampleSection';
 function App() {
   return (
     <main>
-      <ExampleSection Input={InputAkira} theme={akiraTheme}/>
-      <ExampleSection Input={InputIchiro} theme={ichiroTheme}/>
-      <ExampleSection Input={InputJiro} theme={jiroTheme}/>
-      <ExampleSection Input={InputKuro} theme={kuroTheme}/>
-      <ExampleSection Input={InputMadoka} theme={madokaTheme}/>
-      <ExampleSection Input={InputMaterial} theme={materialTheme}/>
-      <ExampleSection Input={InputMinoru} theme={minoruTheme}/>
-      <ExampleSection Input={InputNao} theme={naoTheme}/>
-      <ExampleSection Input={InputSoda} theme={sodaTheme}/>
-      <ExampleSection Input={InputYoko} theme={yokoTheme}/>
+      <ExampleSection background={'#afbbd5'} Input={InputAkira} theme={akiraTheme}/>
+      <ExampleSection background={'#ffddd4'} Input={InputIchiro} theme={ichiroTheme}/>
+      <ExampleSection background={'#cbe8e1'} Input={InputJiro} theme={jiroTheme}/>
+      <ExampleSection background={'#ffe6d1'} Input={InputKuro} theme={kuroTheme}/>
+      <ExampleSection background={'#e8cbd2'} Input={InputMadoka} theme={madokaTheme}/>
+      <ExampleSection background={'#e2ceb4'} Input={InputMaterial} theme={materialTheme}/>
+      <ExampleSection background={'#fbf9f9'} Input={InputMinoru} theme={minoruTheme}/>
+      <ExampleSection background={'#97c3c3'} Input={InputNao} theme={naoTheme}/>
+      <ExampleSection background={'#e8d7ea'} Input={InputSoda} theme={sodaTheme}/>
+      <ExampleSection background={'#ffb5a1'} Input={InputYoko} theme={yokoTheme}/>
     </main>
   )
 }

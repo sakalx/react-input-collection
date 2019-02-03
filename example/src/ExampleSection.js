@@ -49,7 +49,7 @@ function ExampleSection({
   };
 
   return (
-    <section style={background}>
+    <section style={{background}}>
       <h1>{swapName(Input.type.name).toUpperCase()} UI</h1>
       <div className={'wrap'}>
         {Object.keys(initStateValues).map((field, index) =>

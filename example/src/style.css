@@ -9,7 +9,7 @@ h1::first-letter {
 }
 
 h1:hover::first-letter {
-    color: rgba(255,255,255, .9);
+    color: rgba(88,0,0, .9);
 }
 
 section {

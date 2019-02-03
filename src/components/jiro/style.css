@@ -71,7 +71,7 @@
     height: 100%;
     left: 0;
     position: absolute;
-    top: 0;
+    top: -1px;
     transition: transform .3s, -webkit-transform .3s;
     width: 100%;
 }
