@@ -55,7 +55,7 @@ button:hover {
 }
 
 .wallpaper {
-    background-image: url("https://github.com/sakalx/react-input-collection/blob/master/static/wallpaper.png?raw=true");
+    background-image: url('https://github.com/sakalx/react-input-collection/blob/master/example/src/static/wallpaper.png?raw=true');
     height: 100%;
     left: 0;
     position: absolute;

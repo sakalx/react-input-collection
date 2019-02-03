@@ -28,7 +28,7 @@
     "start": "webpack-dev-server --mode development",
     "transpile": "babel src -d collection --copy-files",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d example/collection",
+    "deploy": "gh-pages -d example/dist",
     "publish-demo": "npm run build && npm run deploy",
     "prepublishOnly": "npm run transpile",
     "publish": "npm publish"
