@@ -1,0 +1,199 @@
+:root {
+    --i-kuroUI-activeTextColor: #101010;
+    --i-kuroUI-focusColor: #2196f3;
+    --i-kuroUI-hoverColor: #252525;
+    --i-kuroUI-mainColor: #727272;
+}
+
+
+.i-kuroUI {
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: 2px solid var(--i-kuroUI-focusColor);
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+
+.i-kuroUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -webkit-box-sizing: border-box;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--i-kuroUI-mainColor);
+    cursor: text;
+    outline: none;
+    padding: .7em;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.i-kuroUI__input:hover {
+    color: var(--i-kuroUI-hoverColor);
+}
+
+.i-kuroUI__input:focus {
+    color: var(--i-kuroUI-activeTextColor);
+}
+
+
+/*Label & Legend*/
+.i-kuroUI__label {
+    -khtml-user-select: none;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-transition: all .3s;
+    -o-transition-property: bottom, font-size, margin-left, font-weight;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-transition: all .3s;
+    -webkit-transition-property: bottom, font-size, margin-left, font-weight;
+    -webkit-user-select: none;
+    bottom: 5px;
+    color: var(--i-kuroUI-mainColor);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all .3s;
+    transition-property: bottom, font-size, margin-left, font-weight;
+    user-select: none;
+}
+
+.i-kuroUI__input:hover ~ .i-kuroUI__label {
+    color: var(--i-kuroUI-hoverColor);
+}
+
+.i-kuroUI__input:focus ~ .i-kuroUI__label {
+    color: var(--i-kuroUI-focusColor);
+}
+
+.i-kuroUI__input:focus ~ .i-kuroUI__label,
+.i-kuroUI__input:not([value=""]) ~ .i-kuroUI__label {
+    bottom: 70%;
+    font-size: small;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+.i-kuroUI__legend {
+    font-size: small;
+    font-weight: bold;
+    min-width: 100%;
+    padding: 0 .3em;
+    transition: all .3s;
+    transition-property: min-width, margin-left;
+    visibility: hidden;
+}
+
+.i-kuroUI__input:focus ~ .i-kuroUI__legend {
+    margin-left: .7em;
+    min-width: 1%;
+}
+
+
+/*Underline*/
+.i-kuroUI__underline {
+    background: transparent;
+    border-bottom: 1px solid var(--i-kuroUI-mainColor);
+    border-left: 2px solid var(--i-kuroUI-focusColor);
+    border-right: 2px solid var(--i-kuroUI-focusColor);
+    border-top: none;
+    bottom: 0;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    font-size: 1px;
+    height: 1px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    transition: all .3s;
+    transition-property: height, border-bottom;
+    width: 100%;
+    z-index: 0;
+}
+
+.i-kuroUI__input:hover ~ .i-kuroUI__underline {
+    border-bottom-color: var(--i-kuroUI-hoverColor);
+}
+
+.i-kuroUI__input:focus ~ .i-kuroUI__underline {
+    border-bottom: 2px solid var(--i-kuroUI-focusColor);
+    height: 90%;
+}
+
+
+/*Placeholder*/
+.i-kuroUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s;
+}
+
+.i-kuroUI__input:-ms-input-placeholder {
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s;
+}
+
+.i-kuroUI__input::-ms-input-placeholder {
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s;
+}
+
+.i-kuroUI__input::placeholder {
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s;
+}
+
+.i-kuroUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s;
+}
+
+.i-kuroUI__input::-ms-input-placeholder {
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s;
+}
+
+.i-kuroUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-kuroUI__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-kuroUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+
+.i-kuroUI__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-kuroUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-kuroUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-kuroUI__input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}

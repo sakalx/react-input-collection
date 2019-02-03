@@ -1,0 +1,192 @@
+:root {
+    --i-minoruUI-activeTextColor: #101010;
+    --i-minoruUI-focusColor: #2196f3;
+    --i-minoruUI-hoverColor: #252525;
+    --i-minoruUI-mainColor: #727272;
+}
+
+
+.i-minoruUI {
+    border: none;
+    padding: 0;
+    position: relative;
+}
+
+
+.i-minoruUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -webkit-box-sizing: border-box;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--i-minoruUI-mainColor);
+    cursor: text;
+    outline: none;
+    padding: .7em;
+    width: 100%;
+}
+
+.i-minoruUI__input:hover {
+    color: var(--i-minoruUI-hoverColor);
+}
+
+.i-minoruUI__input:focus {
+    color: var(--i-minoruUI-activeTextColor);
+}
+
+/*Label */
+.i-minoruUI__label {
+    -o-transition: all .3s ease;
+    -o-transition-property: bottom, height, border-bottom-color;
+    -webkit-transition: all .3s ease;
+    -webkit-transition-property: bottom, height, border-bottom-color;
+    border-bottom: 1px solid var(--i-minoruUI-mainColor);
+    bottom: 0;
+    color: var(--i-minoruUI-mainColor);
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all .3s ease;
+    transition-property: bottom, height, border-bottom-color;
+    width: 100%;
+}
+
+.i-minoruUI__input:hover ~ .i-minoruUI__label {
+    border-bottom-color: var(--i-minoruUI-hoverColor);;
+    color: var(--i-minoruUI-hoverColor);
+}
+
+.i-minoruUI__input:focus ~ .i-minoruUI__label {
+    border-bottom-color: rgba(0, 0, 0, .0);
+    border-bottom-width: 0;
+    bottom: 100%;
+    color: var(--i-minoruUI-focusColor);
+    height: 0;
+}
+
+/*Label title*/
+.i-minoruUI__label--title {
+    -o-transition: all .3s ease;
+    -o-transition-property: bottom, font-size;
+    -webkit-transition: all .3s ease;
+    -webkit-transition-property: bottom, font-size;
+    bottom: 0;
+    margin-bottom: 5px;
+    position: absolute;
+    transition: all .3s ease;
+    transition-property: bottom, font-size;
+}
+
+.i-minoruUI__input:focus ~ .i-minoruUI__label .i-minoruUI__label--title,
+.i-minoruUI__input:not([value=""]) ~ .i-minoruUI__label .i-minoruUI__label--title {
+    bottom: 100%;
+    font-size: small;
+}
+
+
+/*Underline*/
+.i-minoruUI__underline {
+    -ms-transform: scaleY(0);
+    -o-transition: all .3s ease-out;
+    -o-transition-property: transform, box-shadow;
+    -webkit-box-shadow: none;
+    -webkit-transform: scaleY(0);
+    -webkit-transition: all .3s ease-out;
+    -webkit-transition-property: -webkit-transform, -webkit-box-shadow;
+    border-radius: 4px;
+    border: none;
+    bottom: 0;
+    box-shadow: none;
+    content: '';
+    display: block;
+    font-size: 1px;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    transform: scaleY(0);
+    transition: all .3s ease-out;
+    transition-property: transform, box-shadow, -webkit-transform, -webkit-box-shadow;
+    width: 100%;
+    z-index: 9;
+}
+
+
+.i-minoruUI__input:focus ~ .i-minoruUI__underline {
+    -ms-transform: scaleY(1);
+    -webkit-box-shadow: inset 0 0 15px 0 var(--i-minoruUI-mainColor), 0 2px 10px var(--i-minoruUI-focusColor);
+    -webkit-transform: scaleY(1);
+    box-shadow: inset 0 0 15px 0 var(--i-minoruUI-mainColor), 0 2px 10px var(--i-minoruUI-focusColor);
+    transform: scaleY(1);
+}
+
+
+/*Placeholder*/
+.i-minoruUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-minoruUI__input:-ms-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-minoruUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-minoruUI__input::placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-minoruUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-minoruUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-minoruUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-minoruUI__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-minoruUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-minoruUI__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-minoruUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-minoruUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-minoruUI__input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}

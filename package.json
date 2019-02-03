@@ -1,8 +1,8 @@
 {
-  "name": "react-input-collection",
-  "version": "1.0.0",
-  "description": "Collection of input fields for React",
-  "main": "dist/index.js",
+  "name": "react-input-ui",
+  "version": "1.0.1",
+  "description": "Collection of input fields for ReactJs",
+  "main": "collection/",
   "babel": {
     "presets": [
       [
@@ -26,9 +26,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "transpile": "babel src -d dist --copy-files",
+    "transpile": "babel src -d collection --copy-files",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d example/dist",
+    "deploy": "gh-pages -d example/collection",
     "publish-demo": "npm run build && npm run deploy",
     "prepublishOnly": "npm run transpile",
     "publish": "npm publish"

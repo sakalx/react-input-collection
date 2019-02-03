@@ -1,0 +1,168 @@
+:root {
+    --i-madokaUI-activeTextColor: #101010;
+    --i-madokaUI-focusColor: #2196f3;
+    --i-madokaUI-hoverColor: #252525;
+    --i-madokaUI-mainColor: #727272;
+}
+
+
+.i-madokaUI {
+    border: none;
+    padding: 0;
+    position: relative;
+}
+
+
+.i-madokaUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -webkit-box-sizing: border-box;
+    background: transparent;
+    border-bottom: 1px solid var(--i-madokaUI-mainColor);
+    border-left: none;
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--i-madokaUI-mainColor);
+    cursor: text;
+    outline: none;
+    padding: .7em;
+    width: 100%;
+}
+
+.i-madokaUI__input:hover {
+    border-bottom-color: var(--i-madokaUI-hoverColor);
+    color: var(--i-madokaUI-hoverColor);
+}
+
+.i-madokaUI__input:focus {
+    border: none;
+    color: var(--i-madokaUI-activeTextColor);
+}
+
+
+/*Label*/
+.i-madokaUI__label {
+    -o-transition: all .3s ease;
+    -o-transition-property: bottom, color, font-size;
+    -webkit-transition: all .3s ease;
+    -webkit-transition-property: bottom, color, font-size;
+    bottom: 5px;
+    color: var(--i-madokaUI-mainColor);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all .3s ease;
+    transition-property: bottom, color, font-size;
+}
+
+.i-madokaUI__input:hover ~ .i-madokaUI__label {
+    color: var(--i-madokaUI-hoverColor);
+}
+
+.i-madokaUI__input:focus ~ .i-madokaUI__label {
+    color: var(--i-madokaUI-focusColor);
+}
+
+.i-madokaUI__input:focus ~ .i-madokaUI__label,
+.i-madokaUI__input:not([value=""]) ~ .i-madokaUI__label {
+    bottom: 100%;
+    font-size: small;
+}
+
+
+/*Underline*/
+.i-madokaUI__underline {
+    -webkit-transform: scale3d(1, -1, 1);
+    -webkit-transition: stroke-dashoffset .5s;
+    fill: none;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    stroke-dasharray: 962;
+    stroke-dashoffset: 962;
+    stroke-width: 3px;
+    stroke: var(--i-madokaUI-mainColor);
+    top: 0;
+    transform: scale3d(1, -1, 1);
+    -o-transition: stroke-dashoffset .5s;
+    transition: stroke-dashoffset .5s;
+}
+
+.i-madokaUI__input:hover ~ .i-madokaUI__underline {
+    stroke: var(--i-madokaUI-hoverColor);
+}
+
+.i-madokaUI__input:focus ~ .i-madokaUI__underline {
+    stroke-dashoffset: 0;
+    stroke: var(--i-madokaUI-focusColor);
+}
+
+
+/*Placeholder*/
+.i-madokaUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-madokaUI__input:-ms-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-madokaUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-madokaUI__input::placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-madokaUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+.i-madokaUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+
+.i-madokaUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-madokaUI__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-madokaUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-madokaUI__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-madokaUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-madokaUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-madokaUI__input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}

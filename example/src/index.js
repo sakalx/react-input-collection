@@ -1,16 +1,16 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import InputAkira, {theme as akiraTheme} from '../../src/components/akira';
-import InputIchiro, {theme as ichiroTheme} from '../../src/components/ichiro';
-import InputJiro, {theme as jiroTheme} from '../../src/components/jiro';
-import InputKuro, {theme as kuroTheme} from '../../src/components/kuro';
-import InputMadoka, {theme as madokaTheme} from '../../src/components/madoka';
-import InputMaterial, {theme as materialTheme} from '../../src/components/material';
-import InputMinoru, {theme as minoruTheme} from '../../src/components/minoru';
-import InputNao, {theme as naoTheme} from '../../src/components/nao';
-import InputSoda, {theme as sodaTheme} from '../../src/components/soda';
-import InputYoko, {theme as yokoTheme} from '../../src/components/yoko';
+import InputAkira, {theme as akiraTheme} from '../../collection/akira';
+import InputIchiro, {theme as ichiroTheme} from '../../collection/ichiro';
+import InputJiro, {theme as jiroTheme} from '../../collection/jiro';
+import InputKuro, {theme as kuroTheme} from '../../collection/kuro';
+import InputMadoka, {theme as madokaTheme} from '../../collection/madoka';
+import InputMaterial, {theme as materialTheme} from '../../collection/material';
+import InputMinoru, {theme as minoruTheme} from '../../collection/minoru';
+import InputNao, {theme as naoTheme} from '../../collection/nao';
+import InputSoda, {theme as sodaTheme} from '../../collection/soda';
+import InputYoko, {theme as yokoTheme} from '../../collection/yoko';
 
 import ExampleSection from './ExampleSection';
 

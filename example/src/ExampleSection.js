@@ -4,7 +4,7 @@ import {camelCaseToString, isColorValid} from './utility';
 import './style.css';
 
 // ['value', error]
-const initStateValues = {
+const initState = {
   activeTextColor: ['', null],
   focusColor: ['', null],
   hoverColor: ['', null],
@@ -17,7 +17,7 @@ function ExampleSection({
                           theme,
                           title,
                         }) {
-  const [sectionState, setSectionState] = useState(initStateValues);
+  const [sectionState, setSectionState] = useState(initState);
 
 
   const handleChangeValue = field => event => {
@@ -53,7 +53,7 @@ function ExampleSection({
     <section>
       <h1>{title} INPUT UI</h1>
       <div className={'wrap'}>
-        {Object.keys(initStateValues).map((field, index) =>
+        {Object.keys(initState).map((field, index) =>
           <Input
             key={String(index)}
             className={'input-field'}

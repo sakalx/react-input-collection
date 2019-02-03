@@ -1,0 +1,217 @@
+:root {
+    --i-sodaUI-activeTextColor: #000;
+    --i-sodaUI-focusColor: #2196f3;
+    --i-sodaUI-hoverColor: #252525;
+    --i-sodaUI-mainColor: #727272;
+    --i-sodaUI-ripple-left: 0;
+    --i-sodaUI-ripple-top: 0;
+}
+
+
+.i-sodaUI {
+    border: none;
+    padding: 0;
+    position: relative;
+    transition: all .4s ease-in-out;
+}
+
+
+.i-sodaUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -webkit-box-sizing: border-box;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--i-sodaUI-mainColor);
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--i-sodaUI-mainColor);
+    cursor: text;
+    outline: none;
+    padding: .7em;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    -webkit-transition-property: box-shadow, border-bottom-left-radius, border-bottom-right-radius;
+    -o-transition-property: box-shadow, border-bottom-left-radius, border-bottom-right-radius;
+    transition-property: box-shadow, border-bottom-left-radius, border-bottom-right-radius;
+}
+
+.i-sodaUI__input:hover {
+    border-bottom-color: var(--i-sodaUI-hoverColor);
+    color: var(--i-sodaUI-hoverColor);
+}
+
+.i-sodaUI__input:focus {
+    border-bottom-color: var(--i-sodaUI-focusColor);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: var(--i-sodaUI-activeTextColor);
+}
+
+
+/*Label*/
+.i-sodaUI__label {
+    -khtml-user-select: none;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-transition: all .3s ease-in-out;
+    -o-transition-property: bottom, font-size;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-transition: all .3s ease-in-out;
+    -webkit-transition-property: bottom, font-size;
+    -webkit-user-select: none;
+    bottom: 5px;
+    color: var(--i-sodaUI-mainColor);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    transition-property: bottom, font-size;
+    user-select: none;
+    width: 100%;
+    z-index: 1;
+}
+
+.i-sodaUI__input:hover ~ .i-sodaUI__label {
+    color: var(--i-sodaUI-hoverColor);
+}
+
+.i-sodaUI__input:focus ~ .i-sodaUI__label {
+    color: var(--i-sodaUI-focusColor);
+}
+
+.i-sodaUI__input:focus ~ .i-sodaUI__label,
+.i-sodaUI__input:not([value=""]) ~ .i-sodaUI__label {
+    bottom: 100%;
+    font-size: small;
+}
+
+
+/*Ripple effect*/
+.i-sodaUI__ripple {
+    border-radius: 4px;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.i-sodaUI__ripple:before,
+.i-sodaUI__ripple:after {
+    content: '';
+    left: var(--i-sodaUI-ripple-left);
+    pointer-events: none;
+    position: absolute;
+    -webkit-transition: -webkit-transform .3s .1s;
+    -o-transition: transform .3s .1s;
+    transition: transform .3s .1s, -webkit-transform .3s .1s;
+    width: 100%;
+}
+
+.i-sodaUI__ripple:before {
+    background: var(--i-sodaUI-focusColor);
+    border-radius: 100%;
+    opacity: .2;
+    padding-top: 100%;
+    top: var(--i-sodaUI-ripple-top);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.i-sodaUI__ripple:after {
+    border-bottom: 2px solid var(--i-sodaUI-focusColor);
+    bottom: 0;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+}
+
+.i-sodaUI__input:focus ~ .i-sodaUI__ripple:before {
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+}
+
+.i-sodaUI__input:focus ~ .i-sodaUI__ripple:after {
+    -webkit-transform: scaleX(2);
+    -ms-transform: scaleX(2);
+    transform: scaleX(2);
+}
+
+
+/*Placeholder*/
+.i-sodaUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-sodaUI__input:-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-sodaUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-sodaUI__input::placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-sodaUI__input::-webkit-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-sodaUI__input::-ms-input-placeholder {
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.i-sodaUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-sodaUI__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-sodaUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-sodaUI__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-sodaUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-sodaUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-sodaUI__input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}

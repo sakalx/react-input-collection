@@ -1,0 +1,161 @@
+:root {
+    --i-naoUI-activeTextColor: #101010;
+    --i-naoUI-focusColor: #2196f3;
+    --i-naoUI-hoverColor: #252525;
+    --i-naoUI-mainColor: #727272;
+}
+
+
+.i-naoUI {
+    border: none;
+    overflow: hidden;
+    padding: 1em 0 0 0;
+    position: relative;
+}
+
+
+.i-naoUI__input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -webkit-box-sizing: border-box;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--i-naoUI-mainColor);
+    cursor: text;
+    outline: none;
+    padding: .8em;
+    width: 100%;
+}
+
+.i-naoUI__input:hover {
+    color: var(--i-naoUI-hoverColor);
+}
+
+.i-naoUI__input:hover ~ .i-naoUI__underline {
+    stroke: var(--i-naoUI-hoverColor);
+}
+
+.i-naoUI__input:focus {
+    color: var(--i-naoUI-activeTextColor);
+}
+
+
+/*Label*/
+.i-naoUI__label {
+    -o-transition: all 300ms ease;
+    -o-transition-property: bottom, font-size;
+    -webkit-transition: all 300ms ease;
+    -webkit-transition-property: bottom, font-size;
+    bottom: 5px;
+    color: var(--i-naoUI-mainColor);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: all 300ms ease;
+    transition-property: bottom, font-size;
+}
+
+.i-naoUI__input:hover ~ .i-naoUI__label {
+    color: var(--i-naoUI-hoverColor);
+}
+
+.i-naoUI__input:focus ~ .i-naoUI__label {
+    color: var(--i-naoUI-focusColor);
+}
+
+.i-naoUI__input:focus ~ .i-naoUI__label,
+.i-naoUI__input:not([value=""]) ~ .i-naoUI__label {
+    bottom: 65%;
+    font-size: small;
+}
+
+
+/*Underline*/
+.i-naoUI__underline {
+    -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+    -webkit-transition: -webkit-transform 0.7s, stroke 0.7s;
+    fill: none;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    stroke: var(--i-naoUI-mainColor);
+    top: 2px;
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+    transition: transform 0.7s, satroke 0.7s;
+}
+
+.i-naoUI__input:focus ~ .i-naoUI__underline {
+    -webkit-transform: translate3d(-66.6%, 0, 0);
+    stroke: var(--i-naoUI-focusColor);
+    transform: translate3d(-66.6%, 0, 0);
+}
+
+
+/*Placeholder*/
+.i-naoUI__input::-webkit-input-placeholder {
+    -webkit-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.i-naoUI__input:-ms-input-placeholder {
+    -webkit-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.i-naoUI__input::-ms-input-placeholder {
+    -webkit-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.i-naoUI__input::placeholder {
+    -webkit-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.i-naoUI__input::-webkit-input-placeholder {
+    -webkit-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.i-naoUI__input::-ms-input-placeholder {
+    -webkit-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.i-naoUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-naoUI__input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-naoUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+
+.i-naoUI__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.i-naoUI__input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.i-naoUI__input:not(:focus)::-ms-input-placeholder {
+    color: transparent;
+}
+
+.i-naoUI__input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}
