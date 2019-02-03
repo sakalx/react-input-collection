@@ -47,9 +47,9 @@ function ExampleSection({
       }));
     });
   };
-
+//style={{background}}
   return (
-    <section style={{background}}>
+    <section>
       <h1>{swapName(Input.type.name).toUpperCase()} UI</h1>
       <div className={'wrap'}>
         {Object.keys(initStateValues).map((field, index) =>
@@ -68,6 +68,7 @@ function ExampleSection({
       <button onClick={handleChangeTheme(theme)}>
         CHANGE THEME
       </button>
+      <div className={'background'} style={{background}}/>
     </section>
   )
 }

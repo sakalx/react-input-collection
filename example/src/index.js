@@ -28,6 +28,7 @@ function App() {
       <ExampleSection background={'#97c3c3'} Input={InputNao} theme={naoTheme}/>
       <ExampleSection background={'#e8d7ea'} Input={InputSoda} theme={sodaTheme}/>
       <ExampleSection background={'#ffb5a1'} Input={InputYoko} theme={yokoTheme}/>
+      <div className={'wallpaper'}/>
     </main>
   )
 }

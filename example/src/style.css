@@ -12,8 +12,13 @@ h1:hover::first-letter {
     color: rgba(88,0,0, .9);
 }
 
+main {
+    position: relative;
+}
+
 section {
     padding: 5%;
+    position: relative;
 }
 
 button {
@@ -34,13 +39,32 @@ button:hover {
     background: rgba(0,0,0, .4);
 }
 
-.input-field {
-    margin: 25px;
-    width: 280px;
-}
-
 .wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.background {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+}
+
+.wallpaper {
+    background-image: url("https://github.com/sakalx/react-input-collection/blob/master/static/wallpaper.png?raw=true");
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.input-field {
+    margin: 25px;
+    width: 280px;
 }
