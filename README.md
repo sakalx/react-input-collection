@@ -21,7 +21,7 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
  ####  Example
  ```javascript
   import React, {useState} from 'react';
-  import {InputAkira} from 'react-input-ui';
+  import InputAkira from 'react-input-ui/collection/akira';
   
   function App() {
     const [value, setValue] = useState('');
@@ -40,31 +40,33 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
   ####  Example with custom style
    ```javascript
     import React, {useState} from 'react';
-    import {InputAkira} from 'react-input-ui';
-
-     function App() {
-       const [value, setValue] = useState('');
+    import InputAkira from 'react-input-ui/collection/akira';
     
-       return (
-         <InputAkira
-           label={'Akira UI'}
-           placeholder='type...'
-           onChanhe={setValue}
-           value={value}
-           style={{margin: '25px'}}
-           className={'custom-class'}
-         />
-       )
-     }
+    function App() {
+      const [value, setValue] = useState('');
+    
+      return (
+        <InputAkira
+          label={'Akira UI'}
+          placeholder='type...'
+          onChanhe={setValue}
+          value={value}
+          style={{margin: '25px'}}
+          className={'custom-class'}
+        />
+      )
+    }
    ```
    
   ####  Example for validation field
-  > If field not valid set property error to **true**
-  > If field valid set property error to **false**
-  > If don't need validation set property error to **null**
-  ```javascript
+  > If field not valid set property **error** to `true`
+  
+  > If field valid set property **error** to `false`
+  
+  > If don't need validation set property **error** to `null`
+   ```javascript
     import React, {useState} from 'react';
-    import {InputAkira} from 'react-input-ui';
+    import InputAkira from 'react-input-ui/collection/akira';
     
     function App() {
       const [value, setValue] = useState('');
@@ -96,27 +98,46 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
         </div>
       )
     }
-  ```
-  
-  import InputAkira, {theme as akiraTheme} from '../../src/components/akira';
-
-   ####  Example for change theme
+   ```
+ 
+   ####  Example for custom theme
+   > Theme has 4 property:
+   
+   | Theme property: |
+   | --- |
+   | `activeTextColor` |
+   | `focusColor` |
+   | `hoverColor` |
+   | `mainColor` |
+   
+   To change them use `theme` method
+   
    ```javascript
     import React, {useState} from 'react';
-    import {InputAkira} from 'react-input-ui';
+    import InputAkira, {theme} from 'react-input-ui/collection/akira';
 
-     function App() {
-       const [value, setValue] = useState('');
-    
-       return (
-         <InputAkira
-           label={'Akira UI'}
-           placeholder='type...'
-           onChanhe={setValue}
-           value={value}
-           style={{margin: '25px'}}
-           className={'custom-class'}
-         />
-       )
-     }
+    function App() {
+      const [value, setValue] = useState('');
+     
+      const handleSetTheme = () => {
+        theme({
+          activeTextColor: '#101010',
+          focusColor: '#2196f3',
+          hoverColor: '#252525',
+          mainColor: '#727272',
+        })
+      };
+      
+      return (
+        <div>
+          <InputAkira
+            label={'Akira UI'}
+            placeholder='type...'
+            onChanhe={setValue}
+            value={value}
+          />
+        <button onClick={handleSetTheme}>CHANGE THEME</button>
+        </div>
+      )
+    }
    ```
