@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {camelCaseToString, isColorValid, swapName} from './utility';
+import {camelCaseToString, isColorValid} from './utility';
 import './style.css';
 
 // ['value', error]
@@ -15,6 +15,7 @@ function ExampleSection({
                           background,
                           Input,
                           theme,
+                          title,
                         }) {
   const [sectionState, setSectionState] = useState(initStateValues);
 
@@ -47,10 +48,10 @@ function ExampleSection({
       }));
     });
   };
-//style={{background}}
+  // Input.type.name not work after deploy
   return (
     <section>
-      <h1>{swapName(Input.type.name).toUpperCase()} UI</h1>
+      <h1>{title} INPUT UI</h1>
       <div className={'wrap'}>
         {Object.keys(initStateValues).map((field, index) =>
           <Input
