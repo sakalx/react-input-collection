@@ -1,7 +1,7 @@
 #  React Input UI Collection
  ____________________________________________________
 [DEMO](https://sakalx.github.io/react-input-collection/)
->Note: **React version 16.8.0**
+Note: **React version 16.8.0**
 ____________________________________________________
 Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-text-input-effects-2/)
 >Form inputs offer a great opportunity to add some subtle and interesting effects to a web page. They are elements that your user will interact with at some point and making them fun to use can enhance the experience. We are used to the default form resembling its paper counterpart but in the digital world we can be more creative
@@ -59,9 +59,9 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
    ```
    
   ####  Example for validation field
-  > If field not valid set property **error** to `true`
+  > If field **not valid** set property **error** to `true`
   
-  > If field valid set property **error** to `false`
+  > If field **valid** set property **error** to `false`
   
   > If don't need validation set property **error** to `null`
    ```javascript
@@ -100,7 +100,7 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
     }
    ```
  
-   ####  Example for custom theme
+   ####  Example for customizing theme
    > Theme has 4 property:
    
    | Theme property: |
