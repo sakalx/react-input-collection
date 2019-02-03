@@ -18,7 +18,7 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
  1. InputSoda
  1. InputYoko
 
- ####  Example
+####  Example
  ```javascript
   import React, {useState} from 'react';
   import InputAkira from 'react-input-ui/collection/akira';
@@ -37,7 +37,7 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
   }
   ```
   
-  ####  Example with custom style
+####  Example with custom style
    ```javascript
     import React, {useState} from 'react';
     import InputAkira from 'react-input-ui/collection/akira';
@@ -58,7 +58,7 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
     }
    ```
    
-  ####  Example for validation field
+####  Example for validation field
   > If field **not valid** set property **error** to `true`
   
   > If field **valid** set property **error** to `false`
@@ -100,15 +100,15 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
     }
    ```
  
-   ####  Example for customizing theme
+####  Example for customizing theme
    > Theme has 4 property:
    
    | Theme property: |
    | --- |
-   | `activeTextColor` |
-   | `focusColor` |
-   | `hoverColor` |
-   | `mainColor` |
+   | activeTextColor |
+   | focusColor |
+   | hoverColor |
+   | mainColor |
    
    To change them use `theme` method
    
