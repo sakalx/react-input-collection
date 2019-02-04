@@ -38,6 +38,12 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
   ```
   
 ####  Example with custom style
+> If you need change style for label or input tag,
+> just use property: 
+
+`labelStyle` `inputStyle` 
+
+*in other cases:* `style` `className`
    ```javascript
     import React, {useState} from 'react';
     import InputAkira from 'react-input-ui/collection/akira';
@@ -53,6 +59,8 @@ Inspiration  from [codrops](https://tympanus.net/codrops/2015/03/18/inspiration-
           value={value}
           style={{margin: '25px'}}
           className={'custom-class'}
+          labelStyle={{fontSize: '18px'}}
+          inputStyle={{fontSize: '21px'}}
         />
       )
     }
