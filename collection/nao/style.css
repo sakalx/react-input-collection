@@ -45,7 +45,7 @@
 
 /*Label*/
 .i-naoUI__label {
-    -o-transition: all 300ms ease;
+    -o-transition: all .3s ease;
     -o-transition-property: bottom, font-size;
     -webkit-transition: all 300ms ease;
     -webkit-transition-property: bottom, font-size;
@@ -54,7 +54,7 @@
     left: 0;
     pointer-events: none;
     position: absolute;
-    transition: all 300ms ease;
+    transition: all .3s ease;
     transition-property: bottom, font-size;
 }
 
@@ -75,16 +75,16 @@
 
 /*Underline*/
 .i-naoUI__underline {
-    -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
-    -webkit-transition: -webkit-transform 0.7s, stroke 0.7s;
+    -webkit-transition-timing-function: cubic-bezier(0, .25, .5, 1);
+    -webkit-transition: -webkit-transform .7s, stroke .7s;
     fill: none;
     left: 0;
     pointer-events: none;
     position: absolute;
     stroke: var(--i-naoUI-mainColor);
     top: 2px;
-    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
-    transition: transform 0.7s, satroke 0.7s;
+    transition-timing-function: cubic-bezier(0, .25, .5, 1);
+    transition: transform 0.7s, stroke .7s;
 }
 
 .i-naoUI__input:focus ~ .i-naoUI__underline {
